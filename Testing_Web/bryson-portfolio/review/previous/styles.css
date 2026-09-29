@@ -134,7 +134,7 @@ h1 .surname{color:var(--red);margin-left:17px;margin-top:-3px;letter-spacing:-.0
 /* The two unequal work sleeves share the same ink, not the same composition. */
 .work-section{border-top:2px solid var(--ink);padding-top:47px}
 .work-spread{display:grid;grid-template-columns:1.13fr 1fr;gap:70px;align-items:start}
-.project-image{border:2px solid var(--ink);background:var(--blue);position:relative;box-shadow:5px 6px 0 var(--ink)}
+.project-image{border:2px solid var(--ink);background:var(--blue);position:relative;pointer-events:none;box-shadow:5px 6px 0 var(--ink)}
 .project-image::before{content:"";position:absolute;width:95px;height:27px;background:#ddd2b9b8;top:-14px;left:38%;transform:rotate(-6deg);z-index:1;border-left:1px dashed #b3a88b;border-right:1px dashed #b3a88b}
 .project-image img{width:100%;aspect-ratio:3/2;object-fit:cover}
 .project-defense .project-image{transform:rotate(-2deg)}
