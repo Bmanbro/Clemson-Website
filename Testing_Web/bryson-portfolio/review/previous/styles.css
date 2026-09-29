@@ -134,7 +134,7 @@ h1 .surname{color:var(--red);margin-left:17px;margin-top:-3px;letter-spacing:-.0
 /* The two unequal work sleeves share the same ink, not the same composition. */
 .work-section{border-top:2px solid var(--ink);padding-top:47px}
 .work-spread{display:grid;grid-template-columns:1.13fr 1fr;gap:70px;align-items:start}
-.project-image{border:2px solid var(--ink);background:var(--blue);position:relative;pointer-events:none;box-shadow:5px 6px 0 var(--ink)}
+.project-image{border:2px solid var(--ink);background:var(--blue);position:relative;box-shadow:5px 6px 0 var(--ink)}
 .project-image::before{content:"";position:absolute;width:95px;height:27px;background:#ddd2b9b8;top:-14px;left:38%;transform:rotate(-6deg);z-index:1;border-left:1px dashed #b3a88b;border-right:1px dashed #b3a88b}
 .project-image img{width:100%;aspect-ratio:3/2;object-fit:cover}
 .project-defense .project-image{transform:rotate(-2deg)}
@@ -186,7 +186,8 @@ footer a span{margin-left:10px}
 
 @media(hover:hover) and (prefers-reduced-motion:no-preference){
   .button,.download-link,.project-image,.masthead nav a::after,.project-details summary span{transition:transform .18s ease,box-shadow .18s ease}
-  .project:hover .project-image{transform:rotate(0)}
+  .project-image:hover{transform:rotate(0)}
+  .project-image:hover::after{content:"";position:absolute;inset:-12px}
   .sleeve-sticker summary:hover{transform:rotate(-3deg)}
 }
 @media(min-width:1500px){.sleeve{min-height:720px;padding-top:64px}.cover-character{width:500px}.cover-copy{width:64%}.cover-note{right:420px;bottom:50px}.cover-cross{right:505px}}
