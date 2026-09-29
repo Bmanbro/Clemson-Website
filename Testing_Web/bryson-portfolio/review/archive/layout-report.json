@@ -1,0 +1,35 @@
+{
+  "screens": [
+    {
+      "width": 1440,
+      "docWidth": 1440,
+      "images": [],
+      "overflows": []
+    },
+    {
+      "width": 1024,
+      "docWidth": 1024,
+      "images": [],
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "docWidth": 768,
+      "images": [],
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "docWidth": 390,
+      "images": [],
+      "overflows": []
+    },
+    {
+      "width": 320,
+      "docWidth": 320,
+      "images": [],
+      "overflows": []
+    }
+  ],
+  "errors": []
+}

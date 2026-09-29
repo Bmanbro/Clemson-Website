@@ -1,0 +1,184 @@
+{
+  "checks": [
+    {
+      "name": "Cursor-reactive ink mark visible",
+      "pass": true
+    },
+    {
+      "name": "Character responds to pointer",
+      "pass": true
+    },
+    {
+      "name": "Motion switch pauses effects",
+      "pass": true
+    },
+    {
+      "name": "Motion preference persists",
+      "pass": true
+    },
+    {
+      "name": "Archive entry navigates to evidence",
+      "pass": true
+    },
+    {
+      "name": "Navigation reflects current section",
+      "pass": true
+    },
+    {
+      "name": "Navigation identifies field-notes",
+      "pass": true
+    },
+    {
+      "name": "Navigation identifies equipment",
+      "pass": true
+    },
+    {
+      "name": "Navigation identifies case-file",
+      "pass": true
+    },
+    {
+      "name": "Navigation identifies transmission",
+      "pass": true
+    },
+    {
+      "name": "Navigation identifies index",
+      "pass": true
+    },
+    {
+      "name": "Navigation identifies evidence",
+      "pass": true
+    },
+    {
+      "name": "Redaction reveals on keyboard focus",
+      "pass": true
+    },
+    {
+      "name": "Redaction click opens phrase",
+      "pass": true
+    },
+    {
+      "name": "Redaction click closes phrase",
+      "pass": true
+    },
+    {
+      "name": "Evidence document unfolds",
+      "pass": true
+    },
+    {
+      "name": "Evidence document unfolds",
+      "pass": true
+    },
+    {
+      "name": "Evidence document unfolds",
+      "pass": true
+    },
+    {
+      "name": "Equipment object inspection opens",
+      "pass": true
+    },
+    {
+      "name": "Equipment object inspection opens",
+      "pass": true
+    },
+    {
+      "name": "Equipment object inspection opens",
+      "pass": true
+    },
+    {
+      "name": "Equipment object inspection opens",
+      "pass": true
+    },
+    {
+      "name": "Equipment object inspection opens",
+      "pass": true
+    },
+    {
+      "name": "Equipment object inspection opens",
+      "pass": true
+    },
+    {
+      "name": "Equipment object inspection opens",
+      "pass": true
+    },
+    {
+      "name": "Dossier opens with keyboard",
+      "pass": true
+    },
+    {
+      "name": "Experience readable in open dossier",
+      "pass": true
+    },
+    {
+      "name": "Radio keyboard tuning changes channel",
+      "pass": true
+    },
+    {
+      "name": "Radio updates email subject",
+      "pass": true
+    },
+    {
+      "name": "Hello channel works",
+      "pass": true
+    },
+    {
+      "name": "Email copy works",
+      "pass": true
+    },
+    {
+      "name": "Email copy announces result",
+      "pass": true
+    },
+    {
+      "name": "Resume PDF downloads",
+      "pass": true
+    },
+    {
+      "name": "Legacy resume URL opens dossier",
+      "pass": true
+    },
+    {
+      "name": "System reduced motion respected",
+      "pass": true
+    },
+    {
+      "name": "Mobile equipment sprite loads near the bench",
+      "pass": true
+    },
+    {
+      "name": "No JavaScript: dossier works",
+      "pass": true
+    },
+    {
+      "name": "No JavaScript: inactive tuner disabled",
+      "pass": true
+    },
+    {
+      "name": "No JavaScript: redacted content remains readable",
+      "pass": true
+    },
+    {
+      "name": "No JavaScript: equipment artwork available",
+      "pass": true
+    }
+  ],
+  "accessibility": [
+    {
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "state": "dossier open",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "violations": []
+    },
+    {
+      "width": 390,
+      "state": "dossier open",
+      "violations": []
+    }
+  ]
+}

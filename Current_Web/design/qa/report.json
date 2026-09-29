@@ -1,0 +1,1402 @@
+{
+  "base": "http://127.0.0.1:8080/",
+  "timestamp": "2026-09-28T22:27:09.951Z",
+  "viewports": [
+    {
+      "viewport": 320,
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "horizontalOverflow": false,
+      "overflowing": [],
+      "brokenImages": [],
+      "badAnchors": [],
+      "headings": [
+        {
+          "level": 1,
+          "text": "BRYSON Newman*"
+        },
+        {
+          "level": 2,
+          "text": "A creative eye.A technical mind."
+        },
+        {
+          "level": 2,
+          "text": "Built throughdoing."
+        },
+        {
+          "level": 3,
+          "text": "Offensive SecurityAnalyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Security Analyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Service Desk Assistant"
+        },
+        {
+          "level": 2,
+          "text": "Ideas into practice."
+        },
+        {
+          "level": 3,
+          "text": "Network practice labs"
+        },
+        {
+          "level": 3,
+          "text": "Defense through practice"
+        },
+        {
+          "level": 2,
+          "text": "Always learning."
+        },
+        {
+          "level": 3,
+          "text": "Clemson University"
+        },
+        {
+          "level": 3,
+          "text": "Certifications"
+        },
+        {
+          "level": 2,
+          "text": "Let’s makewhat’s next.*"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/images/bryson-portrait.webp",
+          "alt": "Bryson Newman smiling, wearing a striped polo shirt.",
+          "width": 181,
+          "height": 274,
+          "loading": "auto",
+          "complete": true,
+          "naturalWidth": 249
+        },
+        {
+          "src": "assets/images/network-labs.webp",
+          "alt": "",
+          "width": 282,
+          "height": 187,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        },
+        {
+          "src": "assets/images/record-collage.webp",
+          "alt": "",
+          "width": 282,
+          "height": 187,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        }
+      ],
+      "exposedControls": 20,
+      "title": "Bryson Newman | Creative Technology & Cybersecurity",
+      "axeViolations": []
+    },
+    {
+      "viewport": 375,
+      "documentWidth": 375,
+      "bodyWidth": 375,
+      "horizontalOverflow": false,
+      "overflowing": [],
+      "brokenImages": [],
+      "badAnchors": [],
+      "headings": [
+        {
+          "level": 1,
+          "text": "BRYSON Newman*"
+        },
+        {
+          "level": 2,
+          "text": "A creative eye.A technical mind."
+        },
+        {
+          "level": 2,
+          "text": "Built throughdoing."
+        },
+        {
+          "level": 3,
+          "text": "Offensive SecurityAnalyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Security Analyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Service Desk Assistant"
+        },
+        {
+          "level": 2,
+          "text": "Ideas into practice."
+        },
+        {
+          "level": 3,
+          "text": "Network practice labs"
+        },
+        {
+          "level": 3,
+          "text": "Defense through practice"
+        },
+        {
+          "level": 2,
+          "text": "Always learning."
+        },
+        {
+          "level": 3,
+          "text": "Clemson University"
+        },
+        {
+          "level": 3,
+          "text": "Certifications"
+        },
+        {
+          "level": 2,
+          "text": "Let’s makewhat’s next.*"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/images/bryson-portrait.webp",
+          "alt": "Bryson Newman smiling, wearing a striped polo shirt.",
+          "width": 198,
+          "height": 339,
+          "loading": "auto",
+          "complete": true,
+          "naturalWidth": 292
+        },
+        {
+          "src": "assets/images/network-labs.webp",
+          "alt": "",
+          "width": 325,
+          "height": 216,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        },
+        {
+          "src": "assets/images/record-collage.webp",
+          "alt": "",
+          "width": 325,
+          "height": 216,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        }
+      ],
+      "exposedControls": 20,
+      "title": "Bryson Newman | Creative Technology & Cybersecurity",
+      "axeViolations": []
+    },
+    {
+      "viewport": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "horizontalOverflow": false,
+      "overflowing": [],
+      "brokenImages": [],
+      "badAnchors": [],
+      "headings": [
+        {
+          "level": 1,
+          "text": "BRYSON Newman*"
+        },
+        {
+          "level": 2,
+          "text": "A creative eye.A technical mind."
+        },
+        {
+          "level": 2,
+          "text": "Built throughdoing."
+        },
+        {
+          "level": 3,
+          "text": "Offensive SecurityAnalyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Security Analyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Service Desk Assistant"
+        },
+        {
+          "level": 2,
+          "text": "Ideas into practice."
+        },
+        {
+          "level": 3,
+          "text": "Network practice labs"
+        },
+        {
+          "level": 3,
+          "text": "Defense through practice"
+        },
+        {
+          "level": 2,
+          "text": "Always learning."
+        },
+        {
+          "level": 3,
+          "text": "Clemson University"
+        },
+        {
+          "level": 3,
+          "text": "Certifications"
+        },
+        {
+          "level": 2,
+          "text": "Let’s makewhat’s next.*"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/images/bryson-portrait.webp",
+          "alt": "Bryson Newman smiling, wearing a striped polo shirt.",
+          "width": 208,
+          "height": 339,
+          "loading": "auto",
+          "complete": true,
+          "naturalWidth": 304
+        },
+        {
+          "src": "assets/images/network-labs.webp",
+          "alt": "",
+          "width": 340,
+          "height": 226,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        },
+        {
+          "src": "assets/images/record-collage.webp",
+          "alt": "",
+          "width": 340,
+          "height": 226,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        }
+      ],
+      "exposedControls": 20,
+      "title": "Bryson Newman | Creative Technology & Cybersecurity",
+      "axeViolations": []
+    },
+    {
+      "viewport": 768,
+      "documentWidth": 768,
+      "bodyWidth": 768,
+      "horizontalOverflow": false,
+      "overflowing": [],
+      "brokenImages": [],
+      "badAnchors": [],
+      "headings": [
+        {
+          "level": 1,
+          "text": "BRYSON Newman*"
+        },
+        {
+          "level": 2,
+          "text": "A creative eye.A technical mind."
+        },
+        {
+          "level": 2,
+          "text": "Built throughdoing."
+        },
+        {
+          "level": 3,
+          "text": "Offensive SecurityAnalyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Security Analyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Service Desk Assistant"
+        },
+        {
+          "level": 2,
+          "text": "Ideas into practice."
+        },
+        {
+          "level": 3,
+          "text": "Network practice labs"
+        },
+        {
+          "level": 3,
+          "text": "Defense through practice"
+        },
+        {
+          "level": 2,
+          "text": "Always learning."
+        },
+        {
+          "level": 3,
+          "text": "Clemson University"
+        },
+        {
+          "level": 3,
+          "text": "Certifications"
+        },
+        {
+          "level": 2,
+          "text": "Let’s makewhat’s next.*"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/images/bryson-portrait.webp",
+          "alt": "Bryson Newman smiling, wearing a striped polo shirt.",
+          "width": 242,
+          "height": 292,
+          "loading": "auto",
+          "complete": true,
+          "naturalWidth": 276
+        },
+        {
+          "src": "assets/images/network-labs.webp",
+          "alt": "",
+          "width": 355,
+          "height": 236,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        },
+        {
+          "src": "assets/images/record-collage.webp",
+          "alt": "",
+          "width": 309,
+          "height": 205,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        }
+      ],
+      "exposedControls": 24,
+      "title": "Bryson Newman | Creative Technology & Cybersecurity",
+      "axeViolations": []
+    },
+    {
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "bodyWidth": 1024,
+      "horizontalOverflow": false,
+      "overflowing": [],
+      "brokenImages": [],
+      "badAnchors": [],
+      "headings": [
+        {
+          "level": 1,
+          "text": "BRYSON Newman*"
+        },
+        {
+          "level": 2,
+          "text": "A creative eye.A technical mind."
+        },
+        {
+          "level": 2,
+          "text": "Built throughdoing."
+        },
+        {
+          "level": 3,
+          "text": "Offensive SecurityAnalyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Security Analyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Service Desk Assistant"
+        },
+        {
+          "level": 2,
+          "text": "Ideas into practice."
+        },
+        {
+          "level": 3,
+          "text": "Network practice labs"
+        },
+        {
+          "level": 3,
+          "text": "Defense through practice"
+        },
+        {
+          "level": 2,
+          "text": "Always learning."
+        },
+        {
+          "level": 3,
+          "text": "Clemson University"
+        },
+        {
+          "level": 3,
+          "text": "Certifications"
+        },
+        {
+          "level": 2,
+          "text": "Let’s makewhat’s next.*"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/images/bryson-portrait.webp",
+          "alt": "Bryson Newman smiling, wearing a striped polo shirt.",
+          "width": 329,
+          "height": 342,
+          "loading": "auto",
+          "complete": true,
+          "naturalWidth": 368
+        },
+        {
+          "src": "assets/images/network-labs.webp",
+          "alt": "",
+          "width": 475,
+          "height": 316,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        },
+        {
+          "src": "assets/images/record-collage.webp",
+          "alt": "",
+          "width": 412,
+          "height": 274,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        }
+      ],
+      "exposedControls": 24,
+      "title": "Bryson Newman | Creative Technology & Cybersecurity",
+      "axeViolations": []
+    },
+    {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "horizontalOverflow": false,
+      "overflowing": [],
+      "brokenImages": [],
+      "badAnchors": [],
+      "headings": [
+        {
+          "level": 1,
+          "text": "BRYSON Newman*"
+        },
+        {
+          "level": 2,
+          "text": "A creative eye.A technical mind."
+        },
+        {
+          "level": 2,
+          "text": "Built throughdoing."
+        },
+        {
+          "level": 3,
+          "text": "Offensive SecurityAnalyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Security Analyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Service Desk Assistant"
+        },
+        {
+          "level": 2,
+          "text": "Ideas into practice."
+        },
+        {
+          "level": 3,
+          "text": "Network practice labs"
+        },
+        {
+          "level": 3,
+          "text": "Defense through practice"
+        },
+        {
+          "level": 2,
+          "text": "Always learning."
+        },
+        {
+          "level": 3,
+          "text": "Clemson University"
+        },
+        {
+          "level": 3,
+          "text": "Certifications"
+        },
+        {
+          "level": 2,
+          "text": "Let’s makewhat’s next.*"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/images/bryson-portrait.webp",
+          "alt": "Bryson Newman smiling, wearing a striped polo shirt.",
+          "width": 421,
+          "height": 387,
+          "loading": "auto",
+          "complete": true,
+          "naturalWidth": 518
+        },
+        {
+          "src": "assets/images/network-labs.webp",
+          "alt": "",
+          "width": 668,
+          "height": 445,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        },
+        {
+          "src": "assets/images/record-collage.webp",
+          "alt": "",
+          "width": 581,
+          "height": 387,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        }
+      ],
+      "exposedControls": 24,
+      "title": "Bryson Newman | Creative Technology & Cybersecurity",
+      "axeViolations": []
+    },
+    {
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "bodyWidth": 1920,
+      "horizontalOverflow": false,
+      "overflowing": [],
+      "brokenImages": [],
+      "badAnchors": [],
+      "headings": [
+        {
+          "level": 1,
+          "text": "BRYSON Newman*"
+        },
+        {
+          "level": 2,
+          "text": "A creative eye.A technical mind."
+        },
+        {
+          "level": 2,
+          "text": "Built throughdoing."
+        },
+        {
+          "level": 3,
+          "text": "Offensive SecurityAnalyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Security Analyst Intern"
+        },
+        {
+          "level": 3,
+          "text": "Service Desk Assistant"
+        },
+        {
+          "level": 2,
+          "text": "Ideas into practice."
+        },
+        {
+          "level": 3,
+          "text": "Network practice labs"
+        },
+        {
+          "level": 3,
+          "text": "Defense through practice"
+        },
+        {
+          "level": 2,
+          "text": "Always learning."
+        },
+        {
+          "level": 3,
+          "text": "Clemson University"
+        },
+        {
+          "level": 3,
+          "text": "Certifications"
+        },
+        {
+          "level": 2,
+          "text": "Let’s makewhat’s next.*"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/images/bryson-portrait.webp",
+          "alt": "Bryson Newman smiling, wearing a striped polo shirt.",
+          "width": 421,
+          "height": 426,
+          "loading": "auto",
+          "complete": true,
+          "naturalWidth": 691
+        },
+        {
+          "src": "assets/images/network-labs.webp",
+          "alt": "",
+          "width": 669,
+          "height": 445,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        },
+        {
+          "src": "assets/images/record-collage.webp",
+          "alt": "",
+          "width": 581,
+          "height": 387,
+          "loading": "lazy",
+          "complete": true,
+          "naturalWidth": 1200
+        }
+      ],
+      "exposedControls": 24,
+      "title": "Bryson Newman | Creative Technology & Cybersecurity",
+      "axeViolations": []
+    }
+  ],
+  "interactions": [
+    {
+      "width": 375,
+      "check": "motion toggle",
+      "before": "false",
+      "after": "true",
+      "persisted": "true",
+      "decorativeMotionAfterPause": [
+        {
+          "element": "record-label motion-visual",
+          "animationName": "record-spin",
+          "playState": "paused"
+        },
+        {
+          "element": "marquee-track motion-visual",
+          "animationName": "marquee-scroll",
+          "playState": "paused"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "check": "menu toggle",
+      "before": "false",
+      "after": "true",
+      "panelVisible": true
+    },
+    {
+      "width": 375,
+      "check": "menu escape",
+      "expanded": "false"
+    },
+    {
+      "width": 375,
+      "check": "mobile navigation",
+      "expectedHash": "#contact",
+      "actualHash": "#contact",
+      "expandedAfter": "false"
+    },
+    {
+      "width": 375,
+      "check": "anchor navigation",
+      "expectedHash": "#main",
+      "actualHash": "#main",
+      "targetTop": -194,
+      "active": []
+    },
+    {
+      "width": 375,
+      "check": "anchor navigation",
+      "expectedHash": "#top",
+      "actualHash": "#top",
+      "targetTop": 0,
+      "active": []
+    },
+    {
+      "width": 375,
+      "check": "anchor navigation",
+      "expectedHash": "#about",
+      "actualHash": "#about",
+      "targetTop": 103.90625,
+      "active": [
+        {
+          "href": "#about",
+          "current": "location"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "check": "anchor navigation",
+      "expectedHash": "#experience",
+      "actualHash": "#experience",
+      "targetTop": 103.84375,
+      "active": [
+        {
+          "href": "#experience",
+          "current": "location"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "check": "anchor navigation",
+      "expectedHash": "#work",
+      "actualHash": "#work",
+      "targetTop": 104.25,
+      "active": [
+        {
+          "href": "#work",
+          "current": "location"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "check": "anchor navigation",
+      "expectedHash": "#education",
+      "actualHash": "#education",
+      "targetTop": 103.546875,
+      "active": [
+        {
+          "href": "#education",
+          "current": "location"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "check": "anchor navigation",
+      "expectedHash": "#contact",
+      "actualHash": "#contact",
+      "targetTop": 235.875,
+      "active": [
+        {
+          "href": "#contact",
+          "current": "location"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "check": "keyboard details",
+      "text": "INFRASTRUCTURE / LAB ENVIRONMENT\nNetwork practice labs\nEnterprise-like network environments for hands-on defense practice.\nRole: Cyber Defense Team Firewall Lead\nAnsible\nPalo Alto\nNetwork defense\nClose details\n+",
+      "toggled": true,
+      "focus": {
+        "outlineStyle": "solid",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(214, 242, 84)",
+        "focused": true
+      }
+    },
+    {
+      "width": 375,
+      "check": "keyboard details",
+      "text": "SECURITY / HANDS-ON LEARNING\nDefense through practice\nPractice labs for investigating incidents and strengthening systems.\nRole: Cyber Defense Team Firewall Lead\nIncident response\nSystem hardening\nClose details\n+",
+      "toggled": true,
+      "focus": {
+        "outlineStyle": "solid",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(214, 242, 84)",
+        "focused": true
+      }
+    },
+    {
+      "width": 1440,
+      "check": "motion toggle",
+      "before": "false",
+      "after": "true",
+      "persisted": "true",
+      "decorativeMotionAfterPause": [
+        {
+          "element": "record-label motion-visual",
+          "animationName": "record-spin",
+          "playState": "paused"
+        },
+        {
+          "element": "marquee-track motion-visual",
+          "animationName": "marquee-scroll",
+          "playState": "paused"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "check": "anchor navigation",
+      "expectedHash": "#main",
+      "actualHash": "#main",
+      "targetTop": 81,
+      "active": []
+    },
+    {
+      "width": 1440,
+      "check": "anchor navigation",
+      "expectedHash": "#top",
+      "actualHash": "#top",
+      "targetTop": 0,
+      "active": []
+    },
+    {
+      "width": 1440,
+      "check": "anchor navigation",
+      "expectedHash": "#about",
+      "actualHash": "#about",
+      "targetTop": 115.515625,
+      "active": [
+        {
+          "href": "#about",
+          "current": "location"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "check": "anchor navigation",
+      "expectedHash": "#experience",
+      "actualHash": "#experience",
+      "targetTop": 115.90625,
+      "active": [
+        {
+          "href": "#experience",
+          "current": "location"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "check": "anchor navigation",
+      "expectedHash": "#work",
+      "actualHash": "#work",
+      "targetTop": 115.671875,
+      "active": [
+        {
+          "href": "#work",
+          "current": "location"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "check": "anchor navigation",
+      "expectedHash": "#education",
+      "actualHash": "#education",
+      "targetTop": 115.734375,
+      "active": [
+        {
+          "href": "#education",
+          "current": "location"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "check": "anchor navigation",
+      "expectedHash": "#contact",
+      "actualHash": "#contact",
+      "targetTop": 115.828125,
+      "active": [
+        {
+          "href": "#contact",
+          "current": "location"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "check": "keyboard details",
+      "text": "Explore the work ↗\nINFRASTRUCTURE / LAB ENVIRONMENT\nNetwork practice labs\nEnterprise-like network environments for hands-on defense practice.\nRole: Cyber Defense Team Firewall Lead\nAnsible\nPalo Alto\nNetwork defense\nClose details\n+",
+      "toggled": true,
+      "focus": {
+        "outlineStyle": "solid",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(214, 242, 84)",
+        "focused": true
+      }
+    },
+    {
+      "width": 1440,
+      "check": "keyboard details",
+      "text": "Explore the work ↗\nSECURITY / HANDS-ON LEARNING\nDefense through practice\nPractice labs for investigating incidents and strengthening systems.\nRole: Cyber Defense Team Firewall Lead\nIncident response\nSystem hardening\nClose details\n+",
+      "toggled": true,
+      "focus": {
+        "outlineStyle": "solid",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(214, 242, 84)",
+        "focused": true
+      }
+    }
+  ],
+  "errors": [],
+  "requests": [],
+  "assetChecks": [
+    {
+      "url": "assets/icons/favicon.svg",
+      "status": 200,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "url": "assets/fonts/bebas-neue-latin.woff2",
+      "status": 200,
+      "contentType": "font/woff2"
+    },
+    {
+      "url": "assets/fonts/space-grotesk-latin-variable.woff2",
+      "status": 200,
+      "contentType": "font/woff2"
+    },
+    {
+      "url": "styles.css",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "script.js",
+      "status": 200,
+      "contentType": "text/javascript"
+    },
+    {
+      "url": "resume/Bryson-Newman-Resume.pdf",
+      "status": 200,
+      "contentType": "application/pdf"
+    },
+    {
+      "url": "assets/images/bryson-portrait.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "assets/images/network-labs.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "assets/images/record-collage.webp",
+      "status": 200,
+      "contentType": "image/webp"
+    }
+  ],
+  "reducedMotion": {
+    "matched": true,
+    "scrollBehavior": "auto",
+    "runningAnimations": []
+  },
+  "withoutJavaScript": {
+    "viewport": 375,
+    "documentWidth": 375,
+    "bodyWidth": 375,
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "headings": [
+      {
+        "level": 1,
+        "text": "BRYSON Newman*"
+      },
+      {
+        "level": 2,
+        "text": "A creative eye.A technical mind."
+      },
+      {
+        "level": 2,
+        "text": "Built throughdoing."
+      },
+      {
+        "level": 3,
+        "text": "Offensive SecurityAnalyst Intern"
+      },
+      {
+        "level": 3,
+        "text": "Security Analyst Intern"
+      },
+      {
+        "level": 3,
+        "text": "Service Desk Assistant"
+      },
+      {
+        "level": 2,
+        "text": "Ideas into practice."
+      },
+      {
+        "level": 3,
+        "text": "Network practice labs"
+      },
+      {
+        "level": 3,
+        "text": "Defense through practice"
+      },
+      {
+        "level": 2,
+        "text": "Always learning."
+      },
+      {
+        "level": 3,
+        "text": "Clemson University"
+      },
+      {
+        "level": 3,
+        "text": "Certifications"
+      },
+      {
+        "level": 2,
+        "text": "Let’s makewhat’s next.*"
+      }
+    ],
+    "images": [
+      {
+        "src": "assets/images/bryson-portrait.webp",
+        "alt": "Bryson Newman smiling, wearing a striped polo shirt.",
+        "width": 198,
+        "height": 339,
+        "loading": "auto",
+        "complete": true,
+        "naturalWidth": 292
+      },
+      {
+        "src": "assets/images/network-labs.webp",
+        "alt": "",
+        "width": 325,
+        "height": 216,
+        "loading": "lazy",
+        "complete": true,
+        "naturalWidth": 1200
+      },
+      {
+        "src": "assets/images/record-collage.webp",
+        "alt": "",
+        "width": 325,
+        "height": 216,
+        "loading": "lazy",
+        "complete": true,
+        "naturalWidth": 1200
+      }
+    ],
+    "exposedControls": 23,
+    "title": "Bryson Newman | Creative Technology & Cybersecurity",
+    "navigation": [
+      {
+        "text": "BRYSON*",
+        "href": "#top",
+        "visible": true
+      },
+      {
+        "text": "About",
+        "href": "#about",
+        "visible": true
+      },
+      {
+        "text": "Experience",
+        "href": "#experience",
+        "visible": true
+      },
+      {
+        "text": "Work",
+        "href": "#work",
+        "visible": true
+      },
+      {
+        "text": "Education",
+        "href": "#education",
+        "visible": true
+      },
+      {
+        "text": "Contact ↗",
+        "href": "#contact",
+        "visible": true
+      }
+    ],
+    "hiddenContent": [],
+    "details": [
+      {
+        "text": "INFRASTRUCTURE / LAB ENVIRONMENT\nNetwork practice labs\nEnterprise-like network environments for hands-on defense practice.\nRole: Cyber Defense Team Firewall Lead\nAnsible\nPalo Alto\nNetwork defense\nClose details\n+",
+        "toggled": true
+      },
+      {
+        "text": "SECURITY / HANDS-ON LEARNING\nDefense through practice\nPractice labs for investigating incidents and strengthening systems.\nRole: Cyber Defense Team Firewall Lead\nIncident response\nSystem hardening\nClose details\n+",
+        "toggled": true
+      }
+    ]
+  },
+  "fileSmoke": {
+    "viewport": 390,
+    "documentWidth": 390,
+    "bodyWidth": 390,
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "brokenImages": [],
+    "badAnchors": [],
+    "headings": [
+      {
+        "level": 1,
+        "text": "BRYSON Newman*"
+      },
+      {
+        "level": 2,
+        "text": "A creative eye.A technical mind."
+      },
+      {
+        "level": 2,
+        "text": "Built throughdoing."
+      },
+      {
+        "level": 3,
+        "text": "Offensive SecurityAnalyst Intern"
+      },
+      {
+        "level": 3,
+        "text": "Security Analyst Intern"
+      },
+      {
+        "level": 3,
+        "text": "Service Desk Assistant"
+      },
+      {
+        "level": 2,
+        "text": "Ideas into practice."
+      },
+      {
+        "level": 3,
+        "text": "Network practice labs"
+      },
+      {
+        "level": 3,
+        "text": "Defense through practice"
+      },
+      {
+        "level": 2,
+        "text": "Always learning."
+      },
+      {
+        "level": 3,
+        "text": "Clemson University"
+      },
+      {
+        "level": 3,
+        "text": "Certifications"
+      },
+      {
+        "level": 2,
+        "text": "Let’s makewhat’s next.*"
+      }
+    ],
+    "images": [
+      {
+        "src": "assets/images/bryson-portrait.webp",
+        "alt": "Bryson Newman smiling, wearing a striped polo shirt.",
+        "width": 208,
+        "height": 339,
+        "loading": "auto",
+        "complete": true,
+        "naturalWidth": 304
+      },
+      {
+        "src": "assets/images/network-labs.webp",
+        "alt": "",
+        "width": 340,
+        "height": 226,
+        "loading": "lazy",
+        "complete": true,
+        "naturalWidth": 1200
+      },
+      {
+        "src": "assets/images/record-collage.webp",
+        "alt": "",
+        "width": 340,
+        "height": 226,
+        "loading": "lazy",
+        "complete": true,
+        "naturalWidth": 1200
+      }
+    ],
+    "exposedControls": 20,
+    "title": "Bryson Newman | Creative Technology & Cybersecurity",
+    "fonts": [
+      {
+        "family": "Bebas Neue",
+        "status": "loaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "status": "loaded"
+      }
+    ]
+  },
+  "skipLink": [
+    {
+      "width": 375,
+      "hash": "#main",
+      "focused": "main",
+      "scrollY": 0,
+      "mainTop": 69,
+      "titleTop": 137,
+      "headerBottom": 69
+    },
+    {
+      "width": 1440,
+      "hash": "#main",
+      "focused": "main",
+      "scrollY": 0,
+      "mainTop": 81,
+      "titleTop": 183,
+      "headerBottom": 81
+    }
+  ],
+  "wideNavigation": [
+    {
+      "width": 1920,
+      "height": 768,
+      "expected": "#about",
+      "active": "#about",
+      "passed": true,
+      "hash": ""
+    },
+    {
+      "width": 1920,
+      "height": 768,
+      "expected": "#experience",
+      "active": "#experience",
+      "passed": true,
+      "hash": ""
+    },
+    {
+      "width": 1920,
+      "height": 768,
+      "expected": "#work",
+      "active": "#work",
+      "passed": true,
+      "hash": ""
+    },
+    {
+      "width": 1920,
+      "height": 768,
+      "expected": "#education",
+      "active": "#education",
+      "passed": true,
+      "hash": ""
+    },
+    {
+      "width": 1920,
+      "height": 768,
+      "expected": "#contact",
+      "active": "#contact",
+      "passed": true,
+      "hash": ""
+    },
+    {
+      "width": 1440,
+      "height": 600,
+      "expected": "#about",
+      "active": "#about",
+      "passed": true,
+      "hash": ""
+    },
+    {
+      "width": 1440,
+      "height": 600,
+      "expected": "#experience",
+      "active": "#experience",
+      "passed": true,
+      "hash": ""
+    },
+    {
+      "width": 1440,
+      "height": 600,
+      "expected": "#work",
+      "active": "#work",
+      "passed": true,
+      "hash": ""
+    },
+    {
+      "width": 1440,
+      "height": 600,
+      "expected": "#education",
+      "active": "#education",
+      "passed": true,
+      "hash": ""
+    },
+    {
+      "width": 1440,
+      "height": 600,
+      "expected": "#contact",
+      "active": "#contact",
+      "passed": true,
+      "hash": ""
+    }
+  ],
+  "resizeNavigation": [
+    {
+      "width": 390,
+      "height": 844,
+      "expected": "#about",
+      "active": "#about",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "expected": "#work",
+      "active": "#work",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "expected": "#contact",
+      "active": "#contact",
+      "passed": true
+    },
+    {
+      "width": 1920,
+      "height": 768,
+      "expected": "#about",
+      "active": "#about",
+      "passed": true
+    },
+    {
+      "width": 1920,
+      "height": 768,
+      "expected": "#work",
+      "active": "#work",
+      "passed": true
+    },
+    {
+      "width": 1920,
+      "height": 768,
+      "expected": "#contact",
+      "active": "#contact",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "height": 600,
+      "expected": "#about",
+      "active": "#about",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "height": 600,
+      "expected": "#work",
+      "active": "#work",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "height": 600,
+      "expected": "#contact",
+      "active": "#contact",
+      "passed": true
+    }
+  ]
+}

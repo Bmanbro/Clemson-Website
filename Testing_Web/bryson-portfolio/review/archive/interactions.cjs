@@ -1,0 +1,83 @@
+const {chromium}=require('/tmp/bryson-site-qa/node_modules/playwright');
+const {default:AxeBuilder}=require('/tmp/bryson-site-qa/node_modules/@axe-core/playwright');
+const fs=require('fs');
+module.exports=async function check(browser){
+const report={checks:[],accessibility:[]};
+const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'no-preference'});
+const page=await context.newPage();
+await page.goto('http://127.0.0.1:4174/',{waitUntil:'networkidle'});
+const assert=(condition,name)=>{report.checks.push({name,pass:!!condition});if(!condition)console.error('FAILED:',name)};
+await page.mouse.move(800,620);
+await page.waitForTimeout(80);
+assert(await page.locator('.cursor-mark').evaluate(e=>getComputedStyle(e).display==='block'),'Cursor-reactive ink mark visible');
+assert(await page.locator('.character-rig').evaluate(e=>e.style.getPropertyValue('--mx')!=='0px'),'Character responds to pointer');
+await page.locator('#motion-toggle').click();
+assert(await page.locator('html').getAttribute('data-motion')==='off','Motion switch pauses effects');
+await page.reload();
+assert(await page.locator('html').getAttribute('data-motion')==='off','Motion preference persists');
+await page.locator('[data-archive-link]').click();
+await page.waitForTimeout(100);
+assert(new URL(page.url()).hash==='#evidence','Archive entry navigates to evidence');
+assert(await page.locator('.archive-nav [aria-current]').getAttribute('href')==='#evidence','Navigation reflects current section');
+for(const id of ['field-notes','equipment','case-file','transmission','index','evidence']) {
+ await page.locator(`.archive-nav a[href="#${id}"]`).click();
+ await page.waitForTimeout(150);
+ assert(await page.locator('.archive-nav [aria-current]').getAttribute('href')===`#${id}`,`Navigation identifies ${id}`);
+}
+const redaction=page.locator('[data-redaction]');
+await redaction.focus();
+assert(await redaction.evaluate(e=>getComputedStyle(e.firstElementChild).color!=='rgba(0, 0, 0, 0)'),'Redaction reveals on keyboard focus');
+await redaction.click();
+assert(await redaction.getAttribute('aria-expanded')==='true','Redaction click opens phrase');
+await redaction.click();
+assert(await redaction.getAttribute('aria-expanded')==='false','Redaction click closes phrase');
+for (const el of await page.locator('.artifact-fold').all()){await el.locator('summary').click();assert(await el.getAttribute('open')!==null,'Evidence document unfolds');}
+for (const el of await page.locator('.equipment-item').all()){await el.locator('summary').click();assert(await el.getAttribute('open')!==null,'Equipment object inspection opens');await el.locator('summary').click();}
+await page.locator('#dossier > summary').focus();await page.keyboard.press('Enter');
+assert(await page.locator('#dossier').getAttribute('open')!==null,'Dossier opens with keyboard');
+assert(await page.locator('.file-timeline').isVisible(),'Experience readable in open dossier');
+await page.locator('#transmission-dial').focus();await page.keyboard.press('ArrowRight');
+assert(await page.locator('#frequency-output').textContent()==='Research','Radio keyboard tuning changes channel');
+assert((await page.locator('#transmit-link').getAttribute('href')).includes('Research%20question'),'Radio updates email subject');
+await page.keyboard.press('ArrowRight');
+assert(await page.locator('#frequency-output').textContent()==='Just saying hello','Hello channel works');
+await page.context().grantPermissions(['clipboard-read','clipboard-write']);
+await page.locator('[data-copy-email]').click();
+assert(await page.evaluate(()=>navigator.clipboard.readText())==='BrysonNewman@proton.me','Email copy works');
+assert(await page.locator('.copy-status').textContent()==='Coordinates copied. Your mail app knows the rest.','Email copy announces result');
+const pdf=await page.request.get('http://127.0.0.1:4174/assets/documents/Bryson-Newman-Resume.pdf');
+assert(pdf.ok()&&(await pdf.body()).subarray(0,4).toString()==='%PDF','Resume PDF downloads');
+await page.goto('http://127.0.0.1:4174/#resume');
+assert(await page.locator('#dossier').getAttribute('open')!==null,'Legacy resume URL opens dossier');
+for(const width of [1440,390]){
+ await page.setViewportSize({width,height:1000});
+ await page.goto('http://127.0.0.1:4174/',{waitUntil:'networkidle'});
+ const axe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
+ report.accessibility.push({width,violations:axe.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary}))}))});
+ await page.locator('#dossier > summary').click();
+ const opened=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
+ report.accessibility.push({width,state:'dossier open',violations:opened.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary}))}))});
+}
+await page.emulateMedia({reducedMotion:'reduce'});
+assert(await page.locator('html').getAttribute('data-motion')==='off','System reduced motion respected');
+await page.close();
+const mobile=await context.newPage({viewport:{width:390,height:1000}});
+await mobile.setViewportSize({width:390,height:1000});
+await mobile.goto('http://127.0.0.1:4174/');
+await mobile.locator('#equipment').scrollIntoViewIfNeeded();
+await mobile.waitForTimeout(100);
+assert(await mobile.locator('#equipment').evaluate(e=>e.style.getPropertyValue('--equipment-image').includes('equipment-spread-960.webp')),'Mobile equipment sprite loads near the bench');
+await mobile.close();
+const noJS=await browser.newPage({javaScriptEnabled:false,viewport:{width:390,height:1000}});
+await noJS.goto('http://127.0.0.1:4174/');
+await noJS.locator('#dossier > summary').click();
+assert(await noJS.locator('.file-timeline').isVisible(),'No JavaScript: dossier works');
+assert(await noJS.locator('#transmission-dial').isDisabled(),'No JavaScript: inactive tuner disabled');
+assert(await noJS.locator('[data-redaction]').evaluate(e=>getComputedStyle(e.firstElementChild).color!=='rgba(0, 0, 0, 0)'),'No JavaScript: redacted content remains readable');
+await noJS.locator('#equipment').scrollIntoViewIfNeeded();
+assert(await noJS.locator('.equipment-item').first().evaluate(e=>getComputedStyle(e,':before').backgroundImage.includes('equipment-spread-960.webp')),'No JavaScript: equipment artwork available');
+await noJS.screenshot({path:'/home/brysonn/Projects/bryson-portfolio/review/archive/no-js-390.png'});
+await noJS.close();
+fs.writeFileSync('/home/brysonn/Projects/bryson-portfolio/review/archive/interaction-report.json',JSON.stringify(report,null,2));
+console.log(JSON.stringify(report,null,2));
+};

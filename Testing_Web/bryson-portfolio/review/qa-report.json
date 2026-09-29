@@ -1,0 +1,62 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "viewport": 1440,
+      "document": 1440,
+      "overflow": [],
+      "brokenImages": [],
+      "missingAnchors": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "viewport": 1024,
+      "document": 1024,
+      "overflow": [],
+      "brokenImages": [],
+      "missingAnchors": [],
+      "violations": []
+    },
+    {
+      "width": 768,
+      "viewport": 768,
+      "document": 768,
+      "overflow": [],
+      "brokenImages": [],
+      "missingAnchors": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "viewport": 390,
+      "document": 390,
+      "overflow": [],
+      "brokenImages": [],
+      "missingAnchors": [],
+      "violations": []
+    },
+    {
+      "width": 320,
+      "viewport": 320,
+      "document": 320,
+      "overflow": [],
+      "brokenImages": [],
+      "missingAnchors": [],
+      "violations": []
+    }
+  ],
+  "interactions": {
+    "sleeveNote": true,
+    "projectNotes": true,
+    "clipboard": true,
+    "clipboardFailure": true,
+    "httpClipboardFocus": true,
+    "escapeKeepsFocus": true,
+    "download": true,
+    "keyboardSkip": true,
+    "noJavaScript": true
+  },
+  "errors": [],
+  "openNoteViolations": []
+}
