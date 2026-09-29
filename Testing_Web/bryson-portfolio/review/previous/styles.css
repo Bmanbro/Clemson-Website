@@ -186,7 +186,8 @@ footer a span{margin-left:10px}
 
 @media(hover:hover) and (prefers-reduced-motion:no-preference){
   .button,.download-link,.project-image,.masthead nav a::after,.project-details summary span{transition:transform .18s ease,box-shadow .18s ease}
-  .project:hover .project-image{transform:rotate(0)}
+  .project-image:hover{transform:rotate(0)}
+  .project-image:hover::after{content:"";position:absolute;inset:-12px}
   .sleeve-sticker summary:hover{transform:rotate(-3deg)}
 }
 @media(min-width:1500px){.sleeve{min-height:720px;padding-top:64px}.cover-character{width:500px}.cover-copy{width:64%}.cover-note{right:420px;bottom:50px}.cover-cross{right:505px}}
