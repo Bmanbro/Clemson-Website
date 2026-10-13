@@ -9,7 +9,7 @@ A static personal website for Bryson Newman, intended for `https://brysonn.peopl
 | [index.html](index.html) | Single source for page content, resume entries, contact details, project information, and metadata |
 | [styles.css](styles.css) | Responsive layout, typography, palette, textures, and motion styles |
 | [script.js](script.js) | Mobile menu, active navigation, motion controls, entrance effects, and copyright year |
-| [assets/images/](assets/images/) | Optimized portrait, illustrative project covers, and grain texture |
+| [assets/images/](assets/images/) | Portrait, Atari project photo, network equipment photograph, and grain texture |
 | [assets/fonts/](assets/fonts/) | Self-hosted WOFF2 fonts and required license files |
 | [assets/icons/favicon.svg](assets/icons/favicon.svg) | Original typographic site icon |
 | [resume/Bryson-Newman-Resume.pdf](resume/Bryson-Newman-Resume.pdf) | Downloadable copy of the supplied resume |
@@ -28,11 +28,11 @@ Open `http://localhost:8080/` in a browser. Stop the server with `Ctrl+C`. This 
 
 ## Edit resume and portfolio content
 
-Open [index.html](index.html) and search for `EDIT THIS`. These comments mark the introduction, biography and skills, experience, project details, education and certifications, contact links, and page metadata. Content is written directly in HTML so it remains available when JavaScript is disabled. There is no separate content database or generated content file.
+Open [index.html](index.html) and search for `EDIT THIS`. These comments mark the introduction, biography and skills, experience, project details, education, contact links, and page metadata. Content is written directly in HTML so it remains available when JavaScript is disabled. There is no separate content database or generated content file.
 
 - Update employment titles, organizations, dates, locations, and accomplishment bullets inside the corresponding experience `<article>`.
 - Update education, expected graduation, GPA, and skills in their marked sections when those facts change.
-- Update the email `mailto:` destination and visible address together. Social links appear in the contact section and footer; GitHub profile links also appear in both project cards.
+- Update the email `mailto:` destination and visible address together. Social links appear in the contact section and footer; The Atari card links to its repository, and the lab card links to the GitHub profile.
 - Replace the PDF at `resume/Bryson-Newman-Resume.pdf` to keep existing resume buttons working. If you rename it, update every reference in `index.html`.
 - To add a project, duplicate one `<details class="project-card …">` block, give it and its inner details element unique IDs, then replace the title, description, role, tools, image, and expanded content. Put actual repository or demo anchors inside `.project-details`; native `<summary>` provides the keyboard-accessible open/close control.
 - Adjust the title and description in `<head>` when the professional positioning changes. Keep section IDs stable unless their navigation links are updated too.
@@ -41,9 +41,9 @@ Open [index.html](index.html) and search for `EDIT THIS`. These comments mark th
 
 The employment history, accomplishment figures, skills, education, team activities, email, and profile URLs were drawn from the supplied [resume source](bryson_data/Newman_Bryson_Resume.pdf). The public PDF is a copy of that document. The portrait comes from the supplied [photo](bryson_data/bryson-photo.jpg). Introductory and biographical prose is editable editorial wording based on those materials.
 
-The two work cards describe documented Clemson Cyber Defense Team activities. They do not claim to be separate shipped products. Their detailed case studies, architecture/lab screenshots, specific repository or demo links, and project-specific outcomes remain to be added. Each card labels this unfinished material and currently links to the supplied GitHub profile.
+The lead work card features the [Atari 2600+ Sideloader](https://github.com/Bmanbro/Atari-2600-Sideloader-), using project details and the menu photo from its repository. It identifies the supported Pac-Man Edition console and firmware 2.0.1.6. The supporting card consolidates the documented Clemson Cyber Defense Team network and incident-response lab activities. Its detailed case study, lab screenshots, project-specific links, and outcomes remain to be added and are labeled as pending.
 
-The certifications area explicitly says **To be added** because no earned certifications were supplied. Replace it only with confirmed credential names, issuers, dates, and verification URLs, or remove the certifications block.
+The education section pairs degree details with a decorative Clemson paw, sourced from [Clemson’s logo artwork](https://www.clemson.edu/brand/images/logo/level-one/paw-orange.png). The original transparent image is stored in `assets/images/clemson-paw.png`; a CSS mask displays it in the site’s lime accent. On mobile, the paw sits beside the degree details and replaces the decorative CU tile.
 
 ## Replace or add images
 
@@ -63,7 +63,11 @@ magick path/to/new-portrait.jpg -auto-orient -resize '640x>' -strip -quality 85 
 
 If the new image has different proportions, update the hero `<img>` `width` and `height` to the actual larger file's dimensions. Keep the `srcset` width descriptors equal to the files' actual widths; the current `640w` and `1000w` variants let browsers select an appropriate size. The `sizes` attribute describes the responsive layout. Update the alt text to describe the replacement portrait.
 
-The project covers, [network-labs.webp](assets/images/network-labs.webp) and [record-collage.webp](assets/images/record-collage.webp), are illustrative artwork, not project screenshots or evidence of outcomes. They were created with the built-in image generation tool; the exact prompts are preserved in [design/image-prompts.json](design/image-prompts.json), with rationale in [design/ART-DIRECTION.md](design/ART-DIRECTION.md). Their displayed HTML dimensions are 1200 × 800. Replace them with your own screenshots or licensed imagery when available, using a consistent 3:2 crop. Set accurate `width` and `height` attributes to reserve space, retain `loading="lazy"` and `decoding="async"` for below-the-fold images, and add meaningful alt text if an image conveys information. Purely decorative covers use `alt=""` because the surrounding card supplies the project information.
+The Atari photo, [atari-sideloader.jpg](assets/images/atari-sideloader.jpg), is the original 4032 × 2268 image from the project repository’s `docs/AtariSideloadMenu.jpg`. It is displayed at its full 16:9 aspect ratio to keep the menu visible.
+
+The network lab cover, [network-equipment.jpg](assets/images/network-equipment.jpg), is a real photograph by Sergei Starostin: [Close Up Photo of Ethernet Cables on Network Switch](https://www.pexels.com/photo/close-up-photo-of-ethernet-cables-on-network-switch-6466143/), from Pexels. The source records a capture date of June 18, 2015 and a Canon EOS 5D Mark III camera. It is used under the [Pexels License](https://www.pexels.com/license/), downloaded at 1213 × 750 and displayed in the existing 3:2 card crop. The expanded project details credit the photographer and identify it as stock photography. It is representative equipment imagery, not a photograph of Bryson’s lab.
+
+The former generated covers (`network-labs.webp` and `record-collage.webp`) remain as unused local assets and are excluded from the upload ZIP. Their original generation prompts are retained in `design/image-prompts.json`. Keep accurate image dimensions, lazy loading, asynchronous decoding, and meaningful alt text when replacing project photos.
 
 The user-supplied artwork in [examples/](examples/) informs the art direction only. Its optimized [study previews](design/reference-previews/README.md) are local design references and are not used by the published page. Preserve the original references locally and exclude both reference directories from deployment.
 
@@ -75,7 +79,7 @@ Both font families are distributed under SIL Open Font License 1.1. Keep [Bebas-
 
 ## Browser validation
 
-Tested locally in Chromium at 320, 375, 390, 768, 1024, 1440, and 1920 pixel widths. Automated axe checks reported no violations at those widths. Navigation, visible keyboard focus, project disclosures, motion pause/persistence, reduced motion, and the no-JavaScript fallback were exercised. All local asset and resume requests succeeded; no broken fragments, document overflow, or HTTP-page console errors were found. Direct local-file loading was also checked. Nineteen additional observer navigation checks passed while scrolling and resizing wide, short viewports (1920 × 768 and 1440 × 600).
+The original site was tested locally in Chromium at 320, 375, 390, 768, 1024, 1440, and 1920 pixel widths. Automated axe checks reported no violations at those widths. Navigation, visible keyboard focus, project disclosures, motion pause/persistence, reduced motion, and the no-JavaScript fallback were exercised. All local asset and resume requests succeeded; no broken fragments, document overflow, or HTTP-page console errors were found. Direct local-file loading was also checked. Nineteen additional observer navigation checks passed while scrolling and resizing wide, short viewports (1920 × 768 and 1440 × 600).
 
 Local test results and screenshots are in `design/qa/`; they are excluded from the upload. These checks validate the local implementation, not the remote Clemson server configuration.
 

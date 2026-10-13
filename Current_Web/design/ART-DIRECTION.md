@@ -8,7 +8,7 @@ The four supplied reference images were inspected before designing. Their common
 - Type: self-hosted Bebas Neue for large poster headlines; Space Grotesk for readable professional content; system monospace for dates and labels. Fonts include their SIL OFL licenses.
 - Grid: maximum 1320px canvas; asymmetric desktop hero and work columns; two-column about; timeline; compact education grid; full-width contact close. Each collapses explicitly for phones.
 - Shape: square controls and project cards; circles reserved for the record graphic. Portrait gets a paper edge and slight tilt.
-- Texture: subtle, small repeating grayscale grain tile, halftone in the hero artwork, original print-textured editorial project covers.
+- Texture: subtle, small repeating grayscale grain tile, halftone in the hero artwork, real project and network equipment photographs.
 - Motion: one decorative marquee, a slowly rotating record, brief section entrances, and transform-only project hover treatment. Global pause control, reduced-motion override, and static no-JavaScript fallback.
 - Design settings: variance 8, motion 5, density 4. Brand remains dark regardless of operating-system color scheme.
 
@@ -16,11 +16,11 @@ The four supplied reference images were inspected before designing. Their common
 
 Employment, tools, dates, education, GPA, contact details, and lab activities come from `bryson_data/Newman_Bryson_Resume.pdf`. The original PDF is copied to `resume/Bryson-Newman-Resume.pdf`. Month-level date labels on the site abbreviate the exact dates in that document. Biography and brand copy are authored summaries of those facts. There is no asserted availability status.
 
-The portrait is the supplied `bryson_data/bryson-photo.jpg`, resized and stripped of metadata; grayscale is applied in CSS. Case study titles summarize documented activities, not independently verified standalone repositories. Case study screenshots, repository/demo links, and outcomes remain explicitly pending. No earned certifications were supplied.
+The portrait is the supplied `bryson_data/bryson-photo.jpg`, resized and stripped of metadata; grayscale is applied in CSS. The lead project is the Atari 2600+ Sideloader, with copy sourced from its linked GitHub README and an actual menu photo from `docs/AtariSideloadMenu.jpg`. The photo retains its full 16:9 framing. The supporting network and defense lab card uses a real stock photograph of network equipment by Sergei Starostin (Pexels photo 6466143, taken June 18, 2015) and summarizes documented team activities; its case study screenshots, project-specific links, and outcomes remain pending. The education section uses Clemson’s original transparent paw artwork as a CSS mask in the site accent color, replacing the certifications placeholder.
 
 ## Original generated artwork
 
-Created with the built-in image generation tool, then resized to 1200 × 800 WebP. These are decorative editorial covers, not actual project screenshots.
+Created with the built-in image generation tool, then resized to 1200 × 800 WebP. These former decorative editorial covers are no longer displayed and are excluded from the upload ZIP.
 
 - `assets/images/record-collage.webp`
 - `assets/images/network-labs.webp`

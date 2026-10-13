@@ -128,56 +128,54 @@
       </div>
     </section>
 
-    <!-- EDIT THIS: WORK. These are documented lab activities, not invented independent projects.
-         Replace each editorial cover with an actual project screenshot. Native details work without JS.
-         Add real repository/demo links in .project-details when available. -->
+    <!-- EDIT THIS: WORK. Sideloader details and photo come from the linked project repository.
+         The supporting lab card summarizes documented team activities. Native details work without JS. -->
     <section id="work" class="section container work-section" data-nav-section aria-labelledby="work-title">
       <div class="work-heading reveal">
         <h2 id="work-title">Ideas into <span class="accent">practice.</span></h2>
-        <p>A selection of hands-on work with the Clemson Cyber Defense Team.</p>
+        <p>Software experiments, console projects, and security labs. Built to understand how things work and what else they can do.</p>
       </div>
       <div class="project-grid">
-        <details class="project-card reveal" id="network-project">
+        <details class="project-card reveal" id="atari-project">
           <summary>
-            <span class="project-image"><img src="assets/images/network-labs.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"><span class="project-image-action" aria-hidden="true">Explore the work ↗</span></span>
+            <span class="project-image project-image-atari"><img src="assets/images/atari-sideloader.jpg" alt="The Atari sideloader running on a TV, showing a six-game menu with joystick and Fire button controls." width="4032" height="2268" loading="lazy" decoding="async"></span>
+            <span class="project-category mono">Console software / personal project</span>
+            <h3>Atari 2600+ Sideloader</h3>
+            <span class="project-description">Load and play games stored inside the Atari 2600+ Pac-Man Edition. No soldering required.</span>
+            <span class="project-role">Role: Developer</span>
+            <span class="project-tags"><span>Python</span><span>C / SDL</span><span>Embedded Linux</span></span>
+            <span class="project-toggle"><span class="details-closed-label">View details</span><span class="details-open-label">Close details</span><span class="details-plus" aria-hidden="true">+</span></span>
+          </summary>
+          <div class="project-details" id="atari-details">
+            <p>I built a software sideloader that lets the console boot into a game menu when the cartridge slot is empty. Choose a game with the joystick and press Fire to play, with no external game drive needed.</p>
+            <dl><div><dt>Console</dt><dd>Atari 2600+ Pac-Man Edition, firmware 2.0.1.6</dd></div><div><dt>Tools</dt><dd>Python install and update tools, a native C / SDL menu, and shell launch scripts</dd></div><div><dt>Playback</dt><dd>Games stored internally; normal cartridge play when a cartridge is inserted before power-on</dd></div></dl>
+            <a class="text-link" href="https://github.com/Bmanbro/Atari-2600-Sideloader-">View source &amp; setup guide <span aria-hidden="true">↗</span></a>
+          </div>
+        </details>
+        <details class="project-card project-card-offset reveal" id="network-project">
+          <summary>
+            <span class="project-image"><img src="assets/images/network-equipment.jpg" alt="Ethernet cables connected to rack-mounted network equipment, bundled with blue cable ties." width="1213" height="750" loading="lazy" decoding="async"><span class="project-image-action" aria-hidden="true">Explore the work ↗</span></span>
             <span class="project-category mono">Infrastructure / lab environment</span>
-            <h3>Network practice labs</h3>
-            <span class="project-description">Enterprise-like network environments for hands-on defense practice.</span>
+            <h3>Network &amp; defense labs</h3>
+            <span class="project-description">Repeatable network environments for investigating incidents and strengthening systems.</span>
             <span class="project-role">Role: Cyber Defense Team Firewall Lead</span>
             <span class="project-tags"><span>Ansible</span><span>Palo Alto</span><span>Network defense</span></span>
             <span class="project-toggle"><span class="details-closed-label">View details</span><span class="details-open-label">Close details</span><span class="details-plus" aria-hidden="true">+</span></span>
           </summary>
           <div class="project-details" id="network-details">
             <p>As Clemson Cyber Defense Team Firewall Lead, I designed and deployed enterprise-like Ansible network environments and configured Palo Alto firewalls for labs and scrimmages.</p>
+            <p id="defense-project">I also documented incidents and developed practice labs covering intrusion detection, incident response, and system hardening.</p>
             <dl><div><dt>Context</dt><dd>Collegiate Cyber Defense Competition and scrimmages</dd></div><div><dt>Period</dt><dd>Spring 2024 - Present</dd></div></dl>
-            <p class="placeholder-note"><strong>Case study in progress.</strong> Architecture images, project-specific links, and detailed outcomes will be added here. Cover is illustrative artwork.</p>
-            <a class="text-link" href="https://github.com/bmanbro">Browse GitHub profile <span aria-hidden="true">↗</span></a>
-          </div>
-        </details>
-        <details class="project-card project-card-offset reveal" id="defense-project">
-          <summary>
-            <span class="project-image"><img src="assets/images/record-collage.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"><span class="project-image-action" aria-hidden="true">Explore the work ↗</span></span>
-            <span class="project-category mono">Security / hands-on learning</span>
-            <h3>Defense through practice</h3>
-            <span class="project-description">Practice labs for investigating incidents and strengthening systems.</span>
-            <span class="project-role">Role: Cyber Defense Team Firewall Lead</span>
-            <span class="project-tags"><span>Incident response</span><span>System hardening</span></span>
-            <span class="project-toggle"><span class="details-closed-label">View details</span><span class="details-open-label">Close details</span><span class="details-plus" aria-hidden="true">+</span></span>
-          </summary>
-          <div class="project-details" id="defense-details">
-            <p>I documented incidents and developed practice labs covering intrusion detection, incident response, and system hardening for the Clemson Cyber Defense Team.</p>
-            <dl><div><dt>Context</dt><dd>Collegiate Cyber Defense Competition and scrimmages</dd></div><div><dt>Period</dt><dd>Spring 2024 - Present</dd></div></dl>
-            <p class="placeholder-note"><strong>Case study in progress.</strong> Lab screenshots, project-specific links, and detailed outcomes will be added here. Cover is illustrative artwork.</p>
+            <p class="placeholder-note"><strong>Case study in progress.</strong> Architecture images, project-specific links, and detailed outcomes will be added here. Cover: stock photograph by <a href="https://www.pexels.com/photo/close-up-photo-of-ethernet-cables-on-network-switch-6466143/">Sergei Starostin / Pexels</a>.</p>
             <a class="text-link" href="https://github.com/bmanbro">Browse GitHub profile <span aria-hidden="true">↗</span></a>
           </div>
         </details>
       </div>
-      <p class="work-note">Lab work drawn from my resume. Full case studies and project screenshots are in progress.</p>
     </section>
 
-    <!-- EDIT THIS: EDUCATION & CERTIFICATIONS. Confirm GPA and expected graduation when updating. -->
+    <!-- EDIT THIS: EDUCATION. Confirm GPA and expected graduation when updating. -->
     <section id="education" class="section education-section" data-nav-section aria-labelledby="education-title">
-      <div class="container">
+      <div class="container education-layout">
         <h2 id="education-title" class="reveal">Always <span class="accent">learning.</span></h2>
         <div class="education-grid reveal">
           <div class="education-emblem" aria-hidden="true"><span>CU</span><span>COMPUTER<br>SCIENCE</span></div>
@@ -188,14 +186,8 @@
             <p class="education-minor">Minor in Cybersecurity</p>
             <span class="gpa">GPA <strong>3.61</strong> / 4.00</span>
           </div>
-          <div class="certifications">
-            <h3>Certifications</h3>
-            <!-- EDIT THIS: replace this clearly marked placeholder with earned certification names,
-                 issuers, dates and verification URLs. No certifications were supplied. -->
-            <p class="placeholder-label">To be added</p>
-            <p>Space for earned credentials and continuing education.</p>
-          </div>
         </div>
+        <div class="education-paw reveal" aria-hidden="true"></div>
       </div>
     </section>
 
