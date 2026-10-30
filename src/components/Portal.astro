@@ -1,0 +1,164 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/bryson-portrait.png';
+import '@fontsource/permanent-marker/latin-400.css';
+import '@fontsource/barlow-condensed/latin-700.css';
+import '@fontsource/barlow/latin-400.css';
+import '@fontsource/barlow/latin-600.css';
+import '../styles/base.css';
+import '../styles/portal.css';
+import Resume from './Resume.astro';
+import Credentials from './Credentials.astro';
+import { profile as p } from '../data/profile';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Bryson Newman. Clemson computer science student, offensive security intern, and Cyber Defense Team firewall lead." />
+    <meta name="theme-color" content="#269fad" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Bryson Newman | Computer science & cybersecurity</title>
+  </head>
+  <body class="portal">
+    <a class="skip-link" href="#main">Skip to resume</a>
+    <div class="street-art" aria-hidden="true"><span class="wall-tag tag-one">BN!</span><span class="wall-tag tag-two">✦</span><span class="wall-tag tag-three">↯</span><span class="wall-tag tag-four">✷</span></div>
+    <div class="portal-shell">
+      <header class="portal-header">
+        <div class="speaker speaker-left" aria-hidden="true"></div>
+        <h1 class="wordmark">Bryson<br /><span>Newman</span></h1>
+        <div class="speaker speaker-right" aria-hidden="true"></div>
+        <span class="header-star" aria-hidden="true">✦</span>
+        <div class="header-checks" aria-hidden="true"></div>
+      </header>
+      <nav class="portal-nav" aria-label="Main navigation">
+        <a href="#profile" data-section="profile" aria-current="location">Home</a>
+        <a href="#experience" data-section="experience">Experience</a>
+        <a href="#cyber-team" data-section="cyber-team">Cyber defense</a>
+        <a href="#education" data-section="education">Education</a>
+        <a href="#skills" data-section="skills">Skills</a>
+      </nav>
+      <div class="portal-columns">
+        <aside class="portal-left" aria-label="Navigation and contact">
+          <nav class="section-links" aria-label="Resume sections">
+            <a href="#profile" data-section="profile" aria-current="location"><span aria-hidden="true">✦</span><span>Profile</span></a>
+            <a href="#experience" data-section="experience"><span aria-hidden="true">▤</span><span>Experience</span></a>
+            <a href="#cyber-team" data-section="cyber-team"><span aria-hidden="true">⚑</span><span>Cyber defense</span></a>
+            <a href="#education" data-section="education"><span aria-hidden="true">✎</span><span>Education</span></a>
+            <a href="#skills" data-section="skills"><span aria-hidden="true">✷</span><span>Skills</span></a>
+          </nav>
+          <div class="contact-links">
+            <a href={`mailto:${p.email}`}>Email<span class="contact-detail"> Bryson</span></a>
+            <a href={p.github}>GitHub<span class="contact-detail"> / Bmanbro</span></a>
+            <a href={p.linkedin}>LinkedIn<span class="contact-detail"> / NewmanB</span></a>
+            <a class="phone-link" href={`tel:${p.phone}`}>{p.phone}</a>
+          </div>
+          <a class="resume-badge" href={p.pdf} download>Resume PDF <span aria-hidden="true">↓</span></a>
+          <div class="side-disc" aria-hidden="true"><span>BN</span></div>
+        </aside>
+        <main id="main" class="portal-center" tabindex="0" aria-label="Bryson's resume">
+          <section id="profile" class="portal-feature" tabindex="-1">
+            <div class="feature-art">
+              <div class="feature-checks" aria-hidden="true"></div>
+              <h2>Hey,<br />I'm Bryson<span aria-hidden="true">!</span></h2>
+              <span class="portrait-star" aria-hidden="true">✷</span>
+              <Image src={portrait} width={192} format="webp" quality={85} alt="Bryson Newman smiling" class="portrait" loading="eager" />
+              <div class="portrait-scanlines" aria-hidden="true"></div>
+            </div>
+            <div class="feature-copy"><p>{p.intro}</p><a href={`mailto:${p.email}`}>Get in touch ↗</a></div>
+          </section>
+          <Resume />
+          <div class="tab-credentials"><Credentials /></div>
+          <div class="center-footer"><a href="#profile" data-section="profile">Back to top ↑</a><a href={p.pdf}>Original resume</a></div>
+        </main>
+        <aside class="portal-right" aria-label="Education and skills"><Credentials idSuffix="-sidebar" /></aside>
+      </div>
+      <footer class="portal-footer"><span>Clemson, SC</span><div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><button type="button" id="motion-toggle" aria-pressed="false" aria-label="Pause animations">Motion on <span aria-hidden="true">Ⅱ</span></button></footer>
+    </div>
+    <script>
+      const motionButton = document.querySelector<HTMLButtonElement>('#motion-toggle');
+      const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let savedMotion: string | null = null;
+      try { savedMotion = localStorage.getItem('bryson-motion'); } catch {}
+      let paused = motionPreference.matches || savedMotion === 'paused';
+      const setMotion = () => {
+        if (motionPreference.matches) paused = true;
+        document.body.dataset.motion = paused ? 'paused' : 'playing';
+        if (motionButton) motionButton.disabled = motionPreference.matches;
+        motionButton?.setAttribute('aria-pressed', String(paused));
+        motionButton?.setAttribute('aria-label', paused ? 'Play animations' : 'Pause animations');
+        if (motionButton) motionButton.textContent = paused ? 'Motion off ▷' : 'Motion on Ⅱ';
+      };
+      setMotion();
+      motionButton?.addEventListener('click', () => {
+        paused = !paused;
+        setMotion();
+        try { localStorage.setItem('bryson-motion', paused ? 'paused' : 'playing'); } catch {}
+      });
+      motionPreference.addEventListener('change', () => { paused = motionPreference.matches; setMotion(); });
+
+      const center = document.querySelector<HTMLElement>('.portal-center');
+      const tabList = document.querySelector<HTMLElement>('.portal-nav');
+      const tabs = [...document.querySelectorAll<HTMLAnchorElement>('.portal-nav a[data-section]')];
+      const sectionLinks = document.querySelectorAll<HTMLAnchorElement>('a[data-section]');
+      const ids = ['profile', 'experience', 'cyber-team', 'education', 'skills'];
+      const panels = ids.map(id => document.getElementById(id)).filter((panel): panel is HTMLElement => Boolean(panel));
+      let activeId = '';
+      const positions = new Map<string, number>();
+      tabList?.setAttribute('role', 'tablist');
+      tabList?.setAttribute('aria-label', 'Resume sections');
+      tabs.forEach(tab => {
+        tab.id = `tab-${tab.dataset.section}`;
+        tab.setAttribute('role', 'tab');
+        tab.setAttribute('aria-controls', tab.dataset.section!);
+        tab.removeAttribute('aria-current');
+      });
+      panels.forEach(panel => {
+        panel.setAttribute('role', 'tabpanel');
+        panel.setAttribute('aria-labelledby', `tab-${panel.id}`);
+        panel.tabIndex = 0;
+      });
+      const selectTab = (id: string, updateHistory = false) => {
+        if (!ids.includes(id)) return;
+        if (center && activeId) positions.set(activeId, center.scrollTop);
+        panels.forEach(panel => { panel.hidden = panel.id !== id; });
+        tabs.forEach(tab => {
+          const selected = tab.dataset.section === id;
+          tab.setAttribute('aria-selected', String(selected));
+          tab.tabIndex = selected ? 0 : -1;
+        });
+        sectionLinks.forEach(link => {
+          if (link.getAttribute('role') === 'tab') return;
+          if (link.dataset.section === id) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+        activeId = id;
+        center?.scrollTo({ top: positions.get(id) ?? 0, behavior: 'instant' });
+        if (updateHistory && location.hash !== `#${id}`) history.pushState(null, '', `#${id}`);
+      };
+      sectionLinks.forEach(link => link.addEventListener('click', event => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        selectTab(link.dataset.section!, true);
+        if (link.getAttribute('role') !== 'tab') document.getElementById(activeId)?.focus({ preventScroll: true });
+      }));
+      tabs.forEach((tab, index) => tab.addEventListener('keydown', event => {
+        let next = index;
+        if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+        else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        tabs[next].focus();
+        selectTab(tabs[next].dataset.section!, true);
+      }));
+      const restoreHash = () => selectTab(ids.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'profile');
+      window.addEventListener('popstate', restoreHash);
+      window.addEventListener('hashchange', restoreHash);
+      document.body.dataset.tabsReady = 'true';
+      restoreHash();
+    </script>
+  </body>
+</html>
