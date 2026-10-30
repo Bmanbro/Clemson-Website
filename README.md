@@ -19,11 +19,11 @@ pnpm exec astro dev stop
 pnpm build
 ```
 
-The server uses port 4321 with strict-port checking. Fonts load from Google Fonts; images are served locally.
+The server uses port 4321 with strict-port checking. Fonts and images are served locally.
 
 ## Design and behavior
 
-Rubik Spray Paint supplies the graffiti lettering; Arimo supplies the application controls and resume text. These portal fonts load through the Google Fonts stylesheet. CSS displays the interface in lowercase without changing the source resume data. The palette uses dusty teal, muted rose, olive yellow, and slate blue. Raised controls, speaker mesh, CD reflections, scanlines, and checkerboards use CSS. `public/images/graffiti-wall.svg` is original vector artwork.
+Rubik Spray Paint supplies the graffiti lettering; Arimo supplies the application controls and resume text. Fontsource packages bundle the Latin font files with the site, with no external font requests. CSS displays the interface in lowercase without changing the source resume data. The palette uses dusty teal, muted rose, olive yellow, and slate blue. Raised controls, speaker mesh, CD reflections, scanlines, and checkerboards use CSS. `public/images/graffiti-wall.svg` is original vector artwork.
 
 The portrait in `src/assets/bryson-portrait.png` was cut out locally with `uvx withoutbg`. Astro serves a 192px-wide version; CSS enlarges it with `image-rendering: pixelated`.
 
@@ -33,4 +33,4 @@ Profile is an address book, Experience is Windows Explorer, and Cyber defense is
 
 The footer can toggle lo-fi rendering and pause animations. Both preferences are saved locally. Lo-fi mode reduces color depth through an SVG filter and adds a subtle pixel-grid overlay across the page. This is a visual approximation; HTML text remains live and selectable. System reduced-motion preferences disable animations. No audio plays.
 
-No images were generated. `inspiration/` remains untracked.
+No images were generated. The original inspiration images and unused source assets are not included in the repository.

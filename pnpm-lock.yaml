@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@fontsource/arimo':
+        specifier: ^5.3.0
+        version: 5.3.0
+      '@fontsource/rubik-spray-paint':
+        specifier: ^5.3.0
+        version: 5.3.0
       astro:
         specifier: ^7.3.5
         version: 7.4.4(yaml@2.9.1)
@@ -194,6 +200,12 @@ packages:
 
   '@emnapi/wasi-threads@1.2.3':
     resolution: {integrity: sha512-ELEBe8PsLvvJ6QMr0zLt8ffvOHW/dc1m3CEzNMg7aJUv3bMaoDtw2TXyDAwkYBuroxxuHEwhRTLJSe5sya547g==}
+
+  '@fontsource/arimo@5.3.0':
+    resolution: {integrity: sha512-nhxZ2sTVZYX8DJBgLuyX360B5vE4mxqpmjlKTRfucIqfcWRVx9vOYzWBc1IgEX0ist48VMC10PRKbFyH+4QFvQ==}
+
+  '@fontsource/rubik-spray-paint@5.3.0':
+    resolution: {integrity: sha512-LyBjEpt22JySVawJGCS3KNwZImP1Q5e6qcW341lmNjQq8lWXvqDWuo6rPDNLgNAROi+SMIwEo5El8k28ZNPMKQ==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -1402,6 +1414,10 @@ snapshots:
     dependencies:
       tslib: 2.8.1
     optional: true
+
+  '@fontsource/arimo@5.3.0': {}
+
+  '@fontsource/rubik-spray-paint@5.3.0': {}
 
   '@img/colour@1.1.0':
     optional: true
