@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+body {
+  margin: 0;
+}
+a {
+  color: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #083dcb;
+  outline-offset: 4px;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+p,
+li {
+  line-height: 1.55;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+ul {
+  padding-left: 20px;
+}
+section[id] {
+  scroll-margin-top: 24px;
+}
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 12px;
+  background: #fff;
+  color: #000;
+  padding: 12px;
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 8px;
+}
+.review-bar {
+  font:
+    12px Arial,
+    sans-serif;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px max(20px, calc((100% - 1120px) / 2));
+  border-bottom: 1px solid #777;
+}
+.review-bar a {
+  text-underline-offset: 3px;
+}
+.photo-credit {
+  font-size: 10px !important;
+  line-height: 1.5 !important;
+  opacity: 0.85;
+  max-width: 660px;
+  margin: 18px auto;
+}
+.job h3 {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.25;
+}
+.job-date {
+  font-size: 11px;
+  white-space: nowrap;
+}
+.job-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: start;
+}
+.organization {
+  font-weight: bold;
+  font-size: 12px;
+  margin: 9px 0;
+}
+.organization span {
+  font-weight: normal;
+}
+.job-subtitle {
+  font-size: 13px;
+  margin: 5px 0;
+}
+.job li {
+  margin: 8px 0;
+}
+.job > p:not([class]) {
+  font-size: 12px;
+}
+.credential h3 {
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+.credential p {
+  font-size: 12px;
+}
+.skill-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.skill-list li {
+  font-size: 11px;
+  line-height: 1.35;
+  padding: 4px 7px;
+}
+.resume-section h2 {
+  font-family: Anton, sans-serif;
+  font-weight: 400;
+}
+.photo-credit a:focus-visible {
+  outline-color: #fff;
+}
+@media (max-width: 700px) {
+  .review-bar {
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+  .review-bar span {
+    display: none;
+  }
+  .job-top {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .job h3 {
+    font-size: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,483 @@
+.mixtape {
+  font-family: Arial, sans-serif;
+  color: #171818;
+  background-color: #269d9c;
+  background-image:
+    radial-gradient(#115d5c55 1px, transparent 1px),
+    linear-gradient(115deg, #23a8a4, #6bc2b6);
+  background-size:
+    5px 5px,
+    auto;
+}
+.desk {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 35px 20px;
+}
+.desk-note {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0 0 15px 30px;
+}
+.jewel-case {
+  position: relative;
+  padding: 12px 12px 12px 42px;
+  border: 2px solid #e0f7f3;
+  border-radius: 10px;
+  background: linear-gradient(
+    105deg,
+    #a3c5c3cc,
+    #efffffa8 8%,
+    #a6b8bbbc 40%,
+    #e9f9f8cc
+  );
+  box-shadow:
+    1px 2px 0 #456a6a,
+    7px 12px 0 #174e5050,
+    16px 24px 35px #123d4870,
+    inset 0 0 0 5px #c0e5e58c;
+}
+.case-spine {
+  position: absolute;
+  left: 9px;
+  top: 20px;
+  bottom: 20px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font: bold 12px Arial;
+  letter-spacing: 3px;
+  border-left: 5px double #5e8587;
+  padding-left: 6px;
+  text-align: center;
+}
+.case-content {
+  border: 1px solid #67787b;
+  background: #fff9e7;
+  box-shadow: 0 0 6px #0007;
+}
+.case-header {
+  background: linear-gradient(#fafcfc, #9da9ad 48%, #edf0ee 52%, #b3bfc2);
+  border-bottom: 2px solid #444;
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  gap: 20px;
+  font-size: 11px;
+  font-weight: bold;
+}
+.disc-logo {
+  margin-right: auto;
+  font: bold italic 23px Arial;
+  line-height: 1;
+}
+.disc-logo span {
+  display: block;
+  font: 8px Arial;
+  margin-top: 4px;
+}
+.metal-button {
+  display: inline-block;
+  background: linear-gradient(#fff, #afb7ba);
+  border: 2px outset #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 9px 13px;
+  box-shadow: 1px 2px 2px #0006;
+}
+.metal-button:active {
+  border-style: inset;
+}
+.album-cover {
+  isolation: isolate;
+  position: relative;
+  min-height: 390px;
+  background: #eb4d96;
+  overflow: hidden;
+  border-bottom: 7px solid #171818;
+  padding: 26px 30px;
+}
+.cover-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(#00000010 1px, transparent 1px),
+    linear-gradient(90deg, #00000010 1px, transparent 1px);
+  background-size: 24px 24px;
+  transform: rotate(-12deg) scale(1.4);
+}
+.cover-caption {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  position: relative;
+  z-index: 2;
+}
+.album-cover h1 {
+  position: relative;
+  z-index: 2;
+  font:
+    400 clamp(60px, 7.5vw, 100px)/1.03 Anton,
+    sans-serif;
+  letter-spacing: -2px;
+  margin: 32px 0 38px;
+  transform: rotate(-5deg);
+  color: #fff9e7;
+  -webkit-text-stroke: 2px #171818;
+  text-shadow: 5px 5px 0 #171818;
+  width: max-content;
+}
+.album-cover h1 span {
+  color: #e7e531;
+}
+.cover-bottom {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin: 0;
+  background: #171818;
+  color: #fff9e7;
+  padding: 7px 12px;
+  font-size: 12px;
+  transform: rotate(-2deg);
+}
+.disc {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  position: absolute;
+  right: -25px;
+  top: 18px;
+  transform: rotate(18deg);
+  border: 2px solid #eceff8;
+  box-shadow:
+    12px 14px 0 #0003,
+    inset 0 0 0 8px #fff5;
+  background:
+    repeating-radial-gradient(
+      circle,
+      transparent 0 2px,
+      #fff3 3px,
+      transparent 4px
+    ),
+    conic-gradient(
+      #c3cad0,
+      #fff9e7,
+      #75d1d2,
+      #f7b8df,
+      #c3cad0,
+      #fff,
+      #cadde6,
+      #96dbb9,
+      #e9b4e4,
+      #c3cad0
+    );
+}
+.disc-label {
+  position: absolute;
+  inset: 55px;
+  border: 1px solid #707882;
+  border-radius: 50%;
+  padding-top: 35px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+.disc-label strong {
+  font: 400 25px Anton;
+}
+.disc-hole {
+  position: absolute;
+  top: calc(50% - 21px);
+  left: calc(50% - 21px);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #eb4d96;
+  border: 9px solid #e1dfda;
+  box-shadow: 0 0 0 1px #85858a;
+}
+.cover-sticker {
+  position: absolute;
+  right: 26px;
+  bottom: 26px;
+  background: #e7e531;
+  transform: rotate(9deg);
+  border: 2px solid #000;
+  padding: 15px 20px;
+  font: bold 14px/1.1 Arial;
+  text-align: center;
+  box-shadow: 3px 3px 0 #000;
+}
+.liner-layout {
+  display: grid;
+  grid-template-columns: 215px 1fr;
+}
+.track-sidebar {
+  padding: 24px 18px;
+  background: #e5e5d9;
+  border-right: 1px solid #777;
+}
+.track-sidebar nav h2 {
+  font: 400 24px Anton;
+  margin-bottom: 15px;
+}
+.track-sidebar nav a {
+  display: flex;
+  gap: 14px;
+  text-decoration: none;
+  border-top: 1px solid #b3b5a9;
+  padding: 12px 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+.track-sidebar nav a:hover {
+  background: #e7e531;
+}
+.track-sidebar nav span {
+  font-size: 10px;
+  color: #4c5151;
+}
+.sidebar-links {
+  border-top: 3px solid #171818;
+  margin: 8px 0 25px;
+  padding-top: 12px;
+  display: grid;
+  gap: 12px;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.hardware-photo {
+  background: #20aaa8;
+  border: 1px solid #999;
+  transform: rotate(-4deg);
+  padding: 7px;
+  box-shadow: 2px 3px 3px #0003;
+  margin: 15px 2px 30px;
+}
+.hardware-photo img {
+  height: 140px;
+  width: 100%;
+  object-fit: contain;
+}
+.hardware-photo span {
+  display: block;
+  text-align: center;
+  font: italic 10px Georgia;
+  margin: 7px 0 2px;
+}
+.credential {
+  margin-top: 28px;
+}
+.credential h2 {
+  font: 400 24px Anton;
+  border-bottom: 2px solid #171818;
+  padding-bottom: 8px;
+}
+.skill-list li {
+  border: 1px solid #898d85;
+  background: #fff9e7;
+}
+.liner-notes {
+  padding: 30px;
+}
+.profile-note h2 {
+  font: 400 38px Anton;
+  margin: 12px 0;
+}
+.insert-label {
+  font-size: 10px;
+  border: 1px solid #171818;
+  padding: 4px 7px;
+  background: #e7e531;
+}
+.profile-note p {
+  font-size: 14px;
+  max-width: 58ch;
+}
+.profile-note > a {
+  font-size: 12px;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+.insert-divider {
+  margin: 28px 0 0;
+  border-top: 4px solid #171818;
+  border-bottom: 1px solid #171818;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+}
+.resume-section h2 {
+  font-size: 30px;
+  margin: 25px 0 20px;
+}
+.job {
+  font-size: 12px;
+  padding-bottom: 20px;
+  margin-bottom: 22px;
+  border-bottom: 1px dashed #929186;
+}
+.job-top {
+  display: block;
+}
+.job-date {
+  display: block;
+  margin-top: 7px;
+}
+.case-footer {
+  padding: 14px 18px;
+  border-top: 2px solid #171818;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 9px;
+}
+.barcode {
+  margin-left: auto;
+  width: 70px;
+  height: 25px;
+  background: repeating-linear-gradient(
+    90deg,
+    #000 0 1px,
+    transparent 1px 3px,
+    #000 3px 6px,
+    transparent 6px 7px,
+    #000 7px 9px,
+    transparent 9px 12px
+  );
+}
+.mixtape .photo-credit {
+  color: #102f30;
+}
+@media (min-width: 1200px) {
+  .album-cover h1 {
+    font-size: 102px;
+  }
+}
+@media (max-width: 700px) {
+  .desk {
+    padding: 24px 10px;
+  }
+  .desk-note {
+    font-size: 9px;
+    letter-spacing: 0;
+    margin-left: 8px;
+  }
+  .jewel-case {
+    padding: 7px 7px 7px 23px;
+  }
+  .case-spine {
+    font-size: 8px;
+    letter-spacing: 2px;
+    left: 3px;
+    border-width: 3px;
+  }
+  .case-header {
+    padding: 10px;
+    gap: 12px;
+  }
+  .case-header > a:not(.metal-button) {
+    display: none;
+  }
+  .album-cover {
+    min-height: 300px;
+    padding: 20px 14px;
+  }
+  .cover-caption {
+    font-size: 9px;
+    max-width: 180px;
+  }
+  .album-cover h1 {
+    font-size: 61px;
+    margin: 45px 0 35px;
+    -webkit-text-stroke: 1px #171818;
+    letter-spacing: -1px;
+  }
+  .disc {
+    width: 230px;
+    height: 230px;
+    right: -110px;
+    top: 30px;
+  }
+  .disc-label {
+    inset: 35px;
+    padding-top: 23px;
+    font-size: 7px;
+  }
+  .disc-label strong {
+    font-size: 17px;
+  }
+  .cover-sticker {
+    font-size: 10px;
+    padding: 8px;
+    right: 15px;
+    bottom: 55px;
+  }
+  .cover-bottom {
+    font-size: 9px;
+    padding: 6px;
+  }
+  .liner-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .track-sidebar {
+    display: contents;
+  }
+  .track-sidebar nav {
+    padding: 15px;
+    background: #e5e5d9;
+    order: 0;
+  }
+  .track-sidebar nav h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .track-sidebar nav a {
+    display: inline-block;
+    font-size: 11px;
+    padding: 8px;
+    border: 0;
+  }
+  .track-sidebar nav span {
+    margin-right: 6px;
+  }
+  .liner-notes {
+    padding: 22px 18px;
+    order: 1;
+  }
+  .track-sidebar .credential {
+    order: 2;
+    padding: 0 18px;
+    margin-top: 0;
+  }
+  .sidebar-links {
+    order: 3;
+    padding: 20px 18px;
+    margin: 10px 0 0;
+  }
+  .hardware-photo {
+    display: none;
+  }
+  .profile-note h2 {
+    font-size: 32px;
+  }
+  .insert-divider span:last-child {
+    display: none;
+  }
+  .case-footer {
+    flex-wrap: wrap;
+    font-size: 8px;
+    gap: 12px;
+  }
+  .barcode {
+    display: none;
+  }
+  .mixtape .photo-credit {
+    padding: 0 10px;
+  }
+}

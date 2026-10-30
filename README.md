@@ -1,43 +1,36 @@
-# Astro Starter Kit: Minimal
+# Bryson Newman profile mockups
+
+Two early-2000s design studies built in Astro. The finished site design is pending review.
+
+- `/`: comparison page with desktop and mobile screenshots
+- `/mockups/mixtape`: CD-case frame, pink album insert, and resume liner notes
+- `/mockups/portal`: speaker header, beveled navigation, and three-column homepage
+
+Both concepts use `src/data/profile.ts`, transcribed and lightly edited from `Bryson-Newman-Resume.pdf`. The public PDF is in `public/documents/`. When updating the resume, update both the shared data and public PDF.
+
+## Development
 
 ```sh
-pnpm create astro@latest -- --template minimal
+pnpm install
+pnpm exec astro dev --background
+pnpm exec astro dev status
+pnpm exec astro dev logs
+pnpm exec astro dev stop
+pnpm build
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The default address is http://localhost:4321. Fonts and images are served locally. No client framework or runtime external assets are required.
 
-## 🚀 Project Structure
+## Visual assets
 
-Inside of your Astro project, you'll see the following folders and files:
+The palette comes from the local inspiration images. The CD-player photograph is credited in `public/images/ATTRIBUTION.md` and in both mockup footers. Its background was removed locally with:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+uvx withoutbg public/images/cd-player.jpg -o public/images/cd-player-cutout.png
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Plastic, chrome, CD reflections, speaker mesh, and paper treatments use CSS. No images were generated. `inspiration/` is intentionally untracked.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Review captures
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+`public/previews/` contains 1440 × 1000 desktop views and full-page mobile captures at 390px wide. Refresh them after visual changes. The comparison page displays the desktop captures and links to the mobile versions.
