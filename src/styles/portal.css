@@ -1,5 +1,5 @@
 .portal {
-  cursor: url("../assets/cursor-arrow.svg") 2 0, default;
+  cursor: url("../assets/cursor-arrow.svg") 2 4, default;
   --pink: #cc78a0;
   --teal: #498e96;
   --purple: #785c88;
@@ -583,7 +583,7 @@
   color: #fff;
   border: 0;
   font: 600 12px var(--body-font);
-  cursor: url("../assets/cursor-hand.svg") 12 1, pointer;
+  cursor: url("../assets/cursor-hand.svg") 8 2, pointer;
   padding: 3px 6px;
 }
 .equalizer {
@@ -1120,7 +1120,7 @@
   box-shadow:
     inset 1px 1px 0 #ffffff88,
     inset -1px -1px 0 #29466d;
-  cursor: url("../assets/cursor-hand.svg") 12 1, pointer;
+  cursor: url("../assets/cursor-hand.svg") 8 2, pointer;
 }
 .window-controls button[data-action="close"] {
   background: linear-gradient(135deg, #e1ae9f, #ad695c 50%, #985346);
@@ -1344,7 +1344,7 @@
   text-decoration: none;
   font: inherit;
   background: transparent;
-  cursor: url("../assets/cursor-hand.svg") 12 1, pointer;
+  cursor: url("../assets/cursor-hand.svg") 8 2, pointer;
 }
 .addressbook-toolbar a:hover,
 .explorer-toolbar a:hover,
@@ -1457,7 +1457,7 @@
   color: #214e91;
   background: none;
   border: 1px solid transparent;
-  cursor: url("../assets/cursor-hand.svg") 12 1, pointer;
+  cursor: url("../assets/cursor-hand.svg") 8 2, pointer;
 }
 .explorer-tasks button .desktop-icon {
   width: 21px;
@@ -1580,7 +1580,7 @@
   border: 2px inset #c6c4b6;
 }
 .lab-notes summary {
-  cursor: url("../assets/cursor-hand.svg") 12 1, pointer;
+  cursor: url("../assets/cursor-hand.svg") 8 2, pointer;
   background: #d8d7cc;
   color: #25312b;
   padding: 7px 11px;
@@ -2141,7 +2141,7 @@
 
 .portal a[href],
 .portal summary {
-  cursor: url("../assets/cursor-hand.svg") 12 1, pointer;
+  cursor: url("../assets/cursor-hand.svg") 8 2, pointer;
 }
 
 @media (width > 760px) and (height <= 500px) {
