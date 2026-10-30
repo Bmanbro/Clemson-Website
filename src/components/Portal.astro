@@ -70,9 +70,9 @@ import { profile as p } from '../data/profile';
       </div>
       <footer class="portal-footer"><button type="button" id="show-desktop" title="Show desktop" aria-label="Minimize all windows"><DesktopIcon kind="profile" /></button><div class="taskbar" aria-label="Open windows">{[{id:'profile',title:'Profile'}, {id:'experience',title:'Experience'}, {id:'cyber-team',title:'Cyber defense'}].map(item => <button type="button" data-task={item.id} hidden={item.id !== 'profile'} aria-pressed={item.id === 'profile'}>{item.title}</button>)}</div><div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><button type="button" id="motion-toggle" aria-pressed="false" aria-label="Pause animations">Motion on <span aria-hidden="true">Ⅱ</span></button></footer>
     </div>
-    <noscript><style is:global>
+    <noscript><style is:inline>
       .portal-center { overflow: auto; }
-      .xp-window, .xp-window[hidden] { display: block; position: relative; inset: auto !important; width: auto !important; height: auto !important; margin: 10px; }
+      .portal-center .xp-window, .portal-center .xp-window[hidden] { display: block !important; position: relative; inset: auto !important; width: auto !important; height: auto !important; margin: 10px; }
       .window-content { overflow: visible; }
       .window-controls, .taskbar, #show-desktop { display: none !important; }
     </style></noscript>

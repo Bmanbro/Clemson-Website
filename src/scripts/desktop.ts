@@ -218,7 +218,7 @@ document.querySelector("#show-desktop")?.addEventListener("click", () => {
 });
 
 function restoreHash() {
-  const id = location.hash.slice(1).replace(/^window-/, '');
+  const id = location.hash.slice(1).replace(/^window-/, "");
   if (id === "desktop") {
     windows.forEach((win) => {
       if (win.open) win.minimized = true;
