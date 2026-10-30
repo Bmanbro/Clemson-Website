@@ -8,6 +8,7 @@ import '@fontsource/rubik-spray-paint/latin-400.css';
 import '../styles/base.css';
 import '../styles/portal.css';
 import ExperienceExplorer from './ExperienceExplorer.astro';
+import Project from './Project.astro';
 import CyberConnection from './CyberConnection.astro';
 import DesktopWindow from './DesktopWindow.astro';
 import DesktopIcon from './DesktopIcon.astro';
@@ -41,6 +42,7 @@ import { profile as p } from '../data/profile';
           <nav class="section-links" aria-label="Open resume windows">
             <a href="#window-profile" data-open-window="profile" aria-current="location"><DesktopIcon kind="profile" /><span>Profile</span></a>
             <a href="#window-experience" data-open-window="experience"><DesktopIcon /><span>Experience</span></a>
+            <a href="#window-projects" data-open-window="projects"><DesktopIcon kind="profile" /><span>Projects</span></a>
             <a href="#window-cyber-team" data-open-window="cyber-team"><DesktopIcon kind="shield" /><span>Cyber defense</span></a>
           </nav>
           <div class="contact-links">
@@ -63,11 +65,12 @@ import { profile as p } from '../data/profile';
               <Image src={portrait} width={192} format="webp" quality={85} alt="Bryson Newman smiling" class="portrait" loading="eager" />
               <div class="portrait-scanlines" aria-hidden="true"></div>
             </div>
-            <div class="feature-copy"><p>{p.intro}</p><dl class="contact-card-fields"><div><dt>email</dt><dd><a href={`mailto:${p.email}`}>{p.email}</a></dd></div><div><dt>location</dt><dd>Clemson, SC</dd></div><div><dt>online</dt><dd><a href={p.github}>GitHub</a> / <a href={p.linkedin}>LinkedIn</a></dd></div></dl></div>
+            <div class="feature-copy"><p>{p.intro}</p><nav class="work-shortcuts" aria-label="Featured work"><a href="#window-experience" data-open-window="experience" data-open-job="0"><DesktopIcon /><span><strong>AI-assisted STIG remediation</strong><small>Llama 3.0 / Python / PowerShell</small></span><span aria-hidden="true">→</span></a><a href="#window-projects" data-open-window="projects"><DesktopIcon kind="profile" /><span><strong>Atari 2600+ Sideloader</strong><small>C / Python / ARM Linux</small></span><span aria-hidden="true">→</span></a></nav><dl class="contact-card-fields"><div><dt>email</dt><dd><a href={`mailto:${p.email}`}>{p.email}</a></dd></div><div><dt>location</dt><dd>Clemson, SC</dd></div><div><dt>online</dt><dd><a href={p.github}>GitHub</a> / <a href={p.linkedin}>LinkedIn</a></dd></div></dl></div>
           </section>
           <div class="mobile-credentials"><Credentials idSuffix="-mobile" /></div>
           </DesktopWindow>
           <DesktopWindow id="experience" title="Experience - Windows Explorer" offset={28}><ExperienceExplorer /></DesktopWindow>
+          <DesktopWindow id="projects" title="Projects - Atari 2600+ Sideloader" icon="profile" offset={34}><Project /></DesktopWindow>
           <DesktopWindow id="cyber-team" title="Cyber defense - remote connection" icon="shield" offset={40}><CyberConnection /></DesktopWindow>
         </main>
         <aside class="portal-right" aria-label="Education and skills"><Credentials idSuffix="-sidebar" /></aside>
@@ -109,7 +112,7 @@ import { profile as p } from '../data/profile';
         document.body.dataset.motion = paused ? 'paused' : 'playing';
         if (motionButton) motionButton.disabled = motionPreference.matches;
         motionButton?.setAttribute('aria-pressed', String(paused));
-        motionButton?.setAttribute('aria-label', paused ? 'Play animations' : 'Pause animations');
+        motionButton?.setAttribute('aria-label', paused ? (motionPreference.matches ? 'Motion off: reduced-motion preference' : 'Motion off: play animations') : 'Motion on: pause animations');
         if (motionButton) motionButton.textContent = paused ? 'Motion off ▷' : 'Motion on Ⅱ';
       };
       setMotion();

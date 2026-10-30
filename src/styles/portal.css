@@ -1798,3 +1798,333 @@
     display: none;
   }
 }
+
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.portal-left,
+.portal-right {
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.window-controls button {
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.contact-links a {
+  min-height: 24px;
+  line-height: 24px;
+}
+
+.work-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0;
+  text-transform: none;
+}
+
+.work-shortcuts a {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  color: #243e5d;
+  background: #e5eaf0;
+  border: 2px outset #f7f8fa;
+  text-decoration: none;
+}
+
+.work-shortcuts a:hover {
+  background: #d6e4f5;
+}
+
+.work-shortcuts a:active {
+  border-style: inset;
+}
+
+.work-shortcuts .desktop-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.work-shortcuts strong,
+.work-shortcuts small {
+  display: block;
+}
+
+.work-shortcuts strong {
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.work-shortcuts small {
+  margin-top: 4px;
+  color: #46596d;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.portal .feature-copy > p,
+.explorer-job,
+.project-content {
+  text-transform: none;
+}
+
+.capstone-intro {
+  margin: 18px 0;
+  color: #33465c;
+}
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.technology-list li,
+.explorer-job .technology-list li {
+  margin: 0;
+  padding: 4px 7px;
+  color: #33465c;
+  background: #edf1f6;
+  border: 1px solid #bcc8d6;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.project-toolbar {
+  flex-wrap: wrap;
+}
+
+.project-toolbar a {
+  white-space: nowrap;
+}
+
+.project-content {
+  padding: 24px;
+  font-size: 14px;
+}
+
+.project-heading {
+  margin-bottom: 12px;
+  color: #243e5d;
+  font: 700 26px/1.2 var(--body-font);
+}
+
+.project-lead {
+  max-width: 65ch;
+  margin-bottom: 14px;
+}
+
+.project-compatibility {
+  margin-bottom: 18px;
+  color: #545d67;
+  font-size: 11px;
+}
+
+.project-figure {
+  margin: 20px 0 24px;
+}
+
+.project-figure a {
+  display: block;
+  border: 2px inset #c4c5c1;
+}
+
+.project-figure img {
+  width: 100%;
+  height: auto;
+}
+
+.project-figure figcaption {
+  margin-top: 8px;
+  color: #545d67;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.project-content h4 {
+  margin: 0 0 12px;
+  color: #243e5d;
+  font-size: 16px;
+}
+
+.project-highlights {
+  padding-left: 18px;
+  margin: 0 0 24px;
+}
+
+.project-highlights li {
+  margin: 12px 0;
+}
+
+.project-details {
+  background: #e8e6dd;
+  border: 1px solid #aaa99f;
+  font-size: 12px;
+}
+
+.project-details summary {
+  padding: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.project-details summary:hover {
+  background: #deddd4;
+}
+
+.project-details summary:focus-visible {
+  outline: 3px solid #315d91;
+  outline-offset: -3px;
+}
+
+.project-details p {
+  margin: 0;
+  padding: 0 12px 12px;
+}
+
+.project-details a,
+.project-credit a {
+  color: #315d91;
+  text-underline-offset: 2px;
+}
+
+.project-credit {
+  margin: 18px 0 0;
+  color: #545d67;
+  font-size: 11px;
+}
+
+@media (width <= 1000px) {
+  .work-shortcuts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Keep the new featured-work links in view on typical desktop displays. */
+@media (width >= 1400px) and (height >= 801px) {
+  .feature-art {
+    height: 300px;
+  }
+
+  .portrait {
+    height: 325px;
+  }
+
+  .feature-copy {
+    padding-block: 20px;
+  }
+}
+
+@media (width >= 1001px) and (height <= 800px) and (height >= 501px) {
+  .feature-art {
+    height: 180px;
+  }
+
+  .feature-art h2 {
+    max-width: 55%;
+    margin: 24px 0 0 32px;
+    font-size: 40px;
+  }
+
+  .portrait {
+    height: 210px;
+    bottom: -15px;
+  }
+
+  .portrait-star {
+    top: 5px;
+    font-size: 110px;
+  }
+
+  .feature-copy {
+    padding: 16px 22px;
+  }
+
+  .feature-copy > p {
+    margin-bottom: 14px;
+  }
+
+  .work-shortcuts {
+    margin-block: 14px;
+  }
+}
+
+@media (width <= 760px), (height <= 500px) {
+  .xp-titlebar {
+    padding-block: 1px 3px;
+  }
+
+  .work-shortcuts a {
+    gap: 8px;
+    padding: 10px 8px;
+  }
+
+  .work-shortcuts .desktop-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .project-content {
+    padding: 18px 13px;
+    font-size: 13px;
+  }
+
+  .project-heading {
+    font-size: 22px;
+  }
+
+  .project-toolbar {
+    padding: 5px;
+    font-size: 11px;
+  }
+
+  .project-toolbar a {
+    padding: 8px 6px;
+  }
+
+  .technology-list {
+    gap: 5px;
+  }
+
+  .technology-list li,
+  .explorer-job .technology-list li {
+    padding: 3px 5px;
+    font-size: 10px;
+  }
+
+  .project-figure {
+    margin: 18px 0;
+  }
+}
+
+@media (width <= 360px) {
+  .project-toolbar a {
+    gap: 4px;
+    padding: 8px 4px;
+    font-size: 10px;
+  }
+
+  .project-toolbar .desktop-icon {
+    width: 16px;
+    height: 16px;
+  }
+}

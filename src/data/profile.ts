@@ -1,7 +1,7 @@
 export const profile = {
   name: "Bryson Newman",
   intro:
-    "I'm a computer science student at Clemson University and an offensive security intern. I test web applications, investigate security findings, and lead firewall operations for Clemson's Cyber Defense Team.",
+    "I'm a computer science student at Clemson University and an offensive security intern. My work spans web application testing, AI-assisted Windows hardening, and embedded systems. I also lead firewall operations for Clemson's Cyber Defense Team.",
   email: "BrysonNewman@proton.me",
   phone: "+1-864-327-6635",
   github: "https://github.com/bmanbro",
@@ -15,6 +15,18 @@ export const profile = {
     gpa: "3.61 / 4.00",
   },
   jobs: [
+    {
+      title: "AI-Assisted STIG Remediation",
+      org: "Department of War, Clemson Capstone",
+      dates: "August 19, 2026 – Present",
+      intro: "A Llama 3.0 platform that turns Windows Server STIG findings into PowerShell remediation scripts. My work focuses on validating the scripts and preserving the evidence behind each test.",
+      bullets: [
+        "Developed Python and PowerShell validation tools for generated scripts that remediate Windows Server security findings.",
+        "Audited DISA STIG scan coverage across four Windows Server releases and helped establish three validated baselines for evaluating remediation scripts.",
+        "Built evidence collection tooling with versioned Amazon S3 artifacts and SHA-256 hashes to preserve scan integrity and support reproducible testing.",
+      ],
+      technologies: ["Python", "PowerShell", "Llama 3.0", "Windows Server", "Amazon S3"],
+    },
     {
       title: "Offensive Security Analyst Intern",
       org: "Clemson Cybersecurity Operations Center",

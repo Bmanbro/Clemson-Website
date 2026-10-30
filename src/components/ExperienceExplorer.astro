@@ -1,7 +1,7 @@
 ---
 import DesktopIcon from './DesktopIcon.astro';
 import { profile as p } from '../data/profile';
-const labels = ['offensive security', 'security operations', 'service desk'];
+const labels = ['AI / STIG capstone', 'offensive security', 'security operations', 'service desk'];
 ---
 <div class="explorer-app">
   <div class="explorer-toolbar">
@@ -20,11 +20,13 @@ const labels = ['offensive security', 'security operations', 'service desk'];
         <div class="folder-document-heading"><DesktopIcon /><h3>{job.title}</h3></div>
         {job.subtitle && <p>{job.subtitle}</p>}
         <p class="organization">{job.org}</p><p class="job-date">{job.dates} / Clemson, SC</p>
+        {'intro' in job && <p class="capstone-intro">{job.intro}</p>}
         <ul>{job.bullets.map(bullet => <li>{bullet}</li>)}</ul>
+        {'technologies' in job && <ul class="technology-list" aria-label="Capstone technologies">{job.technologies.map(technology => <li>{technology}</li>)}</ul>}
       </article>)}
     </div>
   </div>
-  <div class="explorer-status" aria-live="polite" data-explorer-status>1 of 3 work folders</div>
+  <div class="explorer-status" aria-live="polite" data-explorer-status>1 of 4 work folders</div>
 </div>
 <script>
   const app = document.querySelector<HTMLElement>('.explorer-app');
@@ -53,7 +55,7 @@ const labels = ['offensive security', 'security operations', 'service desk'];
     if (back) back.disabled = cursor === 0;
     if (forward) forward.disabled = cursor === history.length - 1;
     if (path) path.textContent = folders.find(folder => folder.dataset.job === id)?.textContent?.trim() ?? '';
-    if (status) status.textContent = `${Number(id) + 1} of 3 work folders`;
+    if (status) status.textContent = `${Number(id) + 1} of ${folders.length} work folders`;
     pane?.scrollTo({ top: positions.get(id) ?? 0, behavior: 'instant' });
   }
   folders.forEach((folder, index) => {
@@ -70,6 +72,10 @@ const labels = ['offensive security', 'security operations', 'service desk'];
       openFolder(folders[next].dataset.job!);
     });
   });
+  document.querySelectorAll<HTMLElement>('[data-open-job]').forEach(link => link.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    openFolder(link.dataset.openJob!);
+  }));
   back?.addEventListener('click', () => { if (cursor > 0) openFolder(history[--cursor], false); });
   forward?.addEventListener('click', () => { if (cursor < history.length - 1) openFolder(history[++cursor], false); });
 </script>
