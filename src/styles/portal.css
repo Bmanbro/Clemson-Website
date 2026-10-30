@@ -1945,7 +1945,13 @@
   gap: 10px;
   align-items: start;
   padding: 9px;
-  background: linear-gradient(135deg, #242b42, #080a13 45%, #161629);
+  background-color: #080810;
+  background-image:
+    radial-gradient(circle at 17% 21%, #d5c7f1 0 1px, transparent 1.5px),
+    radial-gradient(circle at 68% 65%, #6885c5 0 1px, transparent 1.5px),
+    radial-gradient(circle at 43% 78%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(ellipse at 50% 100%, #252451, transparent 65%);
+  background-size: 97px 91px, 137px 113px, 181px 151px, 100% 100%;
   border: 4px ridge #7d8496;
 }
 
@@ -1965,10 +1971,16 @@
   background: #080811;
   border: 3px ridge #777d8f;
 }
-.project-marquee { color: #d8c2f3; text-shadow: 2px 2px #442972; }
+.project-marquee {
+  color: #d8c2f3;
+  text-shadow: 2px 2px #442972;
+  background-color: #080811;
+  background-image: radial-gradient(circle, #9099d6 0 1px, transparent 1.5px);
+  background-size: 37px 29px;
+}
 .project-marquee span { display: block; font-weight: 700; font-size: 12px; }
-.project-heading { margin: 2px 0; color: #fff; font: 700 clamp(21px, 3vw, 32px)/1 var(--body-font); }
-.project-display { color: #d9d6ff; font-size: 12px; line-height: 1.5; }
+.project-heading { margin: 2px 0; color: #fff; font: 700 clamp(21px, 3vw, 32px)/1 "Courier New", monospace; }
+.project-display { color: #c5b9ff; font: 700 12px/1.5 "Courier New", monospace; text-align: left; }
 .project-display strong, .project-display span { display: block; }
 .project-display strong { color: #e5bd4c; }
 .project-console .technology-list { justify-content: center; margin: 0; }
@@ -1978,11 +1990,19 @@
 .project-content h4 { margin: 0 0 8px; color: #e5bd4c; font-size: 16px; }
 .project-highlights { padding-left: 20px; margin: 0 0 22px; }
 .project-highlights li { margin: 10px 0; }
-.project-details { background: #202437; border: 2px ridge #777d8f; font-size: 12px; }
-.project-details summary { padding: 10px; font-weight: 700; }
-.project-details summary:hover { background: #343d57; }
-.project-details p { margin: 0; padding: 0 10px 10px; }
-.project-details a, .project-credit a { color: #b9d9ff; text-underline-offset: 2px; }
+.project-compatibility {
+  padding: 12px;
+  color: #e1def6;
+  background: #080811;
+  border: 4px ridge #777d8f;
+  font-size: 12px;
+}
+.project-compatibility h4 {
+  color: #c5b9ff;
+  font: 700 16px/1.3 "Courier New", monospace;
+}
+.project-compatibility p { margin: 8px 0 0; }
+.project-compatibility a, .project-credit a { color: #b9d9ff; text-underline-offset: 2px; }
 .project-credit { margin: 16px 0 0; color: #c7c9d5; font-size: 11px; }
 
 @media (width <= 1000px) {

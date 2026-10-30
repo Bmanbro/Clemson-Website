@@ -9,7 +9,7 @@ const image = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/atari-sidel
   <div class="project-cabinet">
     <figure class="project-figure">
       <img src={image} alt="The Atari sideloader running on a television, showing a six-game menu with joystick and Fire-button instructions." width="4032" height="2268" loading="lazy" decoding="async" />
-      <figcaption>The game selector running on a Pac-Man Edition console.</figcaption>
+      <figcaption>The menu running on a Pac-Man Edition console.</figcaption>
     </figure>
     <div class="project-console">
       <div class="project-marquee"><span>Atari 2600+</span><h3 class="project-heading" id="atari-project-title">Sideloader</h3><span>Game selector</span></div>
@@ -19,14 +19,18 @@ const image = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/atari-sidel
     </div>
   </div>
   <div class="project-info">
-    <p class="project-lead">A software-only game menu for the Atari 2600+ Pac-Man Edition. Choose games from internal storage with the joystick, while keeping normal cartridge playback.</p>
+    <p class="project-lead">This menu lets you pick games from internal storage using the joystick. Cartridges still work as usual.</p>
     <h4>Inside the build</h4>
     <ul class="project-highlights">
-      <li><strong>A native console interface.</strong> An ARM game selector written in C reads Linux joystick input and renders through the firmware's existing SDL library.</li>
-      <li><strong>Cartridge-first startup.</strong> Booting with an empty slot opens the internal library. Inserting a cartridge before power-on keeps the original playback path.</li>
-      <li><strong>Verified updates.</strong> Python tooling checks firmware hashes, backs up the console, writes only the OEM partition, and verifies the full readback against the new image.</li>
+      <li>The game menu is written in C for ARM Linux. It reads the joystick and uses the console's existing SDL library.</li>
+      <li>Start the console with an empty slot to open the menu. Insert a cartridge before switching it on to play the cartridge instead.</li>
+      <li>The Python update tools check firmware hashes, back up the console, write the OEM partition, and verify the result by reading it back.</li>
     </ul>
-    <details class="project-details"><summary>Hardware validation &amp; compatibility</summary><p>The menu, joystick selection, internal Atari 2600 gameplay, and cartridge playback have been reported working on one Pac-Man Edition console. The Atari 7800 game path uses the existing ProSystem core; individual games and controllers still need play checks.</p><p>This release targets Pac-Man Edition firmware 2.0.1.6. The original 2600+ and 7800+ consoles are not supported. See the <a href="https://github.com/Bmanbro/Atari-2600-Sideloader-#compatibility">repository's compatibility notes</a> for details.</p></details>
-    <p class="project-credit">Built on work from <a href="https://github.com/MrBlinky/Atari2600plus-loader">MrBlinky's Atari2600plus-loader</a> and Rockchip's rkdeveloptool. Community project, unaffiliated with Atari.</p>
+    <section class="project-compatibility" aria-labelledby="compatibility-title">
+      <h4 id="compatibility-title">Compatibility</h4>
+      <p>The menu, joystick selection, Atari 2600 games, and cartridge playback have been reported working on one Pac-Man Edition console. Atari 7800 games use the existing ProSystem core, but individual games and controllers still need testing.</p>
+      <p>This release is for Pac-Man Edition firmware 2.0.1.6. It does not support the original 2600+ or the 7800+. See the <a href="https://github.com/Bmanbro/Atari-2600-Sideloader-#compatibility">compatibility notes</a> for more.</p>
+    </section>
+    <p class="project-credit">Based on <a href="https://github.com/MrBlinky/Atari2600plus-loader">MrBlinky's Atari2600plus-loader</a> and Rockchip's rkdeveloptool. This is a community project and is not affiliated with Atari.</p>
   </div>
 </article>
