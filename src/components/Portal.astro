@@ -1,13 +1,11 @@
 ---
 import { Image } from 'astro:assets';
 import portrait from '../assets/bryson-portrait.png';
-import '@fontsource/permanent-marker/latin-400.css';
-import '@fontsource/barlow-condensed/latin-700.css';
-import '@fontsource/barlow/latin-400.css';
-import '@fontsource/barlow/latin-600.css';
 import '../styles/base.css';
 import '../styles/portal.css';
 import Resume from './Resume.astro';
+import DesktopWindow from './DesktopWindow.astro';
+import DesktopIcon from './DesktopIcon.astro';
 import Credentials from './Credentials.astro';
 import { profile as p } from '../data/profile';
 ---
@@ -17,8 +15,11 @@ import { profile as p } from '../data/profile';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Bryson Newman. Clemson computer science student, offensive security intern, and Cyber Defense Team firewall lead." />
-    <meta name="theme-color" content="#269fad" />
+    <meta name="theme-color" content="#58818c" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@700&family=Rubik+Spray+Paint&display=swap" rel="stylesheet" />
     <title>Bryson Newman | Computer science & cybersecurity</title>
   </head>
   <body class="portal">
@@ -34,12 +35,10 @@ import { profile as p } from '../data/profile';
       </header>
       <div class="portal-columns">
         <aside class="portal-left" aria-label="Navigation and contact">
-          <nav class="section-links" aria-label="Resume sections">
-            <a href="#profile" data-section="profile" aria-current="location"><span aria-hidden="true">✦</span><span>Profile</span></a>
-            <a href="#experience" data-section="experience"><span aria-hidden="true">▤</span><span>Experience</span></a>
-            <a href="#cyber-team" data-section="cyber-team"><span aria-hidden="true">⚑</span><span>Cyber defense</span></a>
-            <a href="#education" data-section="education"><span aria-hidden="true">✎</span><span>Education</span></a>
-            <a href="#skills" data-section="skills"><span aria-hidden="true">✷</span><span>Skills</span></a>
+          <nav class="section-links" aria-label="Open resume windows">
+            <a href="#window-profile" data-open-window="profile" aria-current="location"><DesktopIcon kind="profile" /><span>Profile</span></a>
+            <a href="#window-experience" data-open-window="experience"><DesktopIcon /><span>Experience</span></a>
+            <a href="#window-cyber-team" data-open-window="cyber-team"><DesktopIcon kind="shield" /><span>Cyber defense</span></a>
           </nav>
           <div class="contact-links">
             <a href={`mailto:${p.email}`}>Email<span class="contact-detail"> Bryson</span></a>
@@ -50,8 +49,9 @@ import { profile as p } from '../data/profile';
           <a class="resume-badge" href={p.pdf} download>Resume PDF <span aria-hidden="true">↓</span></a>
           <div class="side-disc" aria-hidden="true"><span>BN</span></div>
         </aside>
-        <main id="main" class="portal-center" tabindex="0" aria-label="Bryson's resume">
-          <section id="profile" class="portal-feature" tabindex="-1">
+        <main id="main" class="portal-center" tabindex="-1" aria-label="Resume desktop">
+          <DesktopWindow id="profile" title="Profile" icon="profile" open>
+          <section class="portal-feature">
             <div class="feature-art">
               <div class="feature-checks" aria-hidden="true"></div>
               <h2>Hey,<br />I'm Bryson<span aria-hidden="true">!</span></h2>
@@ -61,14 +61,21 @@ import { profile as p } from '../data/profile';
             </div>
             <div class="feature-copy"><p>{p.intro}</p><a href={`mailto:${p.email}`}>Get in touch ↗</a><span class="landscape-links"><a href={p.github}>GitHub</a><a href={p.linkedin}>LinkedIn</a></span></div>
           </section>
-          <Resume />
-          <div class="tab-credentials"><Credentials /></div>
-          <div class="center-footer"><a href="#profile" data-section="profile">Back to top ↑</a><a href={p.pdf}>Original resume</a></div>
+          <div class="mobile-credentials"><Credentials idSuffix="-mobile" /></div>
+          </DesktopWindow>
+          <DesktopWindow id="experience" title="Experience" offset={28}><Resume section="experience" idSuffix="-content" /></DesktopWindow>
+          <DesktopWindow id="cyber-team" title="Cyber defense" icon="shield" offset={40}><Resume section="cyber-team" idSuffix="-content" /></DesktopWindow>
         </main>
         <aside class="portal-right" aria-label="Education and skills"><Credentials idSuffix="-sidebar" /></aside>
       </div>
-      <footer class="portal-footer"><span>Clemson, SC</span><div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><button type="button" id="motion-toggle" aria-pressed="false" aria-label="Pause animations">Motion on <span aria-hidden="true">Ⅱ</span></button></footer>
+      <footer class="portal-footer"><button type="button" id="show-desktop" title="Show desktop" aria-label="Minimize all windows"><DesktopIcon kind="profile" /></button><div class="taskbar" aria-label="Open windows">{[{id:'profile',title:'Profile'}, {id:'experience',title:'Experience'}, {id:'cyber-team',title:'Cyber defense'}].map(item => <button type="button" data-task={item.id} hidden={item.id !== 'profile'} aria-pressed={item.id === 'profile'}>{item.title}</button>)}</div><div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><button type="button" id="motion-toggle" aria-pressed="false" aria-label="Pause animations">Motion on <span aria-hidden="true">Ⅱ</span></button></footer>
     </div>
+    <noscript><style is:global>
+      .portal-center { overflow: auto; }
+      .xp-window, .xp-window[hidden] { display: block; position: relative; inset: auto !important; width: auto !important; height: auto !important; margin: 10px; }
+      .window-content { overflow: visible; }
+      .window-controls, .taskbar, #show-desktop { display: none !important; }
+    </style></noscript>
     <script>
       const motionButton = document.querySelector<HTMLButtonElement>('#motion-toggle');
       const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -91,68 +98,7 @@ import { profile as p } from '../data/profile';
       });
       motionPreference.addEventListener('change', () => { paused = motionPreference.matches; setMotion(); });
 
-      const center = document.querySelector<HTMLElement>('.portal-center');
-      const tabList = document.querySelector<HTMLElement>('.section-links');
-      const tabs = [...document.querySelectorAll<HTMLAnchorElement>('.section-links a[data-section]')];
-      const sectionLinks = document.querySelectorAll<HTMLAnchorElement>('a[data-section]');
-      const ids = ['profile', 'experience', 'cyber-team', 'education', 'skills'];
-      const panels = ids.map(id => document.getElementById(id)).filter((panel): panel is HTMLElement => Boolean(panel));
-      let activeId = '';
-      const positions = new Map<string, number>();
-      tabList?.setAttribute('role', 'tablist');
-      tabList?.setAttribute('aria-label', 'Resume sections');
-      tabList?.setAttribute('aria-orientation', 'vertical');
-      tabs.forEach(tab => {
-        tab.id = `tab-${tab.dataset.section}`;
-        tab.setAttribute('role', 'tab');
-        tab.setAttribute('aria-controls', tab.dataset.section!);
-        tab.removeAttribute('aria-current');
-      });
-      panels.forEach(panel => {
-        panel.setAttribute('role', 'tabpanel');
-        panel.setAttribute('aria-labelledby', `tab-${panel.id}`);
-        panel.tabIndex = 0;
-      });
-      const selectTab = (id: string, updateHistory = false) => {
-        if (!ids.includes(id)) return;
-        if (center && activeId) positions.set(activeId, center.scrollTop);
-        panels.forEach(panel => { panel.hidden = panel.id !== id; });
-        tabs.forEach(tab => {
-          const selected = tab.dataset.section === id;
-          tab.setAttribute('aria-selected', String(selected));
-          tab.tabIndex = selected ? 0 : -1;
-        });
-        sectionLinks.forEach(link => {
-          if (link.getAttribute('role') === 'tab') return;
-          if (link.dataset.section === id) link.setAttribute('aria-current', 'location');
-          else link.removeAttribute('aria-current');
-        });
-        activeId = id;
-        center?.scrollTo({ top: positions.get(id) ?? 0, behavior: 'instant' });
-        if (updateHistory && location.hash !== `#${id}`) history.pushState(null, '', `#${id}`);
-      };
-      sectionLinks.forEach(link => link.addEventListener('click', event => {
-        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-        event.preventDefault();
-        selectTab(link.dataset.section!, true);
-        if (link.getAttribute('role') !== 'tab') document.getElementById(activeId)?.focus({ preventScroll: true });
-      }));
-      tabs.forEach((tab, index) => tab.addEventListener('keydown', event => {
-        let next = index;
-        if (event.key === 'ArrowDown') next = (index + 1) % tabs.length;
-        else if (event.key === 'ArrowUp') next = (index - 1 + tabs.length) % tabs.length;
-        else if (event.key === 'Home') next = 0;
-        else if (event.key === 'End') next = tabs.length - 1;
-        else return;
-        event.preventDefault();
-        tabs[next].focus();
-        selectTab(tabs[next].dataset.section!, true);
-      }));
-      const restoreHash = () => selectTab(ids.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'profile');
-      window.addEventListener('popstate', restoreHash);
-      window.addEventListener('hashchange', restoreHash);
-      document.body.dataset.tabsReady = 'true';
-      restoreHash();
     </script>
+    <script>import '../scripts/desktop';</script>
   </body>
 </html>

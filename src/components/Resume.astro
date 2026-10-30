@@ -1,7 +1,8 @@
 ---
 import { profile as p } from '../data/profile';
+const { section = 'all', idSuffix = '' } = Astro.props;
 ---
-<section id="experience" class="resume-section">
+{section !== 'cyber-team' && <section id={`experience${idSuffix}`} class="resume-section">
   <h2>Experience</h2>
   {p.jobs.map((job) => <article class="job">
     <div class="job-top"><h3>{job.title}</h3><span class="job-date">{job.dates}</span></div>
@@ -9,12 +10,12 @@ import { profile as p } from '../data/profile';
     <p class="organization">{job.org} <span>/ Clemson, SC</span></p>
     <ul>{job.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
   </article>)}
-</section>
-<section id="cyber-team" class="resume-section">
+</section>}
+{section !== 'experience' && <section id={`cyber-team${idSuffix}`} class="resume-section">
   <h2>Cyber defense</h2>
   <article class="job">
     <div class="job-top"><h3>{p.team.role}</h3><span class="job-date">{p.team.dates}</span></div>
     <p class="organization">{p.team.title}</p><p>{p.team.context}</p>
     <ul>{p.team.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
   </article>
-</section>
+</section>}
