@@ -8,16 +8,16 @@
   <g transform="translate(-45 38) rotate(-15)"><path fill="url(#checks)" stroke="#000" stroke-width="5" d="M0 0h260v67H0z"/></g>
   <g transform="translate(340 435) rotate(18)"><path fill="url(#checks)" stroke="#000" stroke-width="5" d="M0 0h260v67H0z"/></g>
   <g stroke="#000" stroke-linejoin="round" stroke-width="8">
-    <path fill="#6d9196" d="m40 190 39-45 32 18-10 38 47-16 16 38-51 16 1 41-45-5 2-42-43 1z"/>
-    <path fill="#b58095" d="m390 60 20 53 57-26-33 52 55 18-60 11 3 61-33-43-44 34 21-54-56-18 58-18z"/>
-    <path fill="#c6bb83" d="m330 280 26 1-16 40 43-1-68 89 15-61-42-1z"/>
-    <path fill="#7d7084" d="m70 378 37-18 25 40 37-14 16 35-42 19-23 31-22-32-37 6z"/>
+    <path fill="#5e9fa2" d="m40 190 39-45 32 18-10 38 47-16 16 38-51 16 1 41-45-5 2-42-43 1z"/>
+    <path fill="#c77ca0" d="m390 60 20 53 57-26-33 52 55 18-60 11 3 61-33-43-44 34 21-54-56-18 58-18z"/>
+    <path fill="#d8c76e" d="m330 280 26 1-16 40 43-1-68 89 15-61-42-1z"/>
+    <path fill="#8b6a99" d="m70 378 37-18 25 40 37-14 16 35-42 19-23 31-22-32-37 6z"/>
   </g>
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path stroke="#000" stroke-width="22" d="m192 115-23 70 43-54-8 48 41-63-11 67 43-47-15 55"/>
-    <path stroke="#b58095" stroke-width="10" d="m192 115-23 70 43-54-8 48 41-63-11 67 43-47-15 55"/>
-    <path stroke="#6d9196" stroke-width="6" d="m420 320 20 14-20 15 23 13-20 14 21 14M180 298l19-15 21 18 20-15"/>
-    <path stroke="#b58095" stroke-width="6" d="M193 183v35m17-30v18m52-12v36"/>
+    <path stroke="#c77ca0" stroke-width="10" d="m192 115-23 70 43-54-8 48 41-63-11 67 43-47-15 55"/>
+    <path stroke="#5e9fa2" stroke-width="6" d="m420 320 20 14-20 15 23 13-20 14 21 14M180 298l19-15 21 18 20-15"/>
+    <path stroke="#c77ca0" stroke-width="6" d="M193 183v35m17-30v18m52-12v36"/>
     <path stroke="#d2cfca" stroke-width="3" d="m72 302 11 12m-14 0 15-11M478 261l12 12m-15 0 15-12"/>
   </g>
   <path fill="url(#dots)" opacity=".3" d="M0 0h540v540H0z"/>

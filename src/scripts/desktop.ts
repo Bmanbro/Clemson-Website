@@ -2,7 +2,6 @@ const desktop = document.querySelector<HTMLElement>(".portal-center");
 const launchers = [
   ...document.querySelectorAll<HTMLAnchorElement>("[data-open-window]"),
 ];
-const tasks = [...document.querySelectorAll<HTMLButtonElement>("[data-task]")];
 const compact = window.matchMedia("(max-width: 760px), (max-height: 500px)");
 const windows = [
   ...document.querySelectorAll<HTMLElement>("[data-window]"),
@@ -41,18 +40,6 @@ function sync() {
     link.setAttribute("aria-expanded", String(win.open && !win.minimized));
     if (active === win.id) link.setAttribute("aria-current", "true");
     else link.removeAttribute("aria-current");
-  });
-  tasks.forEach((task) => {
-    const win = windows.find((win) => win.id === task.dataset.task)!;
-    task.hidden = !win.open;
-    task.setAttribute(
-      "aria-pressed",
-      String(active === win.id && !win.minimized),
-    );
-    task.setAttribute(
-      "aria-label",
-      `${win.minimized ? "Restore" : "Switch to"} ${win.title}`,
-    );
   });
 }
 
@@ -108,14 +95,6 @@ launchers.forEach((link) =>
       return;
     event.preventDefault();
     openWindow(link.dataset.openWindow!);
-  }),
-);
-
-tasks.forEach((task) =>
-  task.addEventListener("click", () => {
-    const win = windows.find((win) => win.id === task.dataset.task)!;
-    if (win.id === active && !win.minimized) hideWindow(win);
-    else openWindow(win.id);
   }),
 );
 
@@ -206,15 +185,6 @@ windows.forEach((win) => {
   handle.addEventListener("pointerup", stopDrag);
   handle.addEventListener("pointercancel", stopDrag);
   handle.addEventListener("lostpointercapture", stopDrag);
-});
-
-document.querySelector("#show-desktop")?.addEventListener("click", () => {
-  windows.forEach((win) => {
-    if (win.open) win.minimized = true;
-  });
-  active = "";
-  sync();
-  history.pushState(null, "", "#desktop");
 });
 
 function restoreHash() {
