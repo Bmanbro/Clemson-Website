@@ -26,7 +26,7 @@ import '../../styles/mixtape.css';
             <aside class="track-sidebar">
               <nav aria-label="Resume sections"><h2>Track list</h2><a href="#profile"><span>01</span> Profile</a><a href="#experience"><span>02</span> Experience</a><a href="#cyber-team"><span>03</span> Cyber defense</a><a href="#education"><span>04</span> Education</a><a href="#skills"><span>05</span> Skills</a></nav>
               <div class="sidebar-links"><a href={p.github}>GitHub / Bmanbro</a><a href={p.linkedin}>LinkedIn / NewmanB</a><a href={`tel:${p.phone}`}>{p.phone}</a></div>
-              <div class="hardware-photo"><img src="/images/cd-player-cutout.png" alt="Silver portable CD player" width="688" height="664" /><span>Made for a closer listen.</span></div>
+              <div class="hardware-photo"><img src={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/images/cd-player-cutout.png`} alt="Silver portable CD player" width="688" height="664" /><span>Made for a closer listen.</span></div>
               <Credentials />
             </aside>
             <div class="liner-notes">

@@ -13,7 +13,7 @@ const { title, theme } = Astro.props;
   </head>
   <body class={theme}>
     <a class="skip-link" href="#main">Skip to content</a>
-    <div class="review-bar"><a href="/mockups/">All mockups</a><span>Design preview / {theme === 'mixtape' ? 'A · Mixtape desktop' : 'B · 2003 personal portal'}</span><a href={theme === 'mixtape' ? '/mockups/portal' : '/mockups/mixtape'}>View concept {theme === 'mixtape' ? 'B' : 'A'}</a></div>
+    <div class="review-bar"><a href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/mockups/`}>All mockups</a><span>Design preview / {theme === 'mixtape' ? 'A · Mixtape desktop' : 'B · 2003 personal portal'}</span><a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/mockups/${theme === 'mixtape' ? 'portal' : 'mixtape'}`}>View concept {theme === 'mixtape' ? 'B' : 'A'}</a></div>
     <slot />
   </body>
 </html>

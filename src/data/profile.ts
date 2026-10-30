@@ -6,7 +6,7 @@ export const profile = {
   phone: "+1-864-327-6635",
   github: "https://github.com/bmanbro",
   linkedin: "https://www.linkedin.com/in/newmanb/",
-  pdf: "/documents/Bryson-Newman-Resume.pdf",
+  pdf: `${import.meta.env.BASE_URL.replace(/\/$/, "")}/documents/Bryson-Newman-Resume.pdf`,
   education: {
     school: "Clemson University",
     degree: "B.S. in Computer Science",
