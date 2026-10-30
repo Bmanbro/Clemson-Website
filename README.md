@@ -16,3 +16,5 @@ pnpm build
 ```
 
 See [AGENTS.md](AGENTS.md) for development and style guidelines.
+
+Set `site` in `astro.config.mjs` to the production URL to enable canonical and Open Graph URLs. Include any deployment base path in Astro’s `base` setting.

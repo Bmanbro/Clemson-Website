@@ -16,17 +16,6 @@ import DesktopIcon from './DesktopIcon.astro';
 import Credentials from './Credentials.astro';
 import { profile as p } from '../data/profile';
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Bryson Newman. Clemson computer science student, offensive security intern, and Cyber Defense Team firewall lead." />
-    <meta name="theme-color" content="#58818c" />
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/favicon.svg`} />
-    <title>Bryson Newman | Computer science & cybersecurity</title>
-  </head>
-  <body class="portal" data-lofi="on">
     <svg class="render-filters" width="0" height="0" aria-hidden="true"><defs><filter id="low-color" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="discrete" tableValues="0 .067 .133 .2 .267 .333 .4 .467 .533 .6 .667 .733 .8 .867 .933 1" /><feFuncG type="discrete" tableValues="0 .067 .133 .2 .267 .333 .4 .467 .533 .6 .667 .733 .8 .867 .933 1" /><feFuncB type="discrete" tableValues="0 .067 .133 .2 .267 .333 .4 .467 .533 .6 .667 .733 .8 .867 .933 1" /></feComponentTransfer></filter></defs></svg>
     <a class="skip-link" href="#main">Skip to resume</a>
     <div class="street-art" aria-hidden="true"><span class="wall-tag tag-one">BN!</span><span class="wall-tag tag-two">✦</span><span class="wall-tag tag-three">↯</span><span class="wall-tag tag-four">✷</span></div>
@@ -126,5 +115,3 @@ import { profile as p } from '../data/profile';
 
     </script>
     <script>import '../scripts/desktop';</script>
-  </body>
-</html>
