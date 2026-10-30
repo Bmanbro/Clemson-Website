@@ -32,13 +32,6 @@ import { profile as p } from '../data/profile';
         <span class="header-star" aria-hidden="true">✦</span>
         <div class="header-checks" aria-hidden="true"></div>
       </header>
-      <nav class="portal-nav" aria-label="Main navigation">
-        <a href="#profile" data-section="profile" aria-current="location">Home</a>
-        <a href="#experience" data-section="experience">Experience</a>
-        <a href="#cyber-team" data-section="cyber-team">Cyber defense</a>
-        <a href="#education" data-section="education">Education</a>
-        <a href="#skills" data-section="skills">Skills</a>
-      </nav>
       <div class="portal-columns">
         <aside class="portal-left" aria-label="Navigation and contact">
           <nav class="section-links" aria-label="Resume sections">
@@ -66,7 +59,7 @@ import { profile as p } from '../data/profile';
               <Image src={portrait} width={192} format="webp" quality={85} alt="Bryson Newman smiling" class="portrait" loading="eager" />
               <div class="portrait-scanlines" aria-hidden="true"></div>
             </div>
-            <div class="feature-copy"><p>{p.intro}</p><a href={`mailto:${p.email}`}>Get in touch ↗</a></div>
+            <div class="feature-copy"><p>{p.intro}</p><a href={`mailto:${p.email}`}>Get in touch ↗</a><span class="landscape-links"><a href={p.github}>GitHub</a><a href={p.linkedin}>LinkedIn</a></span></div>
           </section>
           <Resume />
           <div class="tab-credentials"><Credentials /></div>
@@ -99,8 +92,8 @@ import { profile as p } from '../data/profile';
       motionPreference.addEventListener('change', () => { paused = motionPreference.matches; setMotion(); });
 
       const center = document.querySelector<HTMLElement>('.portal-center');
-      const tabList = document.querySelector<HTMLElement>('.portal-nav');
-      const tabs = [...document.querySelectorAll<HTMLAnchorElement>('.portal-nav a[data-section]')];
+      const tabList = document.querySelector<HTMLElement>('.section-links');
+      const tabs = [...document.querySelectorAll<HTMLAnchorElement>('.section-links a[data-section]')];
       const sectionLinks = document.querySelectorAll<HTMLAnchorElement>('a[data-section]');
       const ids = ['profile', 'experience', 'cyber-team', 'education', 'skills'];
       const panels = ids.map(id => document.getElementById(id)).filter((panel): panel is HTMLElement => Boolean(panel));
@@ -108,6 +101,7 @@ import { profile as p } from '../data/profile';
       const positions = new Map<string, number>();
       tabList?.setAttribute('role', 'tablist');
       tabList?.setAttribute('aria-label', 'Resume sections');
+      tabList?.setAttribute('aria-orientation', 'vertical');
       tabs.forEach(tab => {
         tab.id = `tab-${tab.dataset.section}`;
         tab.setAttribute('role', 'tab');
@@ -145,8 +139,8 @@ import { profile as p } from '../data/profile';
       }));
       tabs.forEach((tab, index) => tab.addEventListener('keydown', event => {
         let next = index;
-        if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-        else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === 'ArrowDown') next = (index + 1) % tabs.length;
+        else if (event.key === 'ArrowUp') next = (index - 1 + tabs.length) % tabs.length;
         else if (event.key === 'Home') next = 0;
         else if (event.key === 'End') next = tabs.length - 1;
         else return;

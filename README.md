@@ -1,12 +1,15 @@
-# Bryson Newman profile mockups
+# Bryson Newman
 
-Two early-2000s design studies built in Astro. The finished site design is pending review.
+A full-screen personal portal with early-2000s styling, built in Astro.
 
-- `/`: comparison page with desktop and mobile screenshots
-- `/mockups/mixtape`: CD-case frame, pink album insert, and resume liner notes
-- `/mockups/portal`: speaker header, beveled navigation, and three-column homepage
+The sidebar switches between Profile, Experience, Cyber defense, Education, and Skills. Only the center panel scrolls; the header, sidebar, and desktop credentials column stay stationary. On narrow or short screens, the credentials column gives way to the center tabs.
 
-Both concepts use `src/data/profile.ts`, transcribed and lightly edited from `Bryson-Newman-Resume.pdf`. The public PDF is in `public/documents/`. When updating the resume, update both the shared data and public PDF.
+- `/`: the selected portal design
+- `/mockups/portal`: the same portal
+- `/mockups/`: archived design comparison
+- `/mockups/mixtape`: the alternate design
+
+Resume content lives in `src/data/profile.ts`. Update it and `public/documents/Bryson-Newman-Resume.pdf` when the resume changes.
 
 ## Development
 
@@ -19,18 +22,20 @@ pnpm exec astro dev stop
 pnpm build
 ```
 
-The default address is http://localhost:4321. Fonts and images are served locally. No client framework or runtime external assets are required.
+Astro reports the active address when starting. All fonts and images are served locally.
 
-## Visual assets
+## Design and behavior
 
-The palette comes from the local inspiration images. The CD-player photograph is credited in `public/images/ATTRIBUTION.md` and in both mockup footers. Its background was removed locally with:
+Permanent Marker supplies the graffiti lettering, Barlow Condensed the controls and headings, and Barlow the resume text. Raised sidebar buttons, speaker mesh, CD reflections, scanlines, and checkerboards use CSS. `public/images/graffiti-wall.svg` is original vector artwork.
 
-```sh
-uvx withoutbg public/images/cd-player.jpg -o public/images/cd-player-cutout.png
-```
+The portrait in `src/assets/bryson-portrait.png` was cut out locally with `uvx withoutbg`. Astro serves a 192px-wide version; CSS enlarges it with `image-rendering: pixelated`.
 
-Plastic, chrome, CD reflections, speaker mesh, and paper treatments use CSS. No images were generated. `inspiration/` is intentionally untracked.
+Sidebar tabs support Up, Down, Home, and End. Tab URLs support direct links and browser Back. Each tab retains its center scroll position. Without JavaScript, the center shows the complete resume with anchor navigation.
+
+The footer can pause animations, and that preference is saved locally. System reduced-motion preferences disable animations. No audio plays.
+
+The original CD-player photo appears only in the alternate mixtape mockup. Its credit is in that page's footer and `public/images/ATTRIBUTION.md`. No images were generated. `inspiration/` remains untracked.
 
 ## Review captures
 
-`public/previews/` contains 1440 × 1000 desktop views and full-page mobile captures at 390px wide. Refresh them after visual changes. The comparison page displays the desktop captures and links to the mobile versions.
+`public/previews/portal-desktop.png` and `portal-mobile.png` show the selected design at 1440 × 1000 and 390 × 844. The mixtape captures remain in the same folder.
