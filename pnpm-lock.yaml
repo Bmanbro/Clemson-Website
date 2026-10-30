@@ -11,6 +11,9 @@ importers:
       '@fontsource/arimo':
         specifier: ^5.3.0
         version: 5.3.0
+      '@fontsource/audiowide':
+        specifier: ^5.3.0
+        version: 5.3.0
       '@fontsource/rubik-spray-paint':
         specifier: ^5.3.0
         version: 5.3.0
@@ -203,6 +206,9 @@ packages:
 
   '@fontsource/arimo@5.3.0':
     resolution: {integrity: sha512-nhxZ2sTVZYX8DJBgLuyX360B5vE4mxqpmjlKTRfucIqfcWRVx9vOYzWBc1IgEX0ist48VMC10PRKbFyH+4QFvQ==}
+
+  '@fontsource/audiowide@5.3.0':
+    resolution: {integrity: sha512-ECBdWgQPaCSuwlFyeXzV0i2DAGq0SKID7jxD1oHhYTObx3wz26YKs3F9Ic/EO369Anzld9IqxflRukJm6nVxpw==}
 
   '@fontsource/rubik-spray-paint@5.3.0':
     resolution: {integrity: sha512-LyBjEpt22JySVawJGCS3KNwZImP1Q5e6qcW341lmNjQq8lWXvqDWuo6rPDNLgNAROi+SMIwEo5El8k28ZNPMKQ==}
@@ -1416,6 +1422,8 @@ snapshots:
     optional: true
 
   '@fontsource/arimo@5.3.0': {}
+
+  '@fontsource/audiowide@5.3.0': {}
 
   '@fontsource/rubik-spray-paint@5.3.0': {}
 
