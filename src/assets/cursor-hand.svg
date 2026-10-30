@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="36" viewBox="14 0 18 24" shape-rendering="crispEdges">
+  <!-- Adapted from Lordalpha1, public domain, via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Mouse-cursor-hand-pointer.svg -->
+  <path d="M19 1h2v1h1v4h2v1h3v1h2v1h1v1h1v7h-1v3h-1v3H19v-3h-1v-2h-1v-2h-1v-2h-1v-1h-1v-3h3v1h1V2h1"/>
+  <path fill="#fff" d="M21 2v9h1V7h2v4h1V8h2v4h1V9h1v1h1v7h-1v3h-1v2h-8v-2h-1v-2h-1v-2h-1v-2h-1v-1h-1v-2h2v1h1v1h1V2"/>
+</svg>

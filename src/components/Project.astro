@@ -1,0 +1,36 @@
+---
+const image = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/atari-sideloader-menu.webp`;
+---
+<nav class="project-toolbar" aria-label="Project resources">
+  <a href="https://github.com/Bmanbro/Atari-2600-Sideloader-">View source</a>
+  <a href="https://github.com/Bmanbro/Atari-2600-Sideloader-/blob/main/docs/TECHNICAL.md">Technical notes</a>
+</nav>
+<article class="project-content" aria-labelledby="atari-project-title">
+  <div class="project-cabinet">
+    <figure class="project-figure">
+      <img src={image} alt="The Atari sideloader running on a television, showing a six-game menu with joystick and Fire-button instructions." width="4032" height="2268" loading="lazy" decoding="async" />
+      <figcaption>The menu running on a Pac-Man Edition console.</figcaption>
+    </figure>
+    <div class="project-console">
+      <div class="project-marquee"><span>Atari 2600+</span><h3 class="project-heading" id="atari-project-title">Sideloader</h3><span>Game selector</span></div>
+      <div class="project-display"><strong>Built for</strong><span>Pac-Man Edition</span><span>Firmware 2.0.1.6</span></div>
+      <div class="project-display"><strong>Controls</strong><span>Up / down to browse</span><span>Fire to play</span></div>
+      <ul class="technology-list" aria-label="Project technologies"><li>C</li><li>Python</li><li>ARM Linux</li><li>SDL</li><li>Shell</li></ul>
+    </div>
+  </div>
+  <div class="project-info">
+    <p class="project-lead">This menu lets you pick games from internal storage using the joystick. Cartridges still work as usual.</p>
+    <h4>Inside the build</h4>
+    <ul class="project-highlights">
+      <li>The game menu is written in C for ARM Linux. It reads the joystick and uses the console's existing SDL library.</li>
+      <li>Start the console with an empty slot to open the menu. Insert a cartridge before switching it on to play the cartridge instead.</li>
+      <li>The Python update tools check firmware hashes, back up the console, write the OEM partition, and verify the result by reading it back.</li>
+    </ul>
+    <section class="project-compatibility" aria-labelledby="compatibility-title">
+      <h4 id="compatibility-title">Compatibility</h4>
+      <p>The menu, joystick selection, Atari 2600 games, and cartridge playback have been reported working on one Pac-Man Edition console. Atari 7800 games use the existing ProSystem core, but individual games and controllers still need testing.</p>
+      <p>This release is for Pac-Man Edition firmware 2.0.1.6. It does not support the original 2600+ or the 7800+. See the <a href="https://github.com/Bmanbro/Atari-2600-Sideloader-#compatibility">compatibility notes</a> for more.</p>
+    </section>
+    <p class="project-credit">Based on <a href="https://github.com/MrBlinky/Atari2600plus-loader">MrBlinky's Atari2600plus-loader</a> and Rockchip's rkdeveloptool. This is a community project and is not affiliated with Atari.</p>
+  </div>
+</article>

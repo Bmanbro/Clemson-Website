@@ -1,0 +1,15 @@
+---
+import DesktopIcon from './DesktopIcon.astro';
+const { id, title, icon = 'folder', offset = 16, open = false } = Astro.props;
+---
+<section class="xp-window" id={`window-${id}`} data-window={id} data-title={title} style={`--window-offset:${offset}px`} hidden={!open} role="region" aria-labelledby={`title-${id}`}>
+  <div class="xp-titlebar" data-drag-handle tabindex="0" role="group" aria-label={`${title} window. Use arrow keys to move.`}>
+    <DesktopIcon kind={icon} /><h2 id={`title-${id}`}>{title}</h2>
+    <div class="window-controls">
+      <button type="button" data-action="minimize" aria-label={`Minimize ${title}`} title="Minimize"><span class="control-minimize" aria-hidden="true"></span></button>
+      <button type="button" data-action="maximize" aria-label={`Maximize ${title}`} title="Maximize" aria-pressed="false"><span class="control-maximize" aria-hidden="true"></span></button>
+      <button type="button" data-action="close" aria-label={`Close ${title}`} title="Close"><span aria-hidden="true">×</span></button>
+    </div>
+  </div>
+  <div class="window-content" tabindex="0" aria-label={`${title} content`}><slot /></div>
+</section>

@@ -1,0 +1,81 @@
+---
+import DesktopIcon from './DesktopIcon.astro';
+import { profile as p } from '../data/profile';
+const labels = ['AI / STIG capstone', 'offensive security', 'security operations', 'service desk'];
+---
+<div class="explorer-app">
+  <div class="explorer-toolbar">
+    <button type="button" data-explorer-back disabled><span aria-hidden="true">◀</span> back</button>
+    <button type="button" data-explorer-forward disabled><span aria-hidden="true">▶</span> forward</button>
+    <a href={p.pdf} download><DesktopIcon /> resume</a>
+  </div>
+  <div class="explorer-address"><span>address</span><div><DesktopIcon /><span>my computer / experience / <span data-explorer-path>{labels[0]}</span></span></div></div>
+  <div class="explorer-layout">
+    <nav class="explorer-tasks" aria-label="Career folders">
+      <h3>work folders</h3>
+      <div role="tablist" aria-label="Careers" aria-orientation="vertical">{p.jobs.map((job, index) => <button type="button" role="tab" data-job={index} id={`career-tab-${index}`} aria-controls={`career-${index}`} aria-selected={index === 0} tabindex={index === 0 ? 0 : -1} title={job.title}><DesktopIcon /><span>{labels[index]}</span></button>)}</div>
+    </nav>
+    <div class="explorer-document">
+      {p.jobs.map((job, index) => <article class="explorer-job" id={`career-${index}`} data-job-document={index} role="tabpanel" aria-labelledby={`career-tab-${index}`} tabindex="0" hidden={index !== 0}>
+        <div class="folder-document-heading"><DesktopIcon /><h3>{job.title}</h3></div>
+        {job.subtitle && <p>{job.subtitle}</p>}
+        <p class="organization">{job.org}</p><p class="job-date">{job.dates} / Clemson, SC</p>
+        {'intro' in job && <p class="capstone-intro">{job.intro}</p>}
+        <ul>{job.bullets.map(bullet => <li>{bullet}</li>)}</ul>
+        {'technologies' in job && <ul class="technology-list" aria-label="Capstone technologies">{job.technologies.map(technology => <li>{technology}</li>)}</ul>}
+      </article>)}
+    </div>
+  </div>
+  <div class="explorer-status" aria-live="polite" data-explorer-status>1 of 4 work folders</div>
+</div>
+<script>
+  const app = document.querySelector<HTMLElement>('.explorer-app');
+  const documents = [...(app?.querySelectorAll<HTMLElement>('[data-job-document]') ?? [])];
+  const folders = [...(app?.querySelectorAll<HTMLButtonElement>('[data-job]') ?? [])];
+  const back = app?.querySelector<HTMLButtonElement>('[data-explorer-back]');
+  const forward = app?.querySelector<HTMLButtonElement>('[data-explorer-forward]');
+  const path = app?.querySelector<HTMLElement>('[data-explorer-path]');
+  const status = app?.querySelector<HTMLElement>('[data-explorer-status]');
+  const history = ['0'];
+  let cursor = 0;
+  const positions = new Map<string, number>();
+  let current = '0';
+  function openFolder(id: string, record = true) {
+    if (record && current === id) return;
+    const pane = app?.querySelector<HTMLElement>('.explorer-document');
+    if (pane) positions.set(current, pane.scrollTop);
+    current = id;
+    if (record) { history.splice(cursor + 1); history.push(id); cursor = history.length - 1; }
+    documents.forEach(doc => { doc.hidden = doc.dataset.jobDocument !== id; });
+    folders.forEach(folder => {
+      const selected = folder.dataset.job === id;
+      folder.setAttribute('aria-selected', String(selected));
+      folder.tabIndex = selected ? 0 : -1;
+    });
+    if (back) back.disabled = cursor === 0;
+    if (forward) forward.disabled = cursor === history.length - 1;
+    if (path) path.textContent = folders.find(folder => folder.dataset.job === id)?.textContent?.trim() ?? '';
+    if (status) status.textContent = `${Number(id) + 1} of ${folders.length} work folders`;
+    pane?.scrollTo({ top: positions.get(id) ?? 0, behavior: 'instant' });
+  }
+  folders.forEach((folder, index) => {
+    folder.addEventListener('click', () => openFolder(folder.dataset.job!));
+    folder.addEventListener('keydown', event => {
+      let next = index;
+      if (event.key === 'ArrowDown') next = (index + 1) % folders.length;
+      else if (event.key === 'ArrowUp') next = (index - 1 + folders.length) % folders.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = folders.length - 1;
+      else return;
+      event.preventDefault();
+      folders[next].focus();
+      openFolder(folders[next].dataset.job!);
+    });
+  });
+  document.querySelectorAll<HTMLElement>('[data-open-job]').forEach(link => link.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    openFolder(link.dataset.openJob!);
+  }));
+  back?.addEventListener('click', () => { if (cursor > 0) openFolder(history[--cursor], false); });
+  forward?.addEventListener('click', () => { if (cursor < history.length - 1) openFolder(history[++cursor], false); });
+</script>
