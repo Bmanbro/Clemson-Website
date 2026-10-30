@@ -6,7 +6,7 @@ The sidebar opens Profile, Experience, and Cyber defense in separate XP-style wi
 
 The portal is served at `/`, relative to Astro's configured base path.
 
-Resume content lives in `src/data/profile.ts`. Update it and `public/documents/Bryson-Newman-Resume.pdf` when the resume changes.
+Resume content lives in `src/data/profile.ts`. Update it and `public/documents/resume.pdf` when the resume changes. The source PDF is `resume.pdf` at the repository root.
 
 ## Development
 
