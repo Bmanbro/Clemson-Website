@@ -463,28 +463,7 @@
   max-width: 60ch;
   margin-bottom: 18px;
 }
-.feature-copy > a {
-  display: inline-block;
-  background: #000;
-  color: #fff;
-  padding: 8px 18px;
-  border: 3px outset #a2aeb3;
-  font: 700 18px var(--label-font);
-  text-decoration: none;
-}
-.portal .resume-section {
-  margin: 0;
-  background: #fff;
-  color: #000;
-  border: 2px solid #000;
-}
-.portal-feature + .resume-section {
-  margin-top: 9px;
-}
-.portal .resume-section + .resume-section {
-  margin-top: 9px;
-}
-.portal .resume-section > h2,
+
 .portal .credential > h2 {
   margin: 0;
   padding: 8px 12px;
@@ -493,46 +472,20 @@
   color: #000;
   border-bottom: 3px solid #000;
 }
-.portal .job {
-  padding: 20px;
-  margin: 0;
-  border-bottom: 2px dashed #999;
-}
-.portal .job:last-child {
-  border-bottom: 0;
-}
-.portal .job h3 {
-  font: 700 25px/1.05 var(--label-font);
-}
-.portal .job-top {
-  display: block;
-}
+
 .portal .job-date {
   display: block;
   margin-top: 8px;
   font: 600 12px var(--body-font);
   color: #555;
 }
-.portal .job-subtitle {
-  font-size: 14px;
-}
-.portal .job li {
-  font-size: 14px;
-  margin: 12px 0;
-  line-height: 1.55;
-}
+
 .portal .organization {
   font-size: 13px;
   color: #64566e;
   font-weight: 600;
 }
-.portal .organization span {
-  display: block;
-  color: #444;
-}
-.portal .job > p:not([class]) {
-  font-size: 13px;
-}
+
 .portal-right {
   display: flex;
   flex-direction: column;
@@ -811,30 +764,15 @@
   .feature-copy p {
     font-size: 14px;
   }
-  .feature-copy > a {
-    font-size: 16px;
-    padding: 7px 12px;
-  }
-  .portal .job {
-    padding: 16px 12px;
-  }
-  .portal .job h3 {
-    font-size: 22px;
-  }
+
   .portal .job-date {
     font-size: 11px;
     white-space: normal;
   }
-  .portal .job li {
-    font-size: 13px;
-  }
-  .portal .job ul {
-    padding-left: 16px;
-  }
+
   .portal .organization {
     font-size: 12px;
   }
-  .portal .resume-section > h2,
   .portal .credential > h2 {
     font-size: 22px;
   }
@@ -975,17 +913,8 @@
   .feature-copy {
     padding: 25px 32px;
   }
-  .portal .job {
-    padding: 26px 32px;
-  }
-  .portal .job li {
-    max-width: 78ch;
-  }
 }
 
-.landscape-links {
-  display: none;
-}
 @media (max-height: 500px) {
   .section-links {
     gap: 4px;
@@ -1012,12 +941,6 @@
   .resume-badge {
     margin-top: auto;
     margin-bottom: 8px;
-  }
-  .landscape-links {
-    display: inline-flex;
-    gap: 15px;
-    margin-left: 20px;
-    font-size: 13px;
   }
 }
 
@@ -1181,15 +1104,12 @@
   border: 2px outset #e9ecf0;
   border-radius: 2px;
 }
-.window-content .portal-feature,
-.portal .window-content .resume-section {
+.window-content .portal-feature {
   border: 0;
   background: #f6f4ee;
   margin: 0;
 }
-.portal .window-content .resume-section > h2 {
-  display: none;
-}
+
 .window-content .feature-art {
   border-bottom: 2px solid #8a8577;
 }
@@ -1220,13 +1140,7 @@
   white-space: nowrap;
   font-size: 11px;
 }
-.portal .feature-copy > a {
-  background: linear-gradient(#f8f8f2, #d1cec2);
-  color: #263748;
-  border: 2px outset #f4f3e9;
-  font-family: var(--body-font);
-  font-size: 13px;
-}
+
 .portal .skill-list li {
   background: #f5f3ed;
   border-color: #a19b9f;
@@ -1800,19 +1714,6 @@
   }
 }
 
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
 .portal-left,
 .portal-right {
   overflow-y: auto;
@@ -2123,7 +2024,6 @@
     padding: 3px 5px;
     font-size: 10px;
   }
-
 }
 
 @media (width <= 360px) {
