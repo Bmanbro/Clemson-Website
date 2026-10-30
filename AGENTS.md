@@ -45,7 +45,6 @@ Consult these guides before working on related tasks:
 - Preserve working window controls, stacking, desktop dragging, keyboard movement, career-tab navigation, and the no-JavaScript fallback. Decorative application chrome should not look like a working control unless it does something.
 - Keep keyboard focus visible and content readable. Animation is welcome, but respect reduced motion and the saved motion setting. Keep the lo-fi effect toggleable; use low-resolution imagery, reduced color depth, and the pixel-grid treatment without breaking interaction.
 - Prefer CSS, SVG, existing assets, or sourced images over generated imagery. Preserve image credits. Use `uvx withoutbg` when removing image backgrounds.
-- Treat the mixtape as an alternate mockup with its own visual style; do not apply portal styling to it automatically.
 
 ### Code and content
 

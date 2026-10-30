@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@fontsource/anton':
-        specifier: ^5.3.0
-        version: 5.3.0
       astro:
         specifier: ^7.3.5
         version: 7.4.4(yaml@2.9.1)
@@ -197,9 +194,6 @@ packages:
 
   '@emnapi/wasi-threads@1.2.3':
     resolution: {integrity: sha512-ELEBe8PsLvvJ6QMr0zLt8ffvOHW/dc1m3CEzNMg7aJUv3bMaoDtw2TXyDAwkYBuroxxuHEwhRTLJSe5sya547g==}
-
-  '@fontsource/anton@5.3.0':
-    resolution: {integrity: sha512-OR1D5n124n2XRs66SbX7IjcOSptljEJE8FcDNnlni2y1/M6KpTx7cU2PIWzTSsBj4WFkHPw24On8qw3qkQZuTw==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -1408,8 +1402,6 @@ snapshots:
     dependencies:
       tslib: 2.8.1
     optional: true
-
-  '@fontsource/anton@5.3.0': {}
 
   '@img/colour@1.1.0':
     optional: true

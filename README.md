@@ -4,10 +4,7 @@ A full-screen personal portal with early-2000s styling, built in Astro.
 
 The sidebar opens Profile, Experience, and Cyber defense in separate XP-style windows. Window document panes scroll while the header and sidebars stay stationary. Education and Skills stay in the right column; on narrow or short screens, they appear inside Profile.
 
-- `/`: the selected portal design
-- `/mockups/portal`: the same portal
-- `/mockups/`: archived design comparison
-- `/mockups/mixtape`: the alternate design
+The portal is served at `/`, relative to Astro's configured base path.
 
 Resume content lives in `src/data/profile.ts`. Update it and `public/documents/Bryson-Newman-Resume.pdf` when the resume changes.
 
@@ -22,7 +19,7 @@ pnpm exec astro dev stop
 pnpm build
 ```
 
-The server uses port 4321 with strict-port checking. Portal fonts load from Google Fonts; images are served locally. The alternate mixtape mockup keeps its local Anton font.
+The server uses port 4321 with strict-port checking. Fonts load from Google Fonts; images are served locally.
 
 ## Design and behavior
 
@@ -36,8 +33,4 @@ Profile is an address book, Experience is Windows Explorer, and Cyber defense is
 
 The footer can toggle lo-fi rendering and pause animations. Both preferences are saved locally. Lo-fi mode reduces color depth through an SVG filter and adds a subtle pixel-grid overlay across the page. This is a visual approximation; HTML text remains live and selectable. System reduced-motion preferences disable animations. No audio plays.
 
-The original CD-player photo appears only in the alternate mixtape mockup. Its credit is in that page's footer and `public/images/ATTRIBUTION.md`. No images were generated. `inspiration/` remains untracked.
-
-## Review captures
-
-`public/previews/portal-desktop.png` and `portal-mobile.png` show the selected design at 1440 × 1000 and 390 × 844. The mixtape captures remain in the same folder.
+No images were generated. `inspiration/` remains untracked.

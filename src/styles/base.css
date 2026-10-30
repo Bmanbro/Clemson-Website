@@ -52,42 +52,9 @@ section[id] {
 .skip-link:focus {
   top: 8px;
 }
-.review-bar {
-  font:
-    12px Arial,
-    sans-serif;
-  background: #000;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  padding: 12px max(20px, calc((100% - 1120px) / 2));
-  border-bottom: 1px solid #777;
-}
-.review-bar a {
-  text-underline-offset: 3px;
-}
-.photo-credit {
-  font-size: 10px !important;
-  line-height: 1.5 !important;
-  opacity: 0.85;
-  max-width: 660px;
-  margin: 18px auto;
-}
-.job h3 {
-  margin: 0;
-  font-size: 19px;
-  line-height: 1.25;
-}
 .job-date {
   font-size: 11px;
   white-space: nowrap;
-}
-.job-top {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  align-items: start;
 }
 .organization {
   font-weight: bold;
@@ -96,16 +63,6 @@ section[id] {
 }
 .organization span {
   font-weight: normal;
-}
-.job-subtitle {
-  font-size: 13px;
-  margin: 5px 0;
-}
-.job li {
-  margin: 8px 0;
-}
-.job > p:not([class]) {
-  font-size: 12px;
 }
 .credential h3 {
   font-size: 15px;
@@ -125,29 +82,6 @@ section[id] {
   font-size: 11px;
   line-height: 1.35;
   padding: 4px 7px;
-}
-.resume-section h2 {
-  font-family: Anton, sans-serif;
-  font-weight: 400;
-}
-.photo-credit a:focus-visible {
-  outline-color: #fff;
-}
-@media (max-width: 700px) {
-  .review-bar {
-    padding: 10px 12px;
-    font-size: 10px;
-  }
-  .review-bar span {
-    display: none;
-  }
-  .job-top {
-    flex-direction: column;
-    gap: 6px;
-  }
-  .job h3 {
-    font-size: 18px;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   html {
