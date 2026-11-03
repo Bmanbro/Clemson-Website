@@ -1,0 +1,117 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/bryson-portrait.png';
+import '@fontsource/arimo/latin-400.css';
+import '@fontsource/audiowide/latin-400.css';
+import '@fontsource/arimo/latin-600.css';
+import '@fontsource/arimo/latin-700.css';
+import '@fontsource/rubik-spray-paint/latin-400.css';
+import '../styles/base.css';
+import '../styles/portal.css';
+import ExperienceExplorer from './ExperienceExplorer.astro';
+import Project from './Project.astro';
+import CyberConnection from './CyberConnection.astro';
+import DesktopWindow from './DesktopWindow.astro';
+import DesktopIcon from './DesktopIcon.astro';
+import Credentials from './Credentials.astro';
+import { profile as p } from '../data/profile';
+---
+    <svg class="render-filters" width="0" height="0" aria-hidden="true"><defs><filter id="low-color" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="discrete" tableValues="0 .067 .133 .2 .267 .333 .4 .467 .533 .6 .667 .733 .8 .867 .933 1" /><feFuncG type="discrete" tableValues="0 .067 .133 .2 .267 .333 .4 .467 .533 .6 .667 .733 .8 .867 .933 1" /><feFuncB type="discrete" tableValues="0 .067 .133 .2 .267 .333 .4 .467 .533 .6 .667 .733 .8 .867 .933 1" /></feComponentTransfer></filter></defs></svg>
+    <a class="skip-link" href="#main">Skip to resume</a>
+    <div class="street-art" aria-hidden="true"><span class="wall-tag tag-one">BN!</span><span class="wall-tag tag-two">✦</span><span class="wall-tag tag-three">↯</span><span class="wall-tag tag-four">✷</span></div>
+    <div class="portal-shell">
+      <header class="portal-header">
+        <div class="speaker speaker-left" aria-hidden="true"></div>
+        <h1 class="wordmark">Bryson<br /><span>Newman</span></h1>
+        <div class="speaker speaker-right" aria-hidden="true"></div>
+        <span class="header-star" aria-hidden="true">✦</span>
+        <div class="header-checks" aria-hidden="true"></div>
+      </header>
+      <div class="portal-columns">
+        <aside class="portal-left" aria-label="Navigation and contact">
+          <nav class="section-links" aria-label="Open resume windows">
+            <a href="#window-profile" data-open-window="profile" aria-current="location"><DesktopIcon kind="profile" /><span>Profile</span></a>
+            <a href="#window-experience" data-open-window="experience"><DesktopIcon /><span>Experience</span></a>
+            <a href="#window-projects" data-open-window="projects"><DesktopIcon kind="profile" /><span>Projects</span></a>
+            <a href="#window-cyber-team" data-open-window="cyber-team"><DesktopIcon kind="shield" /><span>Cyber defense</span></a>
+          </nav>
+          <div class="contact-links">
+            <a href={`mailto:${p.email}`}>Email<span class="contact-detail"> Bryson</span></a>
+            <a href={p.github}>GitHub<span class="contact-detail"> / Bmanbro</span></a>
+            <a href={p.linkedin}>LinkedIn<span class="contact-detail"> / NewmanB</span></a>
+            <a class="phone-link" href={`tel:${p.phone}`}>{p.phone}</a>
+          </div>
+          <a class="resume-badge" href={p.pdf} download>Resume PDF <span aria-hidden="true">↓</span></a>
+          <div class="side-disc" aria-hidden="true"><span>BN</span></div>
+        </aside>
+        <main id="main" class="portal-center" tabindex="-1" aria-label="Resume desktop">
+          <DesktopWindow id="profile" title="Bryson Newman - address book" icon="profile" open>
+          <div class="addressbook-toolbar"><a href={`mailto:${p.email}`}><DesktopIcon kind="profile" /> send mail</a><a href={p.pdf} download><DesktopIcon /> save resume</a></div>
+          <section class="portal-feature">
+            <div class="feature-art">
+              <div class="feature-checks" aria-hidden="true"></div>
+              <h2>Hey,<br />I'm Bryson<span aria-hidden="true">!</span></h2>
+              <span class="portrait-star" aria-hidden="true">✷</span>
+              <Image src={portrait} width={192} format="webp" quality={85} alt="Bryson Newman smiling" class="portrait" loading="eager" />
+              <div class="portrait-scanlines" aria-hidden="true"></div>
+            </div>
+            <div class="feature-copy"><p>{p.intro}</p><nav class="work-shortcuts" aria-label="Featured work"><a href="#window-experience" data-open-window="experience" data-open-job="0"><DesktopIcon /><span><strong>AI-assisted STIG remediation</strong><small>Llama 3.0 / Python / PowerShell</small></span><span aria-hidden="true">→</span></a><a href="#window-projects" data-open-window="projects"><DesktopIcon kind="profile" /><span><strong>Atari 2600+ Sideloader</strong><small>C / Python / ARM Linux</small></span><span aria-hidden="true">→</span></a></nav><dl class="contact-card-fields"><div><dt>email</dt><dd><a href={`mailto:${p.email}`}>{p.email}</a></dd></div><div><dt>location</dt><dd>Clemson, SC</dd></div><div><dt>online</dt><dd><a href={p.github}>GitHub</a> / <a href={p.linkedin}>LinkedIn</a></dd></div></dl></div>
+          </section>
+          <div class="mobile-credentials"><Credentials idSuffix="-mobile" /></div>
+          </DesktopWindow>
+          <DesktopWindow id="experience" title="Experience - Windows Explorer" offset={28}><ExperienceExplorer /></DesktopWindow>
+          <DesktopWindow id="projects" title="Projects - Atari 2600+ Sideloader" icon="profile" offset={34}><Project /></DesktopWindow>
+          <DesktopWindow id="cyber-team" title="Cyber defense - remote connection" icon="shield" offset={40}><CyberConnection /></DesktopWindow>
+        </main>
+        <aside class="portal-right" aria-label="Education and skills"><Credentials idSuffix="-sidebar" /></aside>
+      </div>
+      <footer class="portal-footer"><div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><button type="button" id="lofi-toggle" aria-pressed="true">lo-fi on</button><button type="button" id="motion-toggle" aria-pressed="false" aria-label="Pause animations">Motion on <span aria-hidden="true">Ⅱ</span></button></footer>
+    </div>
+    <noscript><style is:inline>
+      .portal-center { overflow: auto; }
+      .portal-center .xp-window, .portal-center .xp-window[hidden] { display: block !important; position: relative; inset: auto !important; width: auto !important; height: auto !important; margin: 10px; }
+      .window-content { overflow: visible; }
+      .portal-center .explorer-job[hidden] { display: block !important; }
+      .explorer-app, .explorer-layout { display: block; height: auto; }
+      .explorer-document { overflow: visible; }
+      .explorer-tasks, .explorer-toolbar button { display: none; }
+      .window-controls { display: none !important; }
+    </style></noscript>
+    <script>
+      const lofiButton = document.querySelector<HTMLButtonElement>('#lofi-toggle');
+      let lofi = true;
+      try { lofi = localStorage.getItem('bryson-lofi') !== 'off'; } catch {}
+      function setLofi() {
+        document.body.dataset.lofi = lofi ? 'on' : 'off';
+        lofiButton?.setAttribute('aria-pressed', String(lofi));
+        if (lofiButton) lofiButton.textContent = lofi ? 'lo-fi on' : 'lo-fi off';
+      }
+      setLofi();
+      lofiButton?.addEventListener('click', () => {
+        lofi = !lofi;
+        setLofi();
+        try { localStorage.setItem('bryson-lofi', lofi ? 'on' : 'off'); } catch {}
+      });
+      const motionButton = document.querySelector<HTMLButtonElement>('#motion-toggle');
+      const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let savedMotion: string | null = null;
+      try { savedMotion = localStorage.getItem('bryson-motion'); } catch {}
+      let paused = motionPreference.matches || savedMotion === 'paused';
+      const setMotion = () => {
+        if (motionPreference.matches) paused = true;
+        document.body.dataset.motion = paused ? 'paused' : 'playing';
+        if (motionButton) motionButton.disabled = motionPreference.matches;
+        motionButton?.setAttribute('aria-pressed', String(paused));
+        motionButton?.setAttribute('aria-label', paused ? (motionPreference.matches ? 'Motion off: reduced-motion preference' : 'Motion off: play animations') : 'Motion on: pause animations');
+        if (motionButton) motionButton.textContent = paused ? 'Motion off ▷' : 'Motion on Ⅱ';
+      };
+      setMotion();
+      motionButton?.addEventListener('click', () => {
+        paused = !paused;
+        setMotion();
+        try { localStorage.setItem('bryson-motion', paused ? 'paused' : 'playing'); } catch {}
+      });
+      motionPreference.addEventListener('change', () => { paused = motionPreference.matches; setMotion(); });
+
+    </script>
+    <script>import '../scripts/desktop';</script>

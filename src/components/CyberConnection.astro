@@ -1,0 +1,13 @@
+---
+import DesktopIcon from './DesktopIcon.astro';
+import { profile as p } from '../data/profile';
+---
+<div class="connection-app">
+  <div class="connection-banner"><DesktopIcon kind="profile" /><h3>cyber defense<br /><strong>connection</strong></h3></div>
+  <div class="connection-body">
+    <dl class="connection-properties"><div><dt>team</dt><dd>{p.team.title}</dd></div><div><dt>role</dt><dd>{p.team.role}</dd></div><div><dt>since</dt><dd>{p.team.dates}</dd></div></dl>
+    <p class="connection-context">{p.team.context}</p>
+    <details class="lab-notes" open><summary>lab notes</summary><ul>{p.team.bullets.map(bullet => <li>{bullet}</li>)}</ul></details>
+    <div class="connection-actions"><a href={`mailto:${p.email}`}>get in touch</a><a href={p.pdf}>view resume</a></div>
+  </div>
+</div>
