@@ -22,6 +22,7 @@ import { profile as p } from '../data/profile';
     <div class="portal-shell">
       <header class="portal-header">
         <div class="speaker speaker-left" aria-hidden="true"></div>
+        <img class="header-portrait" src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/bryson-icon.png`} alt="" aria-hidden="true" width="68" height="68" />
         <h1 class="wordmark">Bryson<br /><span>Newman</span></h1>
         <div class="speaker speaker-right" aria-hidden="true"></div>
         <span class="header-star" aria-hidden="true">✦</span>
@@ -46,7 +47,7 @@ import { profile as p } from '../data/profile';
         </aside>
         <main id="main" class="portal-center" tabindex="-1" aria-label="Resume desktop">
           <DesktopWindow id="profile" title="Bryson Newman - address book" icon="profile" open>
-          <div class="addressbook-toolbar"><a href={`mailto:${p.email}`}><DesktopIcon kind="profile" /> send mail</a><a href={p.pdf} download><DesktopIcon /> save resume</a></div>
+          <div class="addressbook-toolbar"><a href={`mailto:${p.email}`}><DesktopIcon kind="profile" /> Send mail</a><a href={p.pdf} download><DesktopIcon /> Save resume</a></div>
           <section class="portal-feature">
             <div class="feature-art">
               <div class="feature-checks" aria-hidden="true"></div>
@@ -55,7 +56,7 @@ import { profile as p } from '../data/profile';
               <Image src={portrait} width={192} format="webp" quality={85} alt="Bryson Newman smiling" class="portrait" loading="eager" />
               <div class="portrait-scanlines" aria-hidden="true"></div>
             </div>
-            <div class="feature-copy"><p>{p.intro}</p><nav class="work-shortcuts" aria-label="Featured work"><a href="#window-experience" data-open-window="experience" data-open-job="0"><DesktopIcon /><span><strong>AI-assisted STIG remediation</strong><small>Llama 3.0 / Python / PowerShell</small></span><span aria-hidden="true">→</span></a><a href="#window-projects" data-open-window="projects"><DesktopIcon kind="profile" /><span><strong>Atari 2600+ Sideloader</strong><small>C / Python / ARM Linux</small></span><span aria-hidden="true">→</span></a></nav><dl class="contact-card-fields"><div><dt>email</dt><dd><a href={`mailto:${p.email}`}>{p.email}</a></dd></div><div><dt>location</dt><dd>Clemson, SC</dd></div><div><dt>online</dt><dd><a href={p.github}>GitHub</a> / <a href={p.linkedin}>LinkedIn</a></dd></div></dl></div>
+            <div class="feature-copy"><p>{p.intro}</p><nav class="work-shortcuts" aria-label="Featured work"><a href="#window-experience" data-open-window="experience" data-open-job="0"><DesktopIcon /><span><strong>AI-assisted STIG remediation</strong><small>Llama 3.0 / Python / PowerShell</small></span><span aria-hidden="true">→</span></a><a href="#window-projects" data-open-window="projects"><DesktopIcon kind="profile" /><span><strong>Atari 2600+ Sideloader</strong><small>C / Python / ARM Linux</small></span><span aria-hidden="true">→</span></a></nav><dl class="contact-card-fields"><div><dt>Email</dt><dd><a href={`mailto:${p.email}`}>{p.email}</a></dd></div><div><dt>Location</dt><dd>Clemson, SC</dd></div><div><dt>Online</dt><dd><a href={p.github}>GitHub</a> / <a href={p.linkedin}>LinkedIn</a></dd></div></dl></div>
           </section>
           <div class="mobile-credentials"><Credentials idSuffix="-mobile" /></div>
           </DesktopWindow>
@@ -65,7 +66,7 @@ import { profile as p } from '../data/profile';
         </main>
         <aside class="portal-right" aria-label="Education and skills"><Credentials idSuffix="-sidebar" /></aside>
       </div>
-      <footer class="portal-footer"><div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><button type="button" id="lofi-toggle" aria-pressed="true">lo-fi on</button><button type="button" id="motion-toggle" aria-pressed="false" aria-label="Pause animations">Motion on <span aria-hidden="true">Ⅱ</span></button></footer>
+      <footer class="portal-footer"><div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><button type="button" id="lofi-toggle" aria-pressed="true">Lo-fi on</button><button type="button" id="motion-toggle" aria-pressed="false" aria-label="Pause animations">Motion on <span aria-hidden="true">Ⅱ</span></button></footer>
     </div>
     <noscript><style is:inline>
       .portal-center { overflow: auto; }
@@ -84,7 +85,7 @@ import { profile as p } from '../data/profile';
       function setLofi() {
         document.body.dataset.lofi = lofi ? 'on' : 'off';
         lofiButton?.setAttribute('aria-pressed', String(lofi));
-        if (lofiButton) lofiButton.textContent = lofi ? 'lo-fi on' : 'lo-fi off';
+        if (lofiButton) lofiButton.textContent = lofi ? 'Lo-fi on' : 'Lo-fi off';
       }
       setLofi();
       lofiButton?.addEventListener('click', () => {

@@ -1,18 +1,18 @@
 ---
 import DesktopIcon from './DesktopIcon.astro';
 import { profile as p } from '../data/profile';
-const labels = ['AI / STIG capstone', 'offensive security', 'security operations', 'service desk'];
+const labels = ['AI / STIG capstone', 'Offensive security', 'Security operations', 'Service desk'];
 ---
 <div class="explorer-app">
   <div class="explorer-toolbar">
-    <button type="button" data-explorer-back disabled><span aria-hidden="true">◀</span> back</button>
-    <button type="button" data-explorer-forward disabled><span aria-hidden="true">▶</span> forward</button>
-    <a href={p.pdf} download><DesktopIcon /> resume</a>
+    <button type="button" data-explorer-back disabled><span aria-hidden="true">◀</span> Back</button>
+    <button type="button" data-explorer-forward disabled><span aria-hidden="true">▶</span> Forward</button>
+    <a href={p.pdf} download><DesktopIcon /> Resume</a>
   </div>
-  <div class="explorer-address"><span>address</span><div><DesktopIcon /><span>my computer / experience / <span data-explorer-path>{labels[0]}</span></span></div></div>
+  <div class="explorer-address"><span>Address</span><div><DesktopIcon /><span>My computer / Experience / <span data-explorer-path>{labels[0]}</span></span></div></div>
   <div class="explorer-layout">
     <nav class="explorer-tasks" aria-label="Career folders">
-      <h3>work folders</h3>
+      <h3>Work folders</h3>
       <div role="tablist" aria-label="Careers" aria-orientation="vertical">{p.jobs.map((job, index) => <button type="button" role="tab" data-job={index} id={`career-tab-${index}`} aria-controls={`career-${index}`} aria-selected={index === 0} tabindex={index === 0 ? 0 : -1} title={job.title}><DesktopIcon /><span>{labels[index]}</span></button>)}</div>
     </nav>
     <div class="explorer-document">

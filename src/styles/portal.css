@@ -12,7 +12,6 @@
   overflow: hidden;
   color: #fff;
   font: 400 14px/1.4 var(--body-font);
-  text-transform: lowercase;
   background: #34323b;
   background-image: url("/images/graffiti-wall.svg");
   background-size: 540px 540px;
@@ -23,9 +22,6 @@
   outline: 3px solid var(--yellow);
   outline-offset: -4px;
   box-shadow: inset 0 0 0 6px #000;
-}
-.portal button {
-  text-transform: lowercase;
 }
 .portal-shell {
   position: relative;
@@ -2048,4 +2044,38 @@
   .project-cabinet { grid-template-columns: minmax(0, 2fr) minmax(170px, 1fr); }
   .project-console { grid-template-columns: 1fr; }
   .project-marquee, .project-console .technology-list { grid-column: auto; }
+}
+
+.header-portrait {
+  position: absolute;
+  z-index: 2;
+  left: calc(50% - 240px);
+  top: 26px;
+  width: 68px;
+  height: 68px;
+  border: 3px solid #000;
+  border-radius: 50%;
+  box-shadow: 3px 3px 0 var(--pink), 5px 5px 0 #000;
+  animation: portrait-bounce 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes portrait-bounce {
+  0% { transform: translate(0, 0) rotate(-12deg); }
+  50% { transform: translate(-22px, 42px) rotate(8deg); }
+  100% { transform: translate(12px, 65px) rotate(-8deg); }
+}
+@media (max-width: 760px), (max-height: 500px) {
+  .header-portrait { left: calc(50% - 170px); top: 16px; width: 48px; height: 48px; }
+  @keyframes portrait-bounce {
+    0% { transform: translate(0, 0) rotate(-12deg); }
+    50% { transform: translate(-12px, 25px) rotate(8deg); }
+    100% { transform: translate(8px, 42px) rotate(-8deg); }
+  }
+}
+@media (max-height: 600px) and (max-width: 760px), (max-height: 500px) {
+  .header-portrait { top: 7px; width: 36px; height: 36px; }
+  @keyframes portrait-bounce {
+    0% { transform: translate(0, 0) rotate(-12deg); }
+    100% { transform: translate(8px, 25px) rotate(8deg); }
+  }
 }
