@@ -15,7 +15,6 @@ function initGame(ctx: CanvasRenderingContext2D) {
   const overlay = element('overlay');
   const startButton = element<HTMLButtonElement>('start');
   const pauseButton = element<HTMLButtonElement>('pause');
-  const soundButton = element<HTMLButtonElement>('sound');
   const fullscreenButton = element<HTMLButtonElement>('fullscreen');
   const fullscreenFrame = dialog.querySelector<HTMLElement>('.dead-air-frame')!;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -41,7 +40,6 @@ function initGame(ctx: CanvasRenderingContext2D) {
   let spawnIn = 0.8;
   let previousGap = -Math.PI / 2;
   let seed = 2026;
-  let beat = -1;
   let waves: Wave[] = [];
   let sparks: Spark[] = [];
   const keys = new Set<string>();
@@ -49,28 +47,10 @@ function initGame(ctx: CanvasRenderingContext2D) {
   let animation = 0;
   let lastFrame = 0;
   let manualClock = false;
-  let sound = false;
-  let audio: AudioContext | undefined;
-  let master: GainNode | undefined;
   const quietMotion = () => reducedMotion.matches || document.body.dataset.motion === 'paused';
   const wrap = (a: number) => Math.atan2(Math.sin(a), Math.cos(a));
   const random = () => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 4294967296; };
   try { best = Math.max(0, Number(localStorage.getItem('bryson-dead-air-best')) || 0); } catch {}
-
-  function tone(frequency: number, length: number, type: OscillatorType = 'triangle', volume = 0.035) {
-    if (!sound || !audio || !master || audio.state !== 'running') return;
-    const oscillator = audio.createOscillator();
-    const gain = audio.createGain();
-    oscillator.type = type;
-    oscillator.frequency.setValueAtTime(frequency, audio.currentTime);
-    oscillator.frequency.exponentialRampToValueAtTime(Math.max(35, frequency * 0.5), audio.currentTime + length);
-    gain.gain.setValueAtTime(volume, audio.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, audio.currentTime + length);
-    oscillator.connect(gain).connect(master);
-    oscillator.start();
-    oscillator.stop(audio.currentTime + length);
-    oscillator.onended = () => { oscillator.disconnect(); gain.disconnect(); };
-  }
 
   function clearInputs() {
     keys.clear();
@@ -113,11 +93,9 @@ function initGame(ctx: CanvasRenderingContext2D) {
     mode = 'playing';
     elapsed = 0; angle = -Math.PI / 2; lives = 3; score = 0; combo = 0;
     cooldown = 0; phasing = 0; invincible = 0; waveId = 0; spawnIn = 0.8;
-    previousGap = angle; seed = 2026; beat = -1; waves = []; sparks = [];
+    previousGap = angle; seed = 2026; waves = []; sparks = [];
     clearInputs(); panel(); canvas.focus({ preventScroll: true });
-    void audio?.resume().catch(() => {});
-    if (master && audio) master.gain.setValueAtTime(sound ? 1 : 0, audio.currentTime);
-    tone(220, .2); runLoop();
+    runLoop();
   }
 
   function finish(result: 'won' | 'lost') {
@@ -126,18 +104,15 @@ function initGame(ctx: CanvasRenderingContext2D) {
     best = Math.max(best, score);
     try { localStorage.setItem('bryson-dead-air-best', String(best)); } catch {}
     clearInputs(); panel();
-    tone(result === 'won' ? 880 : 65, .5, 'sawtooth', .025);
   }
 
   function pause() {
     if (mode !== 'playing') return;
     mode = 'paused'; clearInputs(); cancelAnimationFrame(animation); panel(); render();
-    if (master && audio) master.gain.setValueAtTime(0, audio.currentTime);
   }
 
   function resume() {
     mode = 'playing'; panel(); canvas.focus({ preventScroll: true });
-    if (master && audio) master.gain.setValueAtTime(sound ? 1 : 0, audio.currentTime);
     runLoop();
   }
 
@@ -145,7 +120,7 @@ function initGame(ctx: CanvasRenderingContext2D) {
     if (mode !== 'playing' || cooldown > 0) return;
     phasing = .5; cooldown = phaseCooldown;
     burst(Math.cos(angle) * orbit, Math.sin(angle) * orbit, colors.teal, 12);
-    tone(420, .22, 'sawtooth', .025); hud();
+    hud();
   }
 
   function burst(x: number, y: number, color: string, count: number) {
@@ -174,8 +149,6 @@ function initGame(ctx: CanvasRenderingContext2D) {
     invincible = Math.max(0, invincible - dt);
     spawnIn -= dt;
     if (spawnIn <= 0 && elapsed < duration - 1.8) spawnWave();
-    const nextBeat = Math.floor(elapsed * (elapsed < 15 ? 2.5 : elapsed < 30 ? 3 : 3.5));
-    if (nextBeat !== beat) { beat = nextBeat; tone(beat % 4 === 0 ? 95 : 55, .1, 'triangle', .045); }
     for (const wave of waves) {
       const before = wave.radius;
       wave.radius -= wave.speed * dt;
@@ -187,13 +160,11 @@ function initGame(ctx: CanvasRenderingContext2D) {
           combo = Math.min(8, combo + 1);
           score += 100 * combo;
           if (distance < .2) { score += 150; burst(Math.cos(angle) * orbit, Math.sin(angle) * orbit, colors.yellow, 10); }
-          tone(350 + combo * 65, .12);
         } else if (phasing > 0 || invincible > 0) {
           score += 50; combo = 0;
         } else {
           lives--; combo = 0; invincible = 1.2;
           burst(Math.cos(angle) * orbit, Math.sin(angle) * orbit, colors.pink, 16);
-          tone(60, .3, 'sawtooth', .04);
           element('announcement').textContent = `${lives} signal ${lives === 1 ? 'life' : 'lives'} left.`;
           if (lives <= 0) { finish('lost'); return; }
         }
@@ -340,7 +311,6 @@ function initGame(ctx: CanvasRenderingContext2D) {
   dialog.addEventListener('close', async () => {
     cancelAnimationFrame(animation); clearInputs();
     if (mode === 'playing') mode = 'paused';
-    if (master && audio) master.gain.setValueAtTime(0, audio.currentTime);
     if (document.fullscreenElement === fullscreenFrame) await document.exitFullscreen().catch(() => {});
     launcher.focus({ preventScroll: true });
   });
@@ -379,15 +349,6 @@ function initGame(ctx: CanvasRenderingContext2D) {
     fullscreenButton.textContent = document.fullscreenElement === fullscreenFrame ? 'Exit full screen' : 'Full screen';
     if (!document.fullscreenElement && !dialog.open) launcher.focus({ preventScroll: true });
   });
-  soundButton.addEventListener('click', async () => {
-    try {
-      if (!audio) { audio = new AudioContext(); master = audio.createGain(); master.connect(audio.destination); }
-      await audio.resume(); sound = !sound;
-      master!.gain.setValueAtTime(sound ? 1 : 0, audio.currentTime);
-      soundButton.setAttribute('aria-pressed', String(sound)); soundButton.textContent = sound ? 'Sound on' : 'Sound off';
-      if (sound) tone(330, .12);
-    } catch { element('announcement').textContent = 'Sound is unavailable in this browser.'; }
-  });
   dialog.addEventListener('keydown', event => {
     if (['ArrowLeft', 'ArrowRight', 'KeyA', 'KeyD'].includes(event.code) && mode === 'playing') { event.preventDefault(); keys.add(event.code); canvas.focus({ preventScroll: true }); }
     else if (event.code === 'Space' && !(event.target instanceof HTMLButtonElement)) { event.preventDefault(); if (!event.repeat) phase(); }
@@ -405,7 +366,7 @@ function initGame(ctx: CanvasRenderingContext2D) {
     elapsed: +elapsed.toFixed(3), remaining: +(duration - elapsed).toFixed(3), lives, score, best, combo,
     player: { x: +(canvas.width / 2 + Math.cos(angle) * orbit).toFixed(2), y: +(canvas.height / 2 + Math.sin(angle) * orbit).toFixed(2), angle: +angle.toFixed(4), orbit, turnSpeed: 3.6, phase: +phasing.toFixed(3), cooldown: +cooldown.toFixed(3), invincible: +invincible.toFixed(3) },
     waves: waves.map(w => ({ ...w, radius: +w.radius.toFixed(2), gap: +w.gap.toFixed(4), contactIn: +((w.radius - orbit) / w.speed).toFixed(3) })),
-    reducedMotion: quietMotion(), sound,
+    reducedMotion: quietMotion(),
   });
   // Explicit test stepping takes over the clock so wall time cannot alter a run.
   gameWindow.advanceTime = (ms: number) => {

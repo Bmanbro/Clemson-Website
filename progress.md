@@ -26,3 +26,10 @@ Original prompt: Make the moving Bryson icon beside the name open an intense, ab
 - Verified full-screen entry/exit, Escape during play, closing while full-screen, and launcher focus restoration after the asynchronous exit.
 - Confirmed reduced-motion preferences (system and saved), desktop minimize/restore and keyboard movement, the existing PDF URL, and all résumé windows without JavaScript.
 - Local test scripts, screenshots, and state artifacts are in `/tmp/dead-air-qa/`. No outstanding TODOs.
+
+## Audio removal (2026-11-05)
+
+- Request: remove all volume and audio buttons; no audio on the site.
+- Removed the footer radio component, YouTube playback script, volume slider, player controls, and equalizer styles.
+- Removed the game sound toggle and all Web Audio synthesis and playback code.
+- Verified `pnpm build` and `git diff --check`. Inspected desktop (1440×900), mobile (390×844), and short landscape (844×390) browser screenshots. No audio controls, media embeds, or YouTube requests remain. Game start, steering, phase, pause/resume, and close pass without browser errors. Ran the skill game client and inspected its gameplay screenshot and state. No outstanding TODOs.
