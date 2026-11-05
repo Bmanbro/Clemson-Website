@@ -15,6 +15,7 @@ import DesktopWindow from './DesktopWindow.astro';
 import DesktopIcon from './DesktopIcon.astro';
 import Credentials from './Credentials.astro';
 import DeadAir from './DeadAir.astro';
+import Radio from './Radio.astro';
 import { profile as p } from '../data/profile';
 ---
     <svg class="render-filters" width="0" height="0" aria-hidden="true"><defs><filter id="low-color" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="discrete" tableValues="0 .067 .133 .2 .267 .333 .4 .467 .533 .6 .667 .733 .8 .867 .933 1" /><feFuncG type="discrete" tableValues="0 .067 .133 .2 .267 .333 .4 .467 .533 .6 .667 .733 .8 .867 .933 1" /><feFuncB type="discrete" tableValues="0 .067 .133 .2 .267 .333 .4 .467 .533 .6 .667 .733 .8 .867 .933 1" /></feComponentTransfer></filter></defs></svg>
@@ -69,7 +70,7 @@ import { profile as p } from '../data/profile';
         <aside class="portal-right" aria-label="Education and skills"><Credentials idSuffix="-sidebar" /></aside>
       </div>
       <footer class="portal-footer">
-        <div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <Radio />
         <button type="button" id="lofi-toggle" aria-pressed="true" aria-label="Lo-fi visual effect" title="Toggle the pixel grid and reduced colors" hidden>Lo-fi on</button>
         <button type="button" id="motion-toggle" aria-pressed="true" aria-label="Animations" hidden>Motion on Ⅱ</button>
       </footer>

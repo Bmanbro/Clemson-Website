@@ -1,3 +1,5 @@
+export {};
+
 const lofiButton = document.querySelector<HTMLButtonElement>('#lofi-toggle');
 const motionButton = document.querySelector<HTMLButtonElement>('#motion-toggle');
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
