@@ -2,6 +2,8 @@
 
 A personal resume site built with Astro, styled as an early-2000s desktop.
 
+The résumé PDF lives at [`public/documents/resume.pdf`](public/documents/resume.pdf). Keep that copy in sync with `src/data/profile.ts`.
+
 ```sh
 pnpm install
 pnpm exec astro dev --background
