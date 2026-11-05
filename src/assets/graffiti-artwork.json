@@ -1,0 +1,21 @@
+{
+  "generator": "Built-in image_gen",
+  "created": "2026-11-04",
+  "assets": [
+    {
+      "file": "graffiti-wall.webp",
+      "prompt": "Use case: stylized-concept. Asset: wide 3:2 background mural for an early-2000s personal website, not a website mockup. Create one beautifully art-directed ABSTRACT graffiti and wheatpaste collage mural, straight-on, full bleed. Think Gorillaz's grimy urban music-video atmosphere, Jet Set Radio's gestural rhythm, underground skate zines, hand-painted album-sleeve artwork. NO characters, faces, people, logos, words or readable lettering. The subject is the PAINT ITSELF: huge interlocking angular calligraphic shapes, rounded black brush loops, broken off-white ink strokes, half-erased tags that do not spell anything, a few long pigment drips, fragments of old torn screen-printed posters, controlled paint mist. Strong black ink shapes with irregular edges; scuffed concrete showing through. Composition: asymmetrical, panoramic flowing diagonal gestures, broad rather than tiny repetitive marks; dark central breathing space; particularly rich cropped marks on the right third and left edge that will show around overlapping windows. A bold dusty-pink angular painted loop on the right, desaturated teal gestural slash crossing left/middle, small mustard yellow blocks as punctuation. Palette locked: dark charcoal #28272d, smoky plum #785c88, gray-green #354f4d, muted teal #498e96, dusty bubblegum #cc78a0, mustard #d5c65d, worn paper #ded9c5. Mostly DARK charcoal and weathered gray-green, with very intentional restrained pastel accents. Handmade printmaking and brushed ink; flat cel-shaded masses, subtle halftone wear, uneven registration, physical paint layering. Sophisticated music art, pleasing balance, rich texture at close inspection but bold readable at thumbnail scale. Not a repeating pattern, no small uniform stickers, no checkerboard wallpaper, no generic neon spray art, no rainbow colors, no glossy gradients, no legible typography, no skulls, no literal objects, no perspective, no border. Landscape image, high quality. Output only the mural."
+    },
+    {
+      "file": "graffiti-paper.webp",
+      "reference": "graffiti-wall.webp",
+      "prompt": "Use case: stylized-concept. The supplied image is a STYLE AND PALETTE REFERENCE, not an edit target. Generate a distinct companion background artwork for the portrait banner of an early-2000s personal website. Wide landscape 3:2. An ABSTRACT graffiti-painted wheatpaste wall, with the underground comic-book and music-video atmosphere associated with Gorillaz and Jet Set Radio. NO characters, people, faces, words, legible lettering, logos or literal objects. Pale worn paper and faded mustard-yellow paint dominate this piece, contrasting with the darker supplied mural. Use beautifully composed broad ink gestures and angular spray-painted forms: a huge dusty teal partially erased shape at the left edge, a dusty-pink arc cut off by the upper right edge, charcoal looping brushwork concentrated at the lower edge, fragmented smoky-plum screen-print scraps, mustard washes, short fine drips and torn off-white paper seams. Large asymmetrical masses with bold flat inked edges, slight offset-print misregistration, dry-brush gaps, real paint overspray, paper and concrete texture. The middle-left area (where a white headline with heavy black outline will be placed) should be mostly calm warm pale yellow, bone paper and gray-green, medium-to-light tone, with no busy high-contrast marks directly in that area. Right third remains simple faded mustard and cream behind a person's portrait cutout; frame the edges with marks rather than placing a central focal object. Make this feel like an original art-directed music-zine collage with plenty of breathing space and strong visual rhythm, not a random grunge texture. Palette strictly weathered mustard #d5c65d, dusty bubblegum pink #cc78a0, teal #498e96, smoky plum #785c88, paper #ded9c5, charcoal #28272d. No neon, no gloss, no soft digital gradients, no starburst, no sticker pattern, no symmetric rays, no frames. Output only the flat full-bleed mural."
+    }
+  ],
+  "encoding": {
+    "format": "WebP",
+    "quality": 82,
+    "width": 1536,
+    "height": 1024
+  }
+}

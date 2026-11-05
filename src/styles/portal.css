@@ -13,8 +13,9 @@
   color: #fff;
   font: 400 14px/1.4 var(--body-font);
   background: #34323b;
-  background-image: url("/images/graffiti-wall.svg");
-  background-size: 540px 540px;
+  background-image: var(--graffiti-wall);
+  background-size: cover;
+  background-position: center;
 }
 .portal a:focus-visible,
 .portal button:focus-visible,
@@ -82,7 +83,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(ellipse at center, #8abfb5, #346a79 65%, #263e48);
+  background: #354f4d;
   border-bottom: 6px ridge #b9d2d8;
 }
 .portal-header::after {
@@ -90,14 +91,15 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: url("/images/graffiti-wall.svg") center / 420px;
-  opacity: 0.25;
+  background-image: linear-gradient(90deg, #182b2c26, #182b2c40 48%, #28272d0d), var(--graffiti-wall);
+  background-size: cover;
+  background-position: center 42%;
 }
 .portal-header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(0deg, transparent 0 3px, #0003 3px 4px);
+  background: repeating-linear-gradient(0deg, transparent 0 3px, #0002 3px 4px);
   z-index: 3;
   pointer-events: none;
 }
@@ -356,8 +358,10 @@
   overscroll-behavior: contain;
   scrollbar-color: var(--pink) #172b32;
   scrollbar-width: auto;
-  background: #34323b url("/images/graffiti-wall.svg") repeat;
-  background-size: 360px;
+  background-color: #28272d;
+  background-image: var(--graffiti-wall);
+  background-size: cover;
+  background-position: center;
   scroll-behavior: smooth;
 }
 .portal-center::-webkit-scrollbar {
@@ -387,19 +391,11 @@
   isolation: isolate;
   height: 280px;
   overflow: hidden;
-  background: var(--yellow);
+  background-color: var(--yellow);
+  background-image: var(--graffiti-paper);
+  background-size: cover;
+  background-position: center 58%;
   border-bottom: 4px solid #000;
-}
-.feature-art::before {
-  content: "";
-  position: absolute;
-  inset: -60px;
-  z-index: -1;
-  background: repeating-conic-gradient(
-    from 10deg at 70% 80%,
-    #fff5 0deg 12deg,
-    transparent 12deg 25deg
-  );
 }
 .feature-checks {
   width: 105px;

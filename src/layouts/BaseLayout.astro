@@ -1,6 +1,8 @@
 ---
 import cursorArrow from '../assets/cursor-arrow-portrait.png';
 import cursorHand from '../assets/cursor-hand-portrait.png';
+import graffitiWall from '../assets/graffiti-wall.webp';
+import graffitiPaper from '../assets/graffiti-paper.webp';
 
 interface Props {
   title: string;
@@ -27,6 +29,8 @@ const canonical = Astro.site && new URL(Astro.url.pathname, Astro.site);
     <title>{title}</title>
   </head>
   <body class="portal" data-lofi="on" style={{
+    '--graffiti-wall': `url("${graffitiWall.src}")`,
+    '--graffiti-paper': `url("${graffitiPaper.src}")`,
     '--cursor-arrow': `url("${cursorArrow.src}") 2 4, default`,
     '--cursor-hand': `url("${cursorHand.src}") 8 2, pointer`,
   }}>
