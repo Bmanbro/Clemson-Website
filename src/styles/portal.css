@@ -2057,8 +2057,13 @@
   border-radius: 50%;
   box-shadow: 3px 3px 0 var(--pink), 5px 5px 0 #000;
   animation: portrait-bounce 3s ease-in-out infinite alternate;
-  pointer-events: none;
+  padding: 0;
+  background: var(--teal);
+  cursor: var(--cursor-hand);
 }
+.header-portrait[hidden] { display: none; }
+.header-portrait img { width: 100%; height: 100%; border-radius: inherit; }
+.header-portrait:hover, .header-portrait:focus { animation-play-state: paused; }
 @keyframes portrait-bounce {
   0% { transform: translate(0, 0) rotate(-12deg); }
   50% { transform: translate(-22px, 42px) rotate(8deg); }

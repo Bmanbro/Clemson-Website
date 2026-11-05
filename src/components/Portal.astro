@@ -14,6 +14,7 @@ import CyberConnection from './CyberConnection.astro';
 import DesktopWindow from './DesktopWindow.astro';
 import DesktopIcon from './DesktopIcon.astro';
 import Credentials from './Credentials.astro';
+import DeadAir from './DeadAir.astro';
 import { profile as p } from '../data/profile';
 ---
     <svg class="render-filters" width="0" height="0" aria-hidden="true"><defs><filter id="low-color" color-interpolation-filters="sRGB"><feComponentTransfer><feFuncR type="discrete" tableValues="0 .067 .133 .2 .267 .333 .4 .467 .533 .6 .667 .733 .8 .867 .933 1" /><feFuncG type="discrete" tableValues="0 .067 .133 .2 .267 .333 .4 .467 .533 .6 .667 .733 .8 .867 .933 1" /><feFuncB type="discrete" tableValues="0 .067 .133 .2 .267 .333 .4 .467 .533 .6 .667 .733 .8 .867 .933 1" /></feComponentTransfer></filter></defs></svg>
@@ -22,7 +23,8 @@ import { profile as p } from '../data/profile';
     <div class="portal-shell">
       <header class="portal-header">
         <div class="speaker speaker-left" aria-hidden="true"></div>
-        <img class="header-portrait" src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/bryson-icon.png`} alt="" aria-hidden="true" width="68" height="68" />
+        <button class="header-portrait" id="dead-air-launch" type="button" aria-label="Play Bryson's secret game" aria-haspopup="dialog" aria-controls="dead-air" title="What's he up to?" hidden><img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/bryson-icon.png`} alt="" width="68" height="68" draggable="false" /></button>
+        <noscript><img class="header-portrait" src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/bryson-icon.png`} alt="" width="68" height="68" /></noscript>
         <h1 class="wordmark">Bryson<br /><span>Newman</span></h1>
         <div class="speaker speaker-right" aria-hidden="true"></div>
         <span class="header-star" aria-hidden="true">✦</span>
@@ -68,6 +70,7 @@ import { profile as p } from '../data/profile';
       </div>
       <footer class="portal-footer"><div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><button type="button" id="lofi-toggle" aria-pressed="true">Lo-fi on</button><button type="button" id="motion-toggle" aria-pressed="false" aria-label="Pause animations">Motion on <span aria-hidden="true">Ⅱ</span></button></footer>
     </div>
+    <DeadAir />
     <noscript><style is:inline>
       .portal-center { overflow: auto; }
       .portal-center .xp-window, .portal-center .xp-window[hidden] { display: block !important; position: relative; inset: auto !important; width: auto !important; height: auto !important; margin: 10px; }

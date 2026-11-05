@@ -4,6 +4,8 @@ A personal resume site built with Astro, styled as an early-2000s desktop.
 
 The résumé PDF lives at [`public/documents/resume.pdf`](public/documents/resume.pdf). Keep that copy in sync with `src/data/profile.ts`.
 
+Click the moving portrait beside the header name to find **Dead Air**, a 45-second orbital survival game. Use Left/Right or A/D to steer, Space to phase, P or Escape to pause, and F for full screen. Touch controls are below the arena. Sound is optional; the best score stays in your browser.
+
 ```sh
 pnpm install
 pnpm exec astro dev --background

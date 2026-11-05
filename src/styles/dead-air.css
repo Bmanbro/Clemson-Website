@@ -1,0 +1,88 @@
+.dead-air {
+  width: min(820px, calc(100vw - 24px));
+  height: min(760px, calc(100dvh - 24px));
+  max-width: none;
+  max-height: none;
+  padding: 3px;
+  overflow: hidden;
+  color: #f4f1e9;
+  background: #4d6f9e;
+  border: 2px outset #b3c8e5;
+  border-radius: 7px 7px 2px 2px;
+  box-shadow: 9px 12px 0 #0008;
+  font: 14px/1.4 var(--body-font);
+}
+.dead-air[open] { display: block; }
+.dead-air-frame { height: 100%; display: grid; grid-template-rows: 32px minmax(0, 1fr); }
+.dead-air::backdrop { background: #12171be6; }
+.dead-air .xp-titlebar { cursor: default; touch-action: auto; }
+.dead-air .window-controls button { width: 28px; height: 26px; background: linear-gradient(135deg, #e1ae9f, #985346); font-size: 23px; }
+.dead-air-deck { min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; border: 2px inset #929da6; background: #242a30; }
+.dead-air-hud { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 10px 14px; border-bottom: 3px solid #000; background: #354f5a; }
+.dead-air-hud > span { display: grid; gap: 1px; color: #e0ddd6; font-size: 11px; text-transform: lowercase; }
+.dead-air-hud strong { color: var(--yellow); font-size: 23px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.dead-air-hud > span:first-child strong { color: #e2a4c5; }
+.dead-air-stage { position: relative; min-height: 0; overflow: hidden; display: grid; place-items: center; background: #252c32; }
+.dead-air-stage canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; outline-offset: -4px; touch-action: none; }
+.dead-air-stage canvas:focus-visible { outline: 2px solid var(--yellow); }
+.portal[data-lofi="on"] .dead-air-stage canvas { image-rendering: pixelated; filter: url("#low-color"); }
+.dead-air-overlay { position: absolute; inset: 0; display: grid; place-items: safe center; padding: 18px; overflow-y: auto; background: #14191b55; }
+.dead-air-overlay[hidden], .dead-air-instructions[hidden] { display: none; }
+.dead-air-card { width: min(390px, 100%); padding: 23px 25px; color: #171a1c; background: #f4f1e9; border: 3px solid #000; box-shadow: 7px 7px 0 var(--purple), 10px 10px 0 #000; }
+.dead-air-sticker { display: inline-block; margin: -8px 0 8px -7px; padding: 3px 8px; background: var(--yellow); border: 2px solid #000; transform: rotate(-3deg); font-size: 11px; font-weight: 700; text-transform: lowercase; }
+.dead-air-card h3 { margin: 0 0 12px; color: #171a1c; font: 48px/.95 var(--tag-font); letter-spacing: -2px; text-transform: lowercase; }
+.dead-air-card p { margin: 0 0 12px; font-size: 13px; line-height: 1.45; }
+.dead-air-instructions { padding-block: 12px 3px; border-top: 2px dashed #8b8983; }
+.dead-air-instructions p { font-size: 11px; margin-bottom: 8px; }
+.dead-air kbd { display: inline-block; padding: 0 4px; border: 1px solid #7e8588; border-bottom-width: 2px; background: #fff; font: inherit; }
+.dead-air button { cursor: var(--cursor-hand); font-family: inherit; }
+.dead-air-start { width: 100%; margin-top: 5px; padding: 10px 12px; border: 2px outset #dbe5e5; background: var(--teal); color: #fff; font-size: 15px; font-weight: 700; text-shadow: 1px 1px #000; }
+.dead-air-start span { float: right; color: var(--yellow); }
+.dead-air-controls { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 7px; padding: 8px 12px; background: #b6bec3; border-top: 3px solid #000; }
+.dead-air-controls button { min-height: 47px; color: #17202b; background: linear-gradient(#faf9ed, #b0b7bc); border: 3px outset #e7ebea; font-size: 18px; font-weight: 700; touch-action: none; user-select: none; -webkit-user-select: none; }
+.dead-air-controls button span { font-size: 12px; }
+.dead-air-controls button:active, .dead-air-controls button[data-held="true"], .dead-air-start:active { border-style: inset; }
+.dead-air-controls .dead-air-phase { position: relative; background: var(--yellow); }
+.dead-air-charge { display: block; position: absolute; inset: auto 5px 3px; height: 3px; background: #0003; }
+.dead-air-charge i { display: block; height: 100%; background: #253d47; transform-origin: left; }
+.dead-air-toolbar { display: flex; align-items: center; gap: 5px; padding: 5px 8px; color: #182738; background: #e6e4dc; font-size: 11px; }
+.dead-air-toolbar > span { flex: 1; font-weight: 700; }
+.dead-air-toolbar button { min-height: 29px; padding: 3px 7px; border: 1px outset #fff; background: #eeece5; color: inherit; font-size: 11px; }
+.dead-air button:disabled { cursor: default; opacity: .6; }
+.dead-air-announcement { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.dead-air-frame:fullscreen { width: 100vw; height: 100dvh; padding: 3px; background: #4d6f9e; }
+@media (max-width: 480px) {
+  .dead-air { width: calc(100vw - 10px); height: calc(100dvh - 10px); }
+  .dead-air-hud { padding: 9px; gap: 4px; }
+  .dead-air-hud strong { font-size: 20px; }
+  .dead-air-card { padding: 19px; }
+  .dead-air-card h3 { font-size: 44px; }
+  .dead-air-controls { padding: 7px; }
+  .dead-air-toolbar { gap: 3px; padding: 5px; }
+  .dead-air-toolbar > span { font-size: 10px; }
+  .dead-air-toolbar button { padding-inline: 5px; font-size: 10px; }
+}
+@media (max-height: 500px) and (min-width: 500px) {
+  .dead-air { width: calc(100vw - 12px); height: calc(100dvh - 12px); }
+  .dead-air-deck { grid-template-columns: minmax(0, 1fr) 120px; grid-template-rows: auto minmax(0, 1fr) auto; }
+  .dead-air-hud { grid-column: 1 / -1; padding: 5px 12px; }
+  .dead-air-hud > span { display: flex; align-items: baseline; gap: 7px; }
+  .dead-air-hud strong { font-size: 18px; }
+  .dead-air-controls { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr 1fr; padding: 8px; border-top: 0; border-left: 3px solid #000; }
+  .dead-air-toolbar { grid-column: 1 / -1; }
+  .dead-air-overlay { padding: 9px 16px; }
+  .dead-air-card { width: min(480px, 100%); padding: 10px 16px; }
+  .dead-air-card h3 { font-size: 31px; margin-bottom: 7px; }
+  .dead-air-sticker { margin: 0 0 5px; font-size: 10px; padding: 1px 6px; }
+  .dead-air-card p { font-size: 11px; margin-bottom: 5px; }
+  .dead-air-instructions { padding: 5px 0 0; }
+  .dead-air-instructions p { display: inline; margin-right: 6px; font-size: 10px; }
+  .dead-air-instructions p:last-child { display: none; }
+  .dead-air-start { padding: 6px 10px; font-size: 12px; }
+}
+@media (max-width: 360px) {
+  .dead-air-card { padding: 14px; }
+  .dead-air-card h3 { font-size: 38px; margin-bottom: 8px; }
+  .dead-air-card p { font-size: 12px; margin-bottom: 8px; }
+  .dead-air-instructions p { font-size: 10px; }
+}

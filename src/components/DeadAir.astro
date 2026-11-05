@@ -1,0 +1,45 @@
+---
+import DesktopIcon from './DesktopIcon.astro';
+import '../styles/dead-air.css';
+---
+<dialog id="dead-air" class="dead-air is-active" aria-labelledby="dead-air-title" aria-describedby="dead-air-description">
+  <div class="dead-air-frame is-active">
+  <div class="xp-titlebar">
+    <DesktopIcon kind="shield" /><h2 id="dead-air-title">Dead Air.exe</h2>
+    <div class="window-controls"><button type="button" data-game-close aria-label="Close Dead Air" title="Close"><span aria-hidden="true">×</span></button></div>
+  </div>
+  <div class="dead-air-deck">
+    <div class="dead-air-hud" aria-label="Game status">
+      <span>Signal <strong data-game-lives>3 / 3</strong></span>
+      <span>Score <strong data-game-score>00000</strong></span>
+      <span>Escape <strong data-game-time>45.0s</strong></span>
+      <span>Best <strong data-game-best>00000</strong></span>
+    </div>
+    <div class="dead-air-stage">
+      <canvas width="720" height="520" tabindex="0" aria-label="Dead Air arena. Move with left and right arrows or A and D. Space to phase. P or Escape to pause. F for full screen.">Dead Air requires a browser with canvas support.</canvas>
+      <div class="dead-air-overlay" data-game-overlay>
+        <div class="dead-air-card">
+          <span class="dead-air-sticker" data-game-caption>You've found the B-side</span>
+          <h3 data-game-heading>Dead Air</h3>
+          <p id="dead-air-description" data-game-description>You're the needle. The world is a broken record. Slip through the gaps. Survive 45 seconds.</p>
+          <div class="dead-air-instructions" data-game-instructions><p><kbd>←</kbd> <kbd>→</kbd> / <kbd>A</kbd> <kbd>D</kbd> to orbit</p><p><kbd>Space</kbd> to phase through a wall</p><p>Gold diamonds build your combo. Three hits and the signal dies. Touch controls below.</p></div>
+          <button type="button" class="dead-air-start" data-game-start>Drop the needle <span aria-hidden="true">▶</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="dead-air-controls">
+      <button type="button" data-game-turn="-1" aria-label="Orbit counterclockwise">↶ <span>Left</span></button>
+      <button type="button" class="dead-air-phase" data-game-phase aria-label="Phase through a wall"><span data-game-phase-label>Phase ready</span><span class="dead-air-charge" aria-hidden="true"><i></i></span></button>
+      <button type="button" data-game-turn="1" aria-label="Orbit clockwise"><span>Right</span> ↷</button>
+    </div>
+    <div class="dead-air-toolbar">
+      <span data-game-act>B-side / 45 seconds</span>
+      <button type="button" data-game-pause disabled>Pause</button>
+      <button type="button" data-game-sound aria-pressed="false">Sound off</button>
+      <button type="button" data-game-fullscreen>Full screen</button>
+    </div>
+    <p class="dead-air-announcement" role="status" aria-live="polite" data-game-announcement></p>
+  </div>
+  </div>
+</dialog>
+<script>import '../scripts/dead-air';</script>
