@@ -349,6 +349,7 @@
 }
 .portal-center {
   position: relative;
+  isolation: isolate;
   min-height: 0;
   overflow: hidden;
   overscroll-behavior: contain;
@@ -518,6 +519,8 @@
   padding: 3px 5px;
 }
 .portal-footer {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -560,6 +563,8 @@
 .portal[data-motion="paused"] *::before,
 .portal[data-motion="paused"] *::after {
   animation-play-state: paused !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
 }
 .portal[data-motion="paused"] .portal-center {
   scroll-behavior: auto;

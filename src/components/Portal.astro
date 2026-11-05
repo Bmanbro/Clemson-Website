@@ -68,7 +68,11 @@ import { profile as p } from '../data/profile';
         </main>
         <aside class="portal-right" aria-label="Education and skills"><Credentials idSuffix="-sidebar" /></aside>
       </div>
-      <footer class="portal-footer"><div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><button type="button" id="lofi-toggle" aria-pressed="true">Lo-fi on</button><button type="button" id="motion-toggle" aria-pressed="false" aria-label="Pause animations">Motion on <span aria-hidden="true">Ⅱ</span></button></footer>
+      <footer class="portal-footer">
+        <div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <button type="button" id="lofi-toggle" aria-pressed="true" aria-label="Lo-fi visual effect" title="Toggle the pixel grid and reduced colors" hidden>Lo-fi on</button>
+        <button type="button" id="motion-toggle" aria-pressed="true" aria-label="Animations" hidden>Motion on Ⅱ</button>
+      </footer>
     </div>
     <DeadAir />
     <noscript><style is:inline>
@@ -81,41 +85,5 @@ import { profile as p } from '../data/profile';
       .explorer-tasks, .explorer-toolbar button { display: none; }
       .window-controls { display: none !important; }
     </style></noscript>
-    <script>
-      const lofiButton = document.querySelector<HTMLButtonElement>('#lofi-toggle');
-      let lofi = true;
-      try { lofi = localStorage.getItem('bryson-lofi') !== 'off'; } catch {}
-      function setLofi() {
-        document.body.dataset.lofi = lofi ? 'on' : 'off';
-        lofiButton?.setAttribute('aria-pressed', String(lofi));
-        if (lofiButton) lofiButton.textContent = lofi ? 'Lo-fi on' : 'Lo-fi off';
-      }
-      setLofi();
-      lofiButton?.addEventListener('click', () => {
-        lofi = !lofi;
-        setLofi();
-        try { localStorage.setItem('bryson-lofi', lofi ? 'on' : 'off'); } catch {}
-      });
-      const motionButton = document.querySelector<HTMLButtonElement>('#motion-toggle');
-      const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-      let savedMotion: string | null = null;
-      try { savedMotion = localStorage.getItem('bryson-motion'); } catch {}
-      let paused = motionPreference.matches || savedMotion === 'paused';
-      const setMotion = () => {
-        if (motionPreference.matches) paused = true;
-        document.body.dataset.motion = paused ? 'paused' : 'playing';
-        if (motionButton) motionButton.disabled = motionPreference.matches;
-        motionButton?.setAttribute('aria-pressed', String(paused));
-        motionButton?.setAttribute('aria-label', paused ? (motionPreference.matches ? 'Motion off: reduced-motion preference' : 'Motion off: play animations') : 'Motion on: pause animations');
-        if (motionButton) motionButton.textContent = paused ? 'Motion off ▷' : 'Motion on Ⅱ';
-      };
-      setMotion();
-      motionButton?.addEventListener('click', () => {
-        paused = !paused;
-        setMotion();
-        try { localStorage.setItem('bryson-motion', paused ? 'paused' : 'playing'); } catch {}
-      });
-      motionPreference.addEventListener('change', () => { paused = motionPreference.matches; setMotion(); });
-
-    </script>
+    <script>import '../scripts/preferences';</script>
     <script>import '../scripts/desktop';</script>

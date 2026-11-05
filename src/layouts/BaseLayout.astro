@@ -30,6 +30,21 @@ const canonical = Astro.site && new URL(Astro.url.pathname, Astro.site);
     '--cursor-arrow': `url("${cursorArrow.src}") 2 4, default`,
     '--cursor-hand': `url("${cursorHand.src}") 8 2, pointer`,
   }}>
+    <script is:inline>
+      // Apply preferences before any visible content is painted.
+      (() => {
+        let lofi = 'on';
+        let motion = 'playing';
+        try {
+          if (localStorage.getItem('bryson-lofi') === 'off') lofi = 'off';
+          if (localStorage.getItem('bryson-motion') === 'paused') motion = 'paused';
+        } catch {}
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) motion = 'paused';
+        document.body.dataset.lofi = lofi;
+        document.body.dataset.motion = motion;
+        if (motion === 'paused') document.documentElement.style.scrollBehavior = 'auto';
+      })();
+    </script>
     <slot />
   </body>
 </html>
