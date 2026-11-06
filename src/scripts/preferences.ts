@@ -4,8 +4,7 @@ const lofiButton = document.querySelector<HTMLButtonElement>('#lofi-toggle');
 const motionButton = document.querySelector<HTMLButtonElement>('#motion-toggle');
 const themeButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-theme-choice]')];
 const validThemes = new Set(themeButtons.map(button => button.dataset.themeChoice));
-const eraInput = document.querySelector<HTMLInputElement>('#desktop-era');
-const eraLabel = document.querySelector<HTMLOutputElement>('#desktop-era-label');
+const eraPickers = [...document.querySelectorAll<HTMLElement>('.era-picker')];
 const eras = [
   { id: '98', label: '1998 · 98', spoken: '1998, Windows 98' },
   { id: 'xp', label: '2001 · XP', spoken: '2001, Windows XP' },
@@ -19,21 +18,23 @@ function setEra(value: string | null | undefined) {
   const index = found < 0 ? 1 : found;
   const era = eras[index];
   document.body.dataset.era = era.id;
-  if (eraInput) {
-    eraInput.value = String(index);
-    eraInput.setAttribute('aria-valuetext', era.spoken);
-  }
-  if (eraLabel) eraLabel.value = era.label;
+  eraPickers.forEach(picker => {
+    const input = picker.querySelector<HTMLInputElement>('input')!;
+    input.value = String(index);
+    input.setAttribute('aria-valuetext', era.spoken);
+    picker.querySelector<HTMLOutputElement>('output')!.value = era.label;
+  });
 }
 
 setEra(document.body.dataset.era);
-if (eraInput) {
-  eraInput.closest<HTMLElement>('.era-picker')!.hidden = false;
-  eraInput.addEventListener('input', () => {
-    setEra(eras[Number(eraInput.value)].id);
+eraPickers.forEach(picker => {
+  picker.hidden = false;
+  const input = picker.querySelector<HTMLInputElement>('input')!;
+  input.addEventListener('input', () => {
+    setEra(eras[Number(input.value)].id);
     try { localStorage.setItem('bryson-era', document.body.dataset.era!); } catch {}
   });
-}
+});
 
 function setTheme(value: string | null | undefined) {
   const theme = value && validThemes.has(value) ? value : 'meadow';
