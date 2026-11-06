@@ -42,6 +42,7 @@ Consult these guides before working on related tasks:
 - Preserve working window controls, stacking, desktop dragging, keyboard movement, career-tab navigation, and the no-JavaScript fallback. Decorative application chrome should not look like a working control unless it does something.
 - Keep keyboard focus visible and content readable. Animation is welcome, but respect reduced motion and the saved motion setting. Keep the lo-fi effect toggleable; use low-resolution imagery, reduced color depth, and the pixel-grid treatment without breaking interaction.
 - Reuse the portrait cutout, SVG artwork, shared icons, and CSS textures.
+- Source new images from Wikimedia Commons or other sources offering Creative Commons licensed or public-domain images rather than generating images, unless the user explicitly requests generation. Verify each image's license, retain its source URL and creator credit, and include any required attribution and license links when using it on the site.
 
 ### Code and content
 
