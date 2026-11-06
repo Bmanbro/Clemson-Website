@@ -1,0 +1,11 @@
+Wallpaper: Xp Reloaded
+Photographer: Marco Rosanova
+Source: Wikimedia Commons
+https://commons.wikimedia.org/wiki/File:Xp_Reloaded_(67866923).jpeg
+
+Licensed under Creative Commons Attribution 3.0 Unported (CC BY 3.0).
+https://creativecommons.org/licenses/by/3.0/
+
+Changes: resized to 1920 pixels wide and converted to WebP.
+The website crops the photograph to fit each background area.
+The optional lo-fi setting reduces displayed colors and adds a pixel grid.

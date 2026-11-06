@@ -12,8 +12,8 @@
   overflow: hidden;
   color: #fff;
   font: 400 14px/1.4 var(--body-font);
-  background: #34323b;
-  background-image: var(--graffiti-wall);
+  background: #6bb5d8;
+  background-image: var(--desktop-wallpaper);
   background-size: cover;
   background-position: center;
 }
@@ -83,7 +83,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #354f4d;
+  background: #66bce2;
   border-bottom: 6px ridge #b9d2d8;
 }
 .portal-header::after {
@@ -91,9 +91,9 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-image: linear-gradient(90deg, #182b2c26, #182b2c40 48%, #28272d0d), var(--graffiti-wall);
+  background-image: var(--desktop-wallpaper);
   background-size: cover;
-  background-position: center 42%;
+  background-position: center 12%;
 }
 .portal-header::before {
   content: "";
@@ -358,8 +358,8 @@
   overscroll-behavior: contain;
   scrollbar-color: var(--pink) #172b32;
   scrollbar-width: auto;
-  background-color: #28272d;
-  background-image: var(--graffiti-wall);
+  background-color: #6aab66;
+  background-image: var(--desktop-wallpaper);
   background-size: cover;
   background-position: center;
   scroll-behavior: smooth;
@@ -391,10 +391,10 @@
   isolation: isolate;
   height: 280px;
   overflow: hidden;
-  background-color: var(--yellow);
-  background-image: var(--graffiti-paper);
+  background-color: #82bb9c;
+  background-image: var(--desktop-wallpaper);
   background-size: cover;
-  background-position: center 58%;
+  background-position: center 65%;
   border-bottom: 4px solid #000;
 }
 .feature-checks {
@@ -526,6 +526,11 @@
   border-top: 4px ridge #afc9cd;
   color: #b9dfe5;
   font-size: 11px;
+}
+.wallpaper-credit {
+  color: #fff;
+  font-size: 10px;
+  text-underline-offset: 2px;
 }
 .portal-footer button {
   background: linear-gradient(#6685ab, #3d5d85);
