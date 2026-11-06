@@ -43,6 +43,7 @@ Consult these guides before working on related tasks:
 - Keep keyboard focus visible and content readable. Animation is welcome, but respect reduced motion and the saved motion setting. Keep the lo-fi effect toggleable; use low-resolution imagery, reduced color depth, and the pixel-grid treatment without breaking interaction.
 - Reuse the portrait cutout, SVG artwork, shared icons, and CSS textures.
 - Source new images from Wikimedia Commons or other sources offering Creative Commons licensed or public-domain images rather than generating images, unless the user explicitly requests generation. Verify each image's license, retain its source URL and creator credit, and include any required attribution and license links when using it on the site.
+- Use `uvx withoutbg` when removing backgrounds from images. Use `cwebp` to convert all raster images to WebP for use on the site, preserving transparency where needed.
 
 ### Code and content
 
