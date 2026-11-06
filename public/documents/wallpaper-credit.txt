@@ -9,3 +9,27 @@ https://creativecommons.org/licenses/by/3.0/
 Changes: resized to 1920 pixels wide and converted to WebP.
 The website crops the photograph to fit each background area.
 The optional lo-fi setting reduces displayed colors and adds a pixel grid.
+
+
+AQUA THEME
+Photograph: Soleil à travers un paysage sous-marin de Bretagne
+(Ifremer 00378-48922 - 904)
+Photographer: Olivier Dugornay / Ifremer
+Source: Wikimedia Commons
+https://commons.wikimedia.org/wiki/File:Soleil_à_travers_un_paysage_sous-marin_de_Bretagne_(Ifremer_00378-48922_-_904).jpg
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Changes: resized to 1920 pixels wide and converted to WebP using cwebp.
+
+BUBBLES THEME
+Photograph: Macro Photography of a soap bubble
+Photographer: Pashminu
+Source: Wikimedia Commons
+https://commons.wikimedia.org/wiki/File:Macro_Photography_of_a_soap_bubble.jpg
+License: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+https://creativecommons.org/licenses/by-sa/4.0/
+Changes: converted to WebP using cwebp. This adapted image remains licensed
+under CC BY-SA 4.0; this license applies to the image, not the site's code.
+
+All theme photographs are cropped by CSS to fit each background area.
+The optional lo-fi setting reduces displayed colors and adds a pixel grid.

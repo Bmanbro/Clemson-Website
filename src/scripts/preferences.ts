@@ -2,6 +2,22 @@ export {};
 
 const lofiButton = document.querySelector<HTMLButtonElement>('#lofi-toggle');
 const motionButton = document.querySelector<HTMLButtonElement>('#motion-toggle');
+const themeButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-theme-choice]')];
+const validThemes = new Set(themeButtons.map(button => button.dataset.themeChoice));
+
+function setTheme(value: string | null | undefined) {
+  const theme = value && validThemes.has(value) ? value : 'meadow';
+  document.body.dataset.theme = theme;
+  themeButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme)));
+}
+
+setTheme(document.body.dataset.theme);
+document.querySelectorAll<HTMLElement>('[data-theme-picker]').forEach(picker => { picker.hidden = false; });
+themeButtons.forEach(button => button.addEventListener('click', () => {
+  setTheme(button.dataset.themeChoice);
+  try { localStorage.setItem('bryson-theme', document.body.dataset.theme!); } catch {}
+}));
+
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 let lofi = document.body.dataset.lofi !== 'off';
 let savedMotion: string | null = null;
@@ -45,6 +61,7 @@ motionButton?.addEventListener('click', () => {
 });
 motionPreference.addEventListener('change', setMotion);
 window.addEventListener('storage', event => {
+  if (event.key === 'bryson-theme' || event.key === null) setTheme(event.newValue);
   if (event.key === 'bryson-lofi' || event.key === null) {
     lofi = event.newValue !== 'off';
     setLofi();

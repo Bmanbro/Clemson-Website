@@ -1,7 +1,8 @@
 ---
 import cursorArrow from '../assets/cursor-arrow-portrait.png';
 import cursorHand from '../assets/cursor-hand-portrait.png';
-import desktopLandscape from '../assets/xp-landscape.webp';
+import { themes } from '../data/themes';
+const themeIds = themes.map(theme => theme.id);
 
 interface Props {
   title: string;
@@ -27,21 +28,25 @@ const canonical = Astro.site && new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/bryson-icon.png`} />
     <title>{title}</title>
   </head>
-  <body class="portal" data-lofi="on" style={{
-    '--desktop-wallpaper': `url("${desktopLandscape.src}")`,
+  <body class="portal" data-lofi="on" data-theme="meadow" style={{
+    ...Object.fromEntries(themes.map(theme => [`--wallpaper-${theme.id}`, `url("${theme.wallpaper.src}")`])),
     '--cursor-arrow': `url("${cursorArrow.src}") 2 4, default`,
     '--cursor-hand': `url("${cursorHand.src}") 8 2, pointer`,
   }}>
-    <script is:inline>
+    <script is:inline define:vars={{ themeIds }}>
       // Apply preferences before any visible content is painted.
       (() => {
         let lofi = 'on';
         let motion = 'playing';
+        let theme = 'meadow';
         try {
           if (localStorage.getItem('bryson-lofi') === 'off') lofi = 'off';
           if (localStorage.getItem('bryson-motion') === 'paused') motion = 'paused';
+          const savedTheme = localStorage.getItem('bryson-theme');
+          if (themeIds.includes(savedTheme)) theme = savedTheme;
         } catch {}
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) motion = 'paused';
+        document.body.dataset.theme = theme;
         document.body.dataset.lofi = lofi;
         document.body.dataset.motion = motion;
         if (motion === 'paused') document.documentElement.style.scrollBehavior = 'auto';

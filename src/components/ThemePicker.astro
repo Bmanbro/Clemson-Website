@@ -1,0 +1,14 @@
+---
+import { themes } from '../data/themes';
+---
+<fieldset class="theme-picker" data-theme-picker hidden>
+  <legend>Desktop theme</legend>
+  <div class="theme-buttons" role="group" aria-label="Choose a desktop theme">
+    {themes.map(theme => (
+      <button type="button" data-theme-choice={theme.id} aria-pressed={theme.id === 'meadow'}>
+        <span class="theme-preview" style={{ backgroundImage: `url("${theme.wallpaper.src}")` }} aria-hidden="true"></span>
+        <span>{theme.label}</span>
+      </button>
+    ))}
+  </div>
+</fieldset>
