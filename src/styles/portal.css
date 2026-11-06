@@ -2149,3 +2149,74 @@
     100% { transform: translate(8px, 25px) rotate(8deg); }
   }
 }
+
+/* Desktop timeline: retain the portal's personality as its application chrome evolves. */
+.era-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.era-picker[hidden] { display: none; }
+.era-picker output { display: inline-block; min-width: 58px; }
+.era-picker input { width: clamp(70px, 13vw, 170px); margin: 0; accent-color: var(--yellow); cursor: var(--cursor-hand); }
+.portal[data-motion="playing"] .xp-window,
+.portal[data-motion="playing"] .xp-titlebar,
+.portal[data-motion="playing"] .window-controls button,
+.portal[data-motion="playing"] .portal-footer {
+  transition: background-color .3s ease, border-color .3s ease, border-radius .3s ease, box-shadow .3s ease;
+}
+
+/* 1998: square, raised system-gray frames. */
+.portal[data-era="98"] .xp-window { padding: 3px; border: 2px outset #fff; border-radius: 0; background: #c0c0c0; box-shadow: 3px 4px #0007; }
+.portal[data-era="98"] .xp-titlebar { border-radius: 0; background: #808080; }
+.portal[data-era="98"] .is-active > .xp-titlebar { background: linear-gradient(90deg, #000080, #1084d0); }
+.portal[data-era="98"] .window-controls button,
+.portal[data-era="98"] .window-controls button[data-action="close"] { border: 2px outset #fff; border-radius: 0; background: #c0c0c0; color: #000; box-shadow: none; }
+.portal[data-era="98"] .portal-footer { background: #c0c0c0; border-color: #fff; }
+.portal[data-era="98"] .portal-footer button { background: #c0c0c0; color: #000; border: 2px outset #fff; border-radius: 0; }
+.portal[data-era="98"] .era-picker, .portal[data-era="98"] .wallpaper-credit { color: #000; }
+
+/* Windows 7: glassy blue frames and softer highlights. */
+.portal[data-era="7"] .xp-window { padding: 5px; border: 1px solid #476b82; border-radius: 9px 9px 4px 4px; background: #91b6c9; box-shadow: 0 8px 22px #0008, inset 0 1px #fff; }
+.portal[data-era="7"] .xp-titlebar { border-radius: 5px 5px 0 0; background: linear-gradient(#d8ebf2, #7296ab); }
+.portal[data-era="7"] .is-active > .xp-titlebar { background: linear-gradient(#c8efff, #5694b6 48%, #27658a 52%, #609bb6); }
+.portal[data-era="7"] .portal-footer { background: linear-gradient(#5289a6, #183e59); }
+
+/* Windows 10 and 11: flatter surfaces, then rounded, softer chrome. */
+.portal[data-era="10"] .xp-window,
+.portal[data-era="11"] .xp-window { padding: 1px; border: 1px solid #608ba1; border-radius: 0; background: #f3f5f6; box-shadow: 0 8px 24px #0006; }
+.portal[data-era="10"] .xp-titlebar,
+.portal[data-era="11"] .xp-titlebar { padding: 2px 3px 2px 8px; border-radius: 0; background: #e5eaec; color: #182932; }
+.portal[data-era="10"] .is-active > .xp-titlebar,
+.portal[data-era="11"] .is-active > .xp-titlebar { background: #f4f7f8; }
+.portal[data-era="10"] .xp-titlebar h2,
+.portal[data-era="11"] .xp-titlebar h2 { color: #182932; text-shadow: none; font-family: var(--body-font); font-weight: 400; }
+.portal[data-era="10"] .window-controls button,
+.portal[data-era="11"] .window-controls button,
+.portal[data-era="10"] .window-controls button[data-action="close"],
+.portal[data-era="11"] .window-controls button[data-action="close"] { border: 0; border-radius: 0; background: transparent; color: #172934; box-shadow: none; }
+.portal[data-era="10"] .window-controls button:hover,
+.portal[data-era="11"] .window-controls button:hover { background: #cedde3; }
+.portal[data-era="10"] .window-controls button[data-action="close"]:hover,
+.portal[data-era="11"] .window-controls button[data-action="close"]:hover { background: #c43b38; color: white; }
+.portal[data-era="10"] .portal-footer { background: #173747; border-color: #345765; }
+.portal[data-era="11"] .xp-window { border-radius: 9px; overflow: hidden; }
+.portal[data-era="11"] .xp-titlebar { border-radius: 8px 8px 0 0; }
+.portal[data-era="11"] .portal-footer { background: #385c70; border-color: #8aafbd; }
+.portal[data-era="11"] .portal-footer button { border-radius: 5px; }
+@media (max-width: 600px) {
+  .era-picker { gap: 4px; }
+  .era-picker label { font-size: 0; }
+  .era-picker output { font-size: 10px; min-width: 52px; }
+  .era-picker input { width: clamp(55px, 18vw, 100px); }
+  .portal-footer .wallpaper-credit { font-size: 0; }
+  .portal-footer .wallpaper-credit::after { content: "Credit"; font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portal .xp-window, .portal .xp-titlebar, .portal .window-controls button, .portal .portal-footer { transition: none; }
+}

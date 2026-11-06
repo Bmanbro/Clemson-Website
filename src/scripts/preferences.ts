@@ -4,6 +4,36 @@ const lofiButton = document.querySelector<HTMLButtonElement>('#lofi-toggle');
 const motionButton = document.querySelector<HTMLButtonElement>('#motion-toggle');
 const themeButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-theme-choice]')];
 const validThemes = new Set(themeButtons.map(button => button.dataset.themeChoice));
+const eraInput = document.querySelector<HTMLInputElement>('#desktop-era');
+const eraLabel = document.querySelector<HTMLOutputElement>('#desktop-era-label');
+const eras = [
+  { id: '98', label: '1998 · 98', spoken: '1998, Windows 98' },
+  { id: 'xp', label: '2001 · XP', spoken: '2001, Windows XP' },
+  { id: '7', label: '2009 · 7', spoken: '2009, Windows 7' },
+  { id: '10', label: '2015 · 10', spoken: '2015, Windows 10' },
+  { id: '11', label: '2021 · 11', spoken: '2021, Windows 11' },
+];
+
+function setEra(value: string | null | undefined) {
+  const found = eras.findIndex(era => era.id === value);
+  const index = found < 0 ? 1 : found;
+  const era = eras[index];
+  document.body.dataset.era = era.id;
+  if (eraInput) {
+    eraInput.value = String(index);
+    eraInput.setAttribute('aria-valuetext', era.spoken);
+  }
+  if (eraLabel) eraLabel.value = era.label;
+}
+
+setEra(document.body.dataset.era);
+if (eraInput) {
+  eraInput.closest<HTMLElement>('.era-picker')!.hidden = false;
+  eraInput.addEventListener('input', () => {
+    setEra(eras[Number(eraInput.value)].id);
+    try { localStorage.setItem('bryson-era', document.body.dataset.era!); } catch {}
+  });
+}
 
 function setTheme(value: string | null | undefined) {
   const theme = value && validThemes.has(value) ? value : 'meadow';
@@ -61,6 +91,7 @@ motionButton?.addEventListener('click', () => {
 });
 motionPreference.addEventListener('change', setMotion);
 window.addEventListener('storage', event => {
+  if (event.key === 'bryson-era' || event.key === null) setEra(event.newValue);
   if (event.key === 'bryson-theme' || event.key === null) setTheme(event.newValue);
   if (event.key === 'bryson-lofi' || event.key === null) {
     lofi = event.newValue !== 'off';

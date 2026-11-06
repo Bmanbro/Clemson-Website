@@ -39,14 +39,18 @@ const canonical = Astro.site && new URL(Astro.url.pathname, Astro.site);
         let lofi = 'on';
         let motion = 'playing';
         let theme = 'meadow';
+        let era = 'xp';
         try {
           if (localStorage.getItem('bryson-lofi') === 'off') lofi = 'off';
           if (localStorage.getItem('bryson-motion') === 'paused') motion = 'paused';
           const savedTheme = localStorage.getItem('bryson-theme');
           if (themeIds.includes(savedTheme)) theme = savedTheme;
+          const savedEra = localStorage.getItem('bryson-era');
+          if (['98', 'xp', '7', '10', '11'].includes(savedEra)) era = savedEra;
         } catch {}
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) motion = 'paused';
         document.body.dataset.theme = theme;
+        document.body.dataset.era = era;
         document.body.dataset.lofi = lofi;
         document.body.dataset.motion = motion;
         if (motion === 'paused') document.documentElement.style.scrollBehavior = 'auto';
