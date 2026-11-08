@@ -1,17 +1,10 @@
-export {};
+import { desktopEras as eras } from '../data/themes';
 
 const lofiButton = document.querySelector<HTMLButtonElement>('#lofi-toggle');
 const motionButton = document.querySelector<HTMLButtonElement>('#motion-toggle');
 const themeButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-theme-choice]')];
 const validThemes = new Set(themeButtons.map(button => button.dataset.themeChoice));
 const eraPickers = [...document.querySelectorAll<HTMLElement>('.era-picker')];
-const eras = [
-  { id: '98', label: '1998 · 98', spoken: '1998, Windows 98' },
-  { id: 'xp', label: '2001 · XP', spoken: '2001, Windows XP' },
-  { id: '7', label: '2009 · 7', spoken: '2009, Windows 7' },
-  { id: '10', label: '2015 · 10', spoken: '2015, Windows 10' },
-  { id: '11', label: '2021 · 11', spoken: '2021, Windows 11' },
-];
 
 function setEra(value: string | null | undefined) {
   const found = eras.findIndex(era => era.id === value);

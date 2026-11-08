@@ -1,5 +1,5 @@
 ---
-import { themes } from '../data/themes';
+import { themes, desktopEras } from '../data/themes';
 ---
 <fieldset class="theme-picker" data-theme-picker hidden>
   <legend>Desktop theme</legend>
@@ -13,6 +13,6 @@ import { themes } from '../data/themes';
   </div>
   <label class="era-picker" hidden>
     <span>Desktop year <output>2001 · XP</output></span>
-    <input type="range" min="0" max="4" step="1" value="1" aria-label="Desktop year" aria-valuetext="2001, Windows XP" />
+    <input type="range" min="0" max={desktopEras.length - 1} step="1" value="1" aria-label="Desktop year" aria-valuetext="2001, Windows XP" />
   </label>
 </fieldset>

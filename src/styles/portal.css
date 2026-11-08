@@ -1013,6 +1013,45 @@
   flex: 0 0 auto;
   image-rendering: pixelated;
 }
+/* Shortcuts stay on the wallpaper beneath the application windows. */
+.desktop-shortcuts {
+  position: absolute;
+  inset: 12px;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 8px;
+  pointer-events: none;
+}
+.desktop-shortcuts a {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 4px;
+  width: 88px;
+  min-height: 72px;
+  padding: 5px 3px;
+  border: 1px solid transparent;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;
+  pointer-events: auto;
+}
+.desktop-shortcuts a:hover,
+.desktop-shortcuts a:focus-visible {
+  border-color: #d4e7ff;
+  background: #2455a880;
+}
+.desktop-shortcuts .desktop-icon {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(2px 2px #0008);
+}
 .section-links .desktop-icon {
   width: 24px;
   height: 24px;
@@ -2188,36 +2227,6 @@
 .portal[data-era="7"] .is-active > .xp-titlebar { background: linear-gradient(#c8efff, #5694b6 48%, #27658a 52%, #609bb6); }
 .portal[data-era="7"] .portal-footer { background: linear-gradient(#5289a6, #183e59); }
 
-/* Windows 10 and 11: flatter surfaces, then rounded, softer chrome. */
-.portal[data-era="10"] .xp-window,
-.portal[data-era="11"] .xp-window { padding: 1px; border: 1px solid #608ba1; border-radius: 0; background: #f3f5f6; box-shadow: 0 8px 24px #0006; }
-.portal[data-era="10"] .xp-titlebar,
-.portal[data-era="11"] .xp-titlebar { padding: 2px 3px 2px 8px; border-radius: 0; background: #e5eaec; color: #182932; }
-.portal[data-era="10"] .is-active > .xp-titlebar { background: linear-gradient(110deg, #276780, #478c9a); }
-.portal[data-era="11"] .is-active > .xp-titlebar { background: linear-gradient(110deg, #405e79, #728da0 58%, #8ca9b1); }
-.portal[data-era="10"] .xp-titlebar h2,
-.portal[data-era="11"] .xp-titlebar h2 { color: #182932; text-shadow: none; font-family: var(--body-font); font-weight: 400; }
-.portal[data-era="10"] .is-active > .xp-titlebar h2,
-.portal[data-era="11"] .is-active > .xp-titlebar h2 { color: #fff; }
-.portal[data-era="10"] .window-controls button,
-.portal[data-era="11"] .window-controls button,
-.portal[data-era="10"] .window-controls button[data-action="close"],
-.portal[data-era="11"] .window-controls button[data-action="close"] { border: 0; border-radius: 0; background: transparent; color: #172934; box-shadow: none; }
-.portal[data-era="10"] .is-active > .xp-titlebar .window-controls button,
-.portal[data-era="11"] .is-active > .xp-titlebar .window-controls button { color: #fff; }
-.portal[data-era="10"] .window-content .portal-feature,
-.portal[data-era="11"] .window-content .portal-feature { background: linear-gradient(135deg, #e5f0ef, #f2ede8 65%, #e9e2eb); }
-.portal[data-era="10"] .addressbook-toolbar { background: #d9e9e9; border-color: #9ab8ba; }
-.portal[data-era="11"] .addressbook-toolbar { background: #e2e9ee; border-color: #b1c2c9; }
-.portal[data-era="10"] .window-controls button:hover,
-.portal[data-era="11"] .window-controls button:hover { background: #cedde3; }
-.portal[data-era="10"] .window-controls button[data-action="close"]:hover,
-.portal[data-era="11"] .window-controls button[data-action="close"]:hover { background: #c43b38; color: white; }
-.portal[data-era="10"] .portal-footer { background: #173747; border-color: #345765; }
-.portal[data-era="11"] .xp-window { border-radius: 9px; overflow: hidden; }
-.portal[data-era="11"] .xp-titlebar { border-radius: 8px 8px 0 0; }
-.portal[data-era="11"] .portal-footer { background: #385c70; border-color: #8aafbd; }
-.portal[data-era="11"] .portal-footer button { border-radius: 5px; }
 @media (prefers-reduced-motion: reduce) {
   .portal .xp-window, .portal .xp-titlebar, .portal .window-controls button, .portal .portal-footer { transition: none; }
 }

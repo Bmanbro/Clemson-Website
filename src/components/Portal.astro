@@ -36,7 +36,7 @@ import { profile as p } from '../data/profile';
             <a href="#window-profile" data-open-window="profile" aria-current="location"><DesktopIcon kind="profile" /><span>Profile</span></a>
             <a href="#window-experience" data-open-window="experience"><DesktopIcon /><span>Experience</span></a>
             <a href="#window-projects" data-open-window="projects"><DesktopIcon kind="profile" /><span>Projects</span></a>
-            <a href="#window-cyber-team" data-open-window="cyber-team"><DesktopIcon kind="shield" /><span>Cyber defense</span></a>
+            <a href="#window-cyber-team" data-open-window="cyber-team"><DesktopIcon kind="shield" /><span>Cyber Defense</span></a>
           </nav>
           <div class="contact-links">
             <a href={`mailto:${p.email}`}>Email<span class="contact-detail"> Bryson</span></a>
@@ -48,7 +48,14 @@ import { profile as p } from '../data/profile';
           <div class="side-disc" aria-hidden="true"><span>BN</span></div>
         </aside>
         <main id="main" class="portal-center" tabindex="-1" aria-label="Resume desktop">
-          <DesktopWindow id="profile" title="Bryson Newman - address book" icon="profile" open>
+          <nav class="desktop-shortcuts" aria-label="Desktop shortcuts">
+            <a href="#window-profile" data-open-window="profile"><DesktopIcon kind="profile" /><span>Profile</span></a>
+            <a href="#window-experience" data-open-window="experience"><DesktopIcon /><span>Experience</span></a>
+            <a href="#window-projects" data-open-window="projects"><DesktopIcon kind="profile" /><span>Projects</span></a>
+            <a href="#window-cyber-team" data-open-window="cyber-team"><DesktopIcon kind="shield" /><span>Cyber Defense</span></a>
+            <a href={p.pdf} download><DesktopIcon /><span>Resume PDF</span></a>
+          </nav>
+          <DesktopWindow id="profile" title="Bryson Newman - Address Book" icon="profile" open>
           <div class="addressbook-toolbar"><a href={`mailto:${p.email}`}><DesktopIcon kind="profile" /> Send mail</a><a href={p.pdf} download><DesktopIcon /> Save resume</a></div>
           <section class="portal-feature">
             <div class="feature-art">
@@ -64,7 +71,7 @@ import { profile as p } from '../data/profile';
           </DesktopWindow>
           <DesktopWindow id="experience" title="Experience - Windows Explorer" offset={28}><ExperienceExplorer /></DesktopWindow>
           <DesktopWindow id="projects" title="Projects - Atari 2600+ Sideloader" icon="profile" offset={34}><Project /></DesktopWindow>
-          <DesktopWindow id="cyber-team" title="Cyber defense - remote connection" icon="shield" offset={40}><CyberConnection /></DesktopWindow>
+          <DesktopWindow id="cyber-team" title="Cyber Defense - Remote Connection" icon="shield" offset={40}><CyberConnection /></DesktopWindow>
         </main>
         <aside class="portal-right" aria-label="Education and skills"><Credentials idSuffix="-sidebar" /></aside>
       </div>
@@ -76,6 +83,7 @@ import { profile as p } from '../data/profile';
     </div>
     <DeadAir />
     <noscript><style is:inline>
+      .desktop-shortcuts { position: relative; }
       .portal-center { overflow: auto; }
       .portal-center .xp-window, .portal-center .xp-window[hidden] { display: block !important; position: relative; inset: auto !important; width: auto !important; height: auto !important; margin: 10px; }
       .window-content { overflow: visible; }
